@@ -1,0 +1,125 @@
+{% extends 'Main/Base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travencia | NewsLetters</title>
+</head>
+<body style="background-color: #333; color:white">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+ 
+    <div class="container">
+
+        <h1 style="color: white; text-align: center; background-color: tomato; padding: 20px;">Subscribe to our newsletters!</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+       <p style="color: white;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem in minus ex nostrum quod, accusamus laborum. Eum molestias sunt assumenda quasi sed fugit, distinctio officiis neque ad nisi vero in. Iste eaque, incidunt id repellat quaerat debitis vitae quibusdam consectetur, tenetur optio necessitatibus temporibus dolorum libero voluptatum sapiente fugit? Quo.</p>
+       <br>
+       <br>
+       <br>
+        <p style="background-color: teal; color: white; text-align: left; padding: 10px;">Never miss an offer</p>
+        <hr>
+    <form action="{% url 'Main:NewsLetter'%}" method="POST">{%csrf_token%}
+        
+        {{form|crispy}}
+        <button type="submit" style="color: white; background-color: #337ab7;" class="btn btn-block"><b>Submit</b></button>
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+</div>
+  <!--Footer-->
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+    <!--Call to action-->
+    <div class="pt-4">
+      <a class="btn btn-outline-white" href="/"  role="button">Travencia
+      
+      </a>
+      <a class="btn btn-outline-white" href="#"  role="button">Start Now
+
+      </a>
+    </div>
+    <!--/.Call to action-->
+
+    <hr class="my-4">
+
+    <!-- Social icons -->
+    <div class="pb-4">
+      <a href="#" target="_blank">
+        <i class="fab fa-facebook-f mr-3"></i>
+      </a>
+
+      <a href="#" target="_blank">
+        <i class="fab fa-twitter mr-3"></i>
+      </a>
+
+      <a href="#" target="_blank">
+        <i class="fab fa-youtube mr-3"></i>
+      </a>
+
+      <a href="#" target="_blank">
+        <i class="fab fa-google-plus-g mr-3"></i>
+      </a>
+
+      <a href="#" target="_blank">
+      
+      </a>
+
+      <a href="#" target="_blank">
+       
+      </a>
+
+      <a href="#" target="_blank">
+       
+      </a>
+
+      <a href="#" target="_blank">
+       
+      </a>
+    </div>
+    <!-- Social icons -->
+
+  <!--Copyright-->
+  <div class="footer-copyright py-3">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    © 2020 Copyright:
+    <a href="/" > Travencia.com </a>
+  </div>
+  <!--/.Copyright-->
+
+ 
+  </footer>
+  <!--/.Footer-->
+
+</body>
+</html>
+
+{% endblock %}

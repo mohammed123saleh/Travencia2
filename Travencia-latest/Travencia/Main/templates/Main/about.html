@@ -1,0 +1,214 @@
+
+{% extends 'Main/Base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travencia | About</title>
+</head>
+<body style="background-color: rgb(22, 22, 22);">
+  <br>
+  <br>
+<style>
+
+
+
+ p{
+  text-align: justify !important;
+  font-family: 'Roboto', sans-serif !important;
+  word-spacing: 1px !important;
+  font-size: 14px !important;
+  line-height: 1.5rem;
+  font-weight: 300 !important;
+ }
+
+
+
+ @media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+
+p{
+  text-align: justify !important;
+  font-family: 'Roboto', sans-serif !important;
+  word-spacing: 1px !important;
+  font-size: 11px !important;
+  line-height: 1.5rem;
+  font-weight: 500 !important;
+}
+
+
+
+
+</style>
+<br>
+<br>
+<br>
+
+  <div class="container">
+    <h1 style="text-align: center !important; font-size: 40px !important;line-height: 1.4;color: rgb(0, 131, 144);font-weight: 700;font-family: 'Archivo Black', arial, sans-serif;    text-transform: uppercase;    overflow-wrap: break-word;    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    ">ABOUT US</h1>
+    <br>
+  <br>
+  </div>
+
+
+
+<div class="container">
+  
+
+<div class="row">
+
+
+<div class="col-md-6">
+  <img style="width: 100%; height:100%; margin-bottom:10px !important; padding-bottom:10px !important;" src="{% static 'Main/img/Vision.jpg'%}" alt="">
+</div>
+
+
+<div class="col-md-6" style="color:rgb(164, 164, 164)!important;margin-top:8px !important; padding-top:10px">
+  <h4 style="color:white !important; text-align:center !important;margin-bottom: 12px;">Our Vision
+
+  </h4>
+  <br>
+<p > Travencia is online Travel Agency & Metasearch Engine for Hotels, Rentals,Guaranteed Lowest Price On Hotels, Resorts & Homes & More 
+  Our goal is to provide business travelers with the most accessible and cost effective way of discovering and booking the broadest selection of accommodation all over the world.24/7 Customer Support. Guaranteed Satisfaction.</div>
+</p>
+</div>
+
+</div>
+<br>
+
+
+
+<span style="margin-top: 7px !important; margin-bottom:7px !important;">
+  
+</span>
+
+
+<div class="container">
+  
+
+  <div class="row">
+    <div class="col-md-6">
+      <img style="width: 100%; height:100%; min-height:250px !important; margin-bottom:10px !important; padding-bottom:10px !important;" src="{% static 'Main/img/Mission.jpg'%}" alt="">
+    </div>
+    <div class="col-md-6" style="color:rgb(164, 164, 164)!important;margin-top:8px !important; padding-top:10px">
+      <h4 style="color:white !important; text-align:center !important;margin-bottom: 12px;">Our Mission
+      </h4>
+      <br>
+    <p >  To help business travelers, whatever their budgets, easily discover, book, and enjoy the world’s best places to stay.Our business strategy hinges on a couple of aspects: 1.Surpassing what our clients may consider as “excellent” in every aspect of the business, hence our motto: “Built For Business”. 2. Focusing on building long-term client relationships, capitalizing on our skilled teams worldwide and leveraging our depth of relevant experience.</p>
+    </div>
+    
+
+  </div>
+  
+  
+  </div>
+  
+
+
+  <br>
+
+
+<span style="margin-top: 7px !important; margin-bottom:7px !important;">
+  
+</span>
+
+  <div class="container">
+  
+
+    <div class="row">
+    
+    
+    <div class="col-md-6">
+      <img style="width: 100%; height:100%; margin-bottom:10px !important; padding-bottom:10px !important;" src="{% static 'Main/img/Team.jpg'%}" alt="">
+    </div>
+    
+    
+    <div class="col-md-6" style="color:rgb(164, 164, 164)!important;margin-top:8px !important; padding-top:10px">
+      <h4 style="color:white !important; text-align:center !important;margin-bottom: 12px;">The Team
+      </h4>
+      <br>
+     <p >At Travencia, we’re constantly looking towards the horizon, ready to learn more about ourselves and how to build a better product for our fellow travelers along the way. Thus we would like you to share your ideas, reviews and suggestions with us.</p>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+
+
+
+
+<br>
+<br>
+<br>
+<img style="height: 75px; width: 80% !important; display:none;" src="{% static 'Main/img/invoice.jpg'%}" alt="" >
+
+{% include 'Main/footer2.html'%}
+
+<script>
+  
+  $('document').ready(function(){
+
+ 
+    $('.requiredField').css('color', 'white');
+
+     $('.form-control').css('background-color', 'white');
+     $('.form-control').css('color', 'black');
+  
+     $('.requiredField').css('color', 'white');
+    
+
+     
+
+
+
+
+
+  });
+
+  $('document').ready(function(){ 
+  $('#mit').css('background-color', 'white');
+  $('.Subscribe').hide();
+  $('.footer-text').hide();
+  $('.subscribe-form').hide();
+
+  
+  });
+</script>
+
+
+
+
+
+
+<script>
+  $('document').ready(function(){ 
+
+  $('.Subscribe').hide();
+  $('.footer-text').hide();
+  $('.subscribe-form').hide();
+
+  
+  });
+
+</script>
+</body>
+</html>
+
+
+
+
+
+{% endblock %}

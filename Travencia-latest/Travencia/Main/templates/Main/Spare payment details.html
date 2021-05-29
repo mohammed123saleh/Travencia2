@@ -1,0 +1,760 @@
+
+{% extends 'Main/Base.html' %}
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Travencia | Secure Payment </title>
+</head>
+<body>
+  
+
+  {% block content %}
+
+  <style>
+
+
+
+
+
+
+
+
+@media only screen 
+    and (min-width : 320px) {
+    /* Styles */
+.container{
+   padding-top: 50px !important;
+    }
+    }
+    @media only screen 
+    and (min-width : 321px) {
+    /* Styles */
+    .container{
+      padding-top: 50px !important;
+    }
+    }
+
+    @media only screen 
+    and (min-width : 320px) {
+    /* Styles */
+    #sepa{
+     padding-bottom: 15px !important;
+    }
+    }
+    @media only screen 
+    and (min-width : 321px) {
+    /* Styles */
+    #sepa{
+      padding-bottom: 15px !important;
+    }
+    }
+  
+    @media only screen 
+    and (min-width : 320px) {
+    /* Styles */
+    #bosum{
+     text-align: center !important;
+    }
+    }
+    @media only screen 
+    and (min-width : 321px) {
+    /* Styles */
+    #bosum{
+     text-align: center !important;
+    }
+    }
+    
+    
+    @import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+    body,html {
+      min-height:100%;
+      margin:0;
+     /* background-color: rgb(22, 22, 22) !important;*/
+     background-color: rgb(22, 22, 22) !important;
+     font-family: 'Roboto', sans-serif !important;
+    }
+    
+    li
+    
+    h2 {
+      margin-bottom:0px;
+      margin-top:25px;
+      text-align:center;
+      font-weight:200;
+      font-size:19px;
+      font-size:1.2rem;
+      
+    }
+    .container {
+      height:100%;
+      -webkit-box-pack:center;
+      -webkit-justify-content:center;
+          -ms-flex-pack:center;
+              justify-content:center;
+      -webkit-box-align:center;
+      -webkit-align-items:center;
+          -ms-flex-align:center;
+              align-items:center;
+      display:-webkit-box;
+      display:-webkit-flex;
+      display:-ms-flexbox;
+      display:flex;
+      background-color: rgb(0, 0, 0);
+      width:100% !important;
+      min-height: 900px !important;
+      margin-top: 0px !important;
+      
+     
+    
+    }
+    .dropdown-select.visible {
+      display:block;
+    }
+    .dropdown {
+      position:relative;
+    }
+    ul {
+      margin:0;
+      padding:0;
+    }
+    ul li {
+      list-style:none;
+      padding-left:10px;
+      cursor:pointer;
+    }
+    ul li:hover {
+      background:rgba(255,255,255,0.1);
+    }
+    .dropdown-select {
+      position:absolute;
+    
+      text-align:left;
+      box-shadow:0px 3px 5px 0px rgba(0,0,0,0.1);
+      border-bottom-right-radius:5px;
+      border-bottom-left-radius:5px;
+      width:90%;
+      left:2px;
+      line-height:2em;
+      margin-top:2px;
+      box-sizing:border-box;
+    }
+    .thin {
+      font-weight:500;
+      color:black  !important;
+    }
+    .small {
+      font-size:12px;
+      font-size:.8rem;
+    }
+    .half-input-table {
+      border-collapse:collapse;
+      width:100%;
+    }
+    .half-input-table td:first-of-type {
+      background-color: rgb(0, 0, 0);
+      width:50%;
+    }
+    .window {
+      height:700;
+      width:800px;
+      background:#fff;
+      display:-webkit-box;
+      display:-webkit-flex;
+      display:-ms-flexbox;
+      display:flex;
+    
+      box-shadow: 0px 15px 50px 10px rgb(22, 22, 22);
+      border-radius:40px !important;
+      z-index:10;
+    }
+    .order-info {
+      height:100%;
+      width:50%;
+      
+      padding-left:25px;
+      padding-right:25px;
+      box-sizing:border-box;
+      display:-webkit-box;
+      display:-webkit-flex;
+      display:-ms-flexbox;
+      display:flex;
+      -webkit-box-pack:center;
+      -webkit-justify-content:center;
+          -ms-flex-pack:center;
+              justify-content:center;
+      position:relative;
+    }
+    .price {
+      bottom:0px;
+      position:absolute;
+      right:0px;
+      color:#4488dd;
+    }
+    .order-table td:first-of-type {
+      width:25%;
+    }
+    .order-table {
+        position:relative;
+    }
+    .line {
+      height:1px;
+      width:100%;
+      margin-top:10px;
+      margin-bottom:10px;
+      background-color: #666 !important;
+    }
+    .order-table td:last-of-type {
+      vertical-align:top;
+      padding-left:25px;
+    }
+    .order-info-content {
+      table-layout:fixed;
+    
+      
+      
+    
+    }
+    
+    .full-width {
+      width:100%;
+    
+    }
+    .pay-btn {
+      border:none;
+      background:#22b877;
+      line-height:2em;
+      border-radius:10px;
+      font-size:19px;
+      font-size:1.2rem;
+      color:#fff;
+      cursor:pointer;
+      position:absolute;
+      bottom:25px;
+      width:calc(100% - 50px);
+      -webkit-transition:all .2s ease;
+              transition:all .2s ease;
+    }
+    .pay-btn:hover {
+      background:#086b47;
+        color:#eee;
+      -webkit-transition:all .2s ease;
+              transition:all .2s ease;
+    }
+    
+    .total {
+      padding-top: 0px;
+      margin-top:0px !important;
+      font-size:20px;
+      font-size:1.3rem;
+      position:absolute;
+      /*bottom:30px;*/
+      right:27px;
+      left:3px;
+      
+    }
+    .dense {
+      line-height:1.2em;
+      font-size:16px;
+      font-size:1rem;
+    }
+    .input-field {
+      background:rgba(255,255,255,0.1);
+      margin-bottom:10px;
+      margin-top:3px;
+      line-height:1.5em;
+      font-size:20px;
+      font-size:1.3rem;
+      border:none;
+      padding:5px 10px 5px 10px;
+      color:#fff;
+      box-sizing:border-box;
+      width:100%;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    
+    
+    
+    .input-field:focus{
+    
+    color: black;
+    }
+    
+    
+    .form-control {
+      background:rgba(255,255,255,0.1);
+      color: white !important;
+      font-size:20px;
+      font-size:1.3rem;
+    }
+    .form-control:focus{
+      color: black !important;
+      font-size:20px;
+      font-size:1.3rem;
+    }
+    
+    
+    .credit-info {
+      background-color: rgb(0, 0, 0);
+      height:115%;
+      width:50%;
+      color:#eee !important;
+      -webkit-box-pack:center;
+      -webkit-justify-content:center;
+          -ms-flex-pack:center;
+              justify-content:center;
+      font-size:14px;
+      font-size:.9rem;
+      display:-webkit-box;
+      display:-webkit-flex;
+      display:-ms-flexbox;
+      display:flex;
+      box-sizing:border-box;
+      padding-left:25px;
+      padding-right:25px;
+      border-top-right-radius:30px;
+      border-top-left-radius:30px;
+      border-bottom-right-radius:30px;
+      position:relative;
+      
+    }
+    .dropdown-btn {
+      background:rgba(255,255,255,0.1);
+      width:100%;
+      border-radius:5px;
+      text-align:center;
+      line-height:1.5em;
+      cursor:pointer;
+      position:relative;
+      -webkit-transition:background .2s ease;
+              transition:background .2s ease;
+    }
+    .dropdown-btn:after {
+      content: '\25BE';
+      right:8px;
+      position:absolute;
+    }
+    .dropdown-btn:hover {
+      background:rgba(255,255,255,0.2);
+      -webkit-transition:background .2s ease;
+              transition:background .2s ease;
+    }
+    .dropdown-select {
+      display:none;
+    }
+    .credit-card-image {
+      display:block;
+      max-height:80px;
+      margin-left:auto;
+      margin-right:auto;
+      margin-top:35px;
+      margin-bottom:15px;
+    }
+    .credit-info-content {
+      margin-top:25px;
+      -webkit-flex-flow:column;
+          -ms-flex-flow:column;
+              flex-flow:column;
+      display:-webkit-box;
+      display:-webkit-flex;
+      display:-ms-flexbox;
+      display:flex;
+      width:100%;
+    }
+    @media (max-width: 800px) {
+      .window {
+        width: 100%;
+        height: 100%;
+        display:block;
+        border-radius:1px;
+      }
+      .order-info {
+        width:3000px !important;
+        min-height:80vh;
+        padding-bottom:100px;
+        border-radius:0px;
+      }
+      .credit-info {
+        width:100%;
+        height:auto;
+        padding-bottom:100px;
+        border-radius:0px;
+        border-top-right-radius:20px;
+        border-top-left-radius:20px;
+        border-bottom-right-radius:3px;
+        border-bottom-left-radius:3px;
+        
+      }
+      .pay-btn {
+        border-radius:0px;
+      }
+    }
+    
+    /*
+    
+    the color of the background rgb(59, 59, 59));
+    */
+    </style>
+    
+    
+    <style>
+    
+    .Texty{
+            overflow-y: scroll;
+            height: 170px;
+            width: 100%;
+            border: 1px solid #DDD;
+            padding: 10px;
+            color: white;
+            background-color: #333;
+            }
+    </style>
+    
+    
+    
+
+
+    
+    
+    <div class='container' style="width: 100% !important; background-color:rgb(22, 22, 22);">
+    
+      <div class='window'style="width: 100% !important;">
+       
+            <div class='credit-info' style="width: 100% !important;">
+              <div class='credit-info-content' style="background-color: rgb(0, 0, 0);">
+                <br>
+                <br>
+                <table class='half-input-table' style="color: white !important;">
+                  <tr><td>Please select your card: </td><td><div class='dropdown' id='card-dropdown'><div class='dropdown-btn' id='current-card'>Visa</div>
+                    <div class='dropdown-select' style="width: 98% !important; ">
+                    <ul>
+                      <li id="licol" style="background-color: #333 !important; text-align: center !important; border-radius: 2px !important; margin-bottom: 2px !important;">Master Card</li>
+                      <li id="licol" style="background-color: #333 !important;text-align: center !important;border-radius: 2px !important; ">American Express</li>
+                      </ul></div>
+                    </div>
+                   </td></tr>
+                </table>
+                <img src='https://dl.dropboxusercontent.com/s/ubamyu6mzov5c80/visa_logo%20%281%29.png'  class='credit-card-image' id='credit-card-image'></img>
+                <form action="" method="POST" autocomplete="off"> {% csrf_token %}
+    
+    
+                  <div  onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" >  
+                  {{form.Card_Number|as_crispy_field}}
+                </div>
+    
+               
+    
+                  
+        
+       
+                <div  onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" >  
+                  {{form.Card_Holder|as_crispy_field}}
+               
+                </div>
+               
+    
+    
+    
+                <table  type="number" class='half-input-table' style="color: white !important; border-radius:6px;">
+                  <tr>
+                    <td>
+    
+                      <div  onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" >  
+                      {{form.Expires|as_crispy_field}} 
+                      </div>
+                    </td>
+                    <td>
+                      <div  onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" >  
+                      {{form.CVC|as_crispy_field}}
+                      </div> 
+                      
+                    </td>
+                  </tr>
+                </table>
+                {{form.Terms|as_crispy_field}} 
+                <div class="Texty">
+                  <h6 style="font-weight: 700 !important;">Terms & Conditions: </h6>
+                  <hr style="background: white !important;">
+              
+              <p> 
+    
+                You acknowledge that the Travencia Group pre-negotiate certain room rate with hotel suppliers to facilitate the booking of reservations. You also acknowledge that the Travencia Group provide you services to facilitate such booking of reservations for a consideration (the "facilitation fee") the rooms rate provided is a combination of the pre-negotiated room rate for rooms reserved on your behalf by the Travencia Group and the facilitation fee retained by the Travencia Group for their services. you authorize the Travencia Group to book reservations for the total reservation price, plus tax recovery charges, service fee, and where applicable, taxes on the Travencia Group Services Travencia is a privately-owned company not affiliated with any event or other organization. You agree to arrange payment no later than 24 hours after submitting this booking form. Upon submitting your reservation request you authorize the Travencia Group to facilitate hotel reservation on your behalf, including making payment arrangements with hotel Suppliers .You acknowledge that except as provided below with respect to tax obligations on the amounts we retain for our services, the Travencia Group do not collect taxes for remittance to applicable taxing authorities. The tax recovery charges on prepaid hotel transactions are a recovery of the estimated taxes (e.g. sales and use occupancy, room tax, excise tax, value added tax, etc.) that the Travencia Group pay to the hotel supplier for taxes due on the hotel's supplier for taxes due on the hotel's rental rate for the room. The hotel suppliers invoice the Travencia Group for certain charges, including tax amounts. The hotel suppliers are responsible for remitting applicable taxes to the applicable taxing jurisdictions. None of the Travencia Group act as co-vendors with the supplier with whom we book or reserve our customer's travel arrangements. Taxability and the appropriate tax rate 20%. The actual tax amounts paid by the Travencia Group to the hotel suppliers may vary from tax recovery charge amounts, depending upon the rates, taxability, etc. n effect at the time of the actual use of the hotel by our customers. We retain services fees as additional compensation. Service fees retained by the Travencia Group for their services vary based on the amount and type of hotel reservation.
+              </p>
+              <br>
+              <p>Cancellation and Modification Policy:</p>
+              <br>
+              <p>
+                You may change your prepaid hotel reservation, but you will be charged the cancellation or change fee if changes requests less than 30 days prior to check-in. If you do not change your reservation before the cancellation policy period applicable to the hotel you reserved, which varies by hotel (usually 15 to 30 Days) prior to your date of arrival, you will be subject to a charge equal to applicable nightly rates, tax recovery charges and service fees. in the event you do not show for the first night of the reservation and plan to check-in for subsequent nights in your reservations changes with us no later than 30 days prior to the first night of the reservation to prevent cancellation of your reservation. If the entire reservation is cancelled, you will be charged a cancellation fee equal 20% of your total Contract price. You agree to pay any cancellation or change fees that you incur in limited cases, some hotels do not permit changes to or cancellations of reservations after they are made.          </p>
+              <br>
+              <p>Help Service:</p>
+              <p>For quick answers to your questions or ways to contact us, visit our Customer Support Center. Or you can write to us at:</p>
+              <ul>
+                  <li>support@travencia.com</li>
+                  <li>helpdesk@travencia.com</li>
+                  <li>(878) 676-0987</li>
+                  <li>1065 SW 8th St #1189 Miami FL 33130</li>
+                  <li>2021 Travencia,   All rights reserved.  </li>
+              
+              </ul>
+              
+              </div>
+                <button style="background-color: rgb(0, 131, 144) !important; margin-top: 30px !important;border: solid white 1px !important;" type="submit" style=" border-radius:6px;" class='btn btn-primary btn-block'>Checkout</button>
+              </form>
+              </div>
+    
+    
+    
+    
+    
+    
+    
+              
+            </div>
+            <div class='order-info' style="width: 100% !important; background-color: white !important; min-height: 690px !important; border-radius: 10px !important;">
+              <div class='order-info-content' style="width: 100% !important;">
+                <br><br>
+                <h2 style="font-weight: 700;" id="bosum">Booking Summary</h2>
+                <br>
+                        <div class='line'></div>
+                        {% for item in object.details.all %}
+                <table class='order-table'>
+                  <tbody>
+                    <tr>
+                 
+                      
+    
+    <style>
+    #moha{
+      display: none;
+    }
+    </style>
+    
+    
+    
+    
+                      <td  id="moha"><img  style="height: 100px !important; width:120px !important;" src='{{item.item.image.url}}'> </img>
+                      </td>
+                      <td>
+                        <hr style="background-color: #666 !important;">
+                        <span class='thin' style="font-weight: 700 !important; font-size:16px !important; ">Hotel Name: </span>  <span style="color: #333 !important; font-size:16px !important; font-weight: 500 !important; ">{{item.item.title}}</span> 
+         
+                        <hr style="background-color: #666 !important;">
+              <span  style="font-weight: 700 !important; font-size:16px !important;" class="thin">Room(s): </span> <span style="color: #333 !important; font-size:16px !important; font-weight: 500 !important; ">{{item.Number_OF_Guests}}</span>  <br> 
+              <hr style="background-color: #666 !important;">
+              <span  style="font-weight: 700 !important; font-size:17px !important;  " class="thin">Night(s): </span>  
+                                     
+                    
+    
+    
+                        <span  style="color: #333 !important; font-size:16px !important; font-weight: 500 !important; ">     {{item.Nights}}
+                        </span>
+                        <hr style="background-color: #666 !important;">
+                       
+                       
+                        <span class='thin' style="font-weight: 700 !important; font-size:16px !important;">Rate Per Night: </span>
+    
+                        <span style="color: #333 !important; font-size:16px !important; font-weight: 500 !important; ">  ${{item.item.price}}0
+                        </span>
+                       
+                      </td>
+        
+                    </tr>
+                    <tr>
+                      <td>
+                     
+                      </td>
+                    </tr>
+                  </tbody>
+                  
+        
+                </table>
+                
+                <hr style="background-color: #666 !important;">
+                      
+                  
+                   
+                     
+                
+            
+                <div class='total'>
+                  <hr>
+                  <span style='float:left; margin-left: 15px !important;'>
+                    <div style="font-weight: 700 !important; " class='thin dense'>Taxes & Fees </div>
+                 
+                    <hr style="background-color: #666 !important;">
+                    <div class='thin dense' style="font-weight: 700 !important;">Down Payment</div>
+                    <hr style="background-color: #666 !important;">
+                    <div class='thin dense' style="font-weight: 700 !important;">Total</div>
+                  </span>
+                  <span style='float:right; text-align:right;'>
+                    <div class='thin dense'>
+                      
+                      <span style="color:#333;" >${{item.get_Tax|floatformat:2}}</span>
+                     </div>
+                    <hr style="background-color: #666 !important;">
+    
+    
+                    <div class='thin dense'> 
+                      <span style="color:#333;" >${{item.get_partial|floatformat:2}}</span></div>
+                    <hr style="background-color: #666 !important;">
+    
+                   
+                    <div class='thin dense'> <span style="color:#333;">${{item.get_final_price }}0</span></div>
+                    
+                  </span>
+                </div>
+        </div>
+        </div>
+          </div>
+    
+    
+     
+        </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <br>
+    <br>
+    <br>
+    
+    <br>
+    <br>
+    <br>
+    
+    <br>
+    <br>
+    <br>
+    
+    <br>
+    <br>
+    <br>
+    
+    
+    <br>
+    <br>
+    <br>
+    
+    
+    
+    
+    
+    
+      
+    <br>
+    <br>
+    <br>
+    
+    
+    
+      
+        
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        {%endfor%}
+    
+        <script>
+    
+    
+    var cardDrop = document.getElementById('card-dropdown');
+    var activeDropdown;
+    cardDrop.addEventListener('click',function(){
+      var node;
+      for (var i = 0; i < this.childNodes.length-1; i++)
+        node = this.childNodes[i];
+        if (node.className === 'dropdown-select') {
+          node.classList.add('visible');
+           activeDropdown = node; 
+        };
+    })
+    
+    window.onclick = function(e) {
+      console.log(e.target.tagName)
+      console.log('dropdown');
+      console.log(activeDropdown)
+      if (e.target.tagName === 'LI' && activeDropdown){
+        if (e.target.innerHTML === 'Master Card') {
+          document.getElementById('credit-card-image').src = 'https://dl.dropboxusercontent.com/s/2vbqk5lcpi7hjoc/MasterCard_Logo.svg.png';
+              activeDropdown.classList.remove('visible');
+          activeDropdown = null;
+          e.target.innerHTML = document.getElementById('current-card').innerHTML;
+          document.getElementById('current-card').innerHTML = 'Master Card';
+        }
+        else if (e.target.innerHTML === 'American Express') {
+             document.getElementById('credit-card-image').src = 'https://dl.dropboxusercontent.com/s/f5hyn6u05ktql8d/amex-icon-6902.png';
+              activeDropdown.classList.remove('visible');
+          activeDropdown = null;
+          e.target.innerHTML = document.getElementById('current-card').innerHTML;
+          document.getElementById('current-card').innerHTML = 'American Express';      
+        }
+        else if (e.target.innerHTML === 'Visa') {
+             document.getElementById('credit-card-image').src = 'https://dl.dropboxusercontent.com/s/ubamyu6mzov5c80/visa_logo%20%281%29.png';
+              activeDropdown.classList.remove('visible');
+          activeDropdown = null;
+          e.target.innerHTML = document.getElementById('current-card').innerHTML;
+          document.getElementById('current-card').innerHTML = 'Visa';
+        }
+      }
+      else if (e.target.className !== 'dropdown-btn' && activeDropdown) {
+        activeDropdown.classList.remove('visible');
+        activeDropdown = null;
+      }
+    }
+    
+        </script>
+    
+    
+    <script>
+      $(document).ready(function(){
+        $("form :input").attr("autocomplete", "off");
+        
+      })
+    </script>
+    
+    
+    
+    
+      {% endblock %}
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+{% load static %}
+{% include 'Main/navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <meta charset="utf-8">
+    <!--meta name="viewport" content="width=device-width, initial-scale=1-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content=" Hotel Booking for Conventions ">
+    <meta name="keywords" content="Convention, Conventions, Hotels, Booking, Best Rates">
+    <meta name="author" content="Travencia.com">
+
+
+
+
+
+
+
+
+
+    <!-- Font Awesome -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+
+
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="{% static 'Main/css/bootstrap.min.css' %}"rel="stylesheet">
+    <link href="{% static 'Main/css/mdb.min.css' %}" rel="stylesheet">
+    <link href="{% static 'Main/css/bootstrap.min.css' %}"rel="stylesheet">
+    <link href="{% static 'Main/css/style.min.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<style>
+  body{
+    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Poppins', sans-serif !important;*/
+  }
+</style>
+
+   <div class="mt-5 pt-4">
+    {% if messages %}
+        {% for message in messages %}
+        <br>
+        <br>
+        <br>
+        
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endfor %}
+    {% endif %}
+    </div>
+{% block content %}
+
+
+{% endblock  %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.9.1/themes/smoothness/jquery-ui.css">
+
+
+<script src="{% static 'Main/javascript/jquery.js' %}"></script> 
+<script src="{% static 'Main/javascript/jquery-ui.min.js' %}"></script> 
+
+<script src="{% static 'Main/javascript/popper.min.js' %}"></script> 
+<script src="{% static 'Main/javascript/bootstrap.min.js' %}"></script> 
+<script src="{% static 'Main/javascript/mdb.min.js' %}"></script> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+  </script>
+  <script>
+    if ($("#ITN2").hasClass("Moha")) {
+      $("#ITN2").css('color','red');
+    }
+
+  </script>
+  <script>
+
+    $(document).ready(function() {
+      $(document).scroll(function() {
+            if ($(document).scrollTop() >= 25) {
+              $('.navbar-brand').addClass('js-scrolling');
+            } else {
+              $('.navbar-brand').removeClass('js-scrolling');
+            }
+      });
+    });
+
+
+
+    
+  </script>
+    
+
+
+
+     

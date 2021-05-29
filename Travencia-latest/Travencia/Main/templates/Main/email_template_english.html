@@ -1,0 +1,319 @@
+{%load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+
+
+</head>
+<body style="border:1px solid #0e1111; padding-right: 5% !important;padding-left: 5% !important;  margin: auto;
+width: 85% !important;">
+
+<style>
+    *{
+        text-align: left !important;
+        font-family: 'Roboto', sans-serif;
+    }
+    body{
+        text-align: left !important;
+        font-family: 'Roboto', sans-serif;
+    }
+
+.container{
+  width: 100%;
+}
+  a {
+   color:black !important;
+  }
+  span{
+    color: black !important;
+
+
+  }
+
+
+  p {
+    display: block;
+    margin-block-start: 2px;
+    margin-block-end: 2px;
+    margin-inline-start:2px;
+    margin-inline-end: 2px;
+    font-size: 14px !important;
+ 
+}
+
+
+</style>
+
+<br>
+
+<div  style="text-align: center !important;" >
+
+  <!-- i will get the source for the image below from about page, from img with dipslay none-->
+
+<!-- img style="height: 75px; width: 80% !important;" src="{% static 'Main/img/invoice.jpg'%}" alt="" -->
+
+
+<img style="height: 75px; width: 80% !important;" src="https://scontent.fcai20-3.fna.fbcdn.net/v/t1.6435-9/188634013_511282980052808_8299239518798317465_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=730e14&_nc_ohc=f3nzv0hofbAAX_DhF6f&_nc_ht=scontent.fcai20-3.fna&oh=adec62415a99888f7e4c35ef2152329b&oe=60CF774D
+" alt="">
+
+
+</div>
+
+<div class="container" style="background-color: chartreuse;">
+  <div class="row">
+    <div  class="col-md-2 mr-auto">
+
+      </div>
+    
+  </div>
+</div>
+<br>
+<br>
+
+<div class="container" style="width: 90%; margin: auto;" >
+
+<div class="row" >
+
+<div class="col-md-12" style="text-align: left !important;">
+
+
+  
+ <img class="img-fluid" style="width:170px; height:60px;text-align: left !important;" src="https://scontent.fcai20-3.fna.fbcdn.net/v/t1.6435-9/172472728_487599435754496_587051161348249069_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=730e14&_nc_ohc=j32j7ASYGwEAX_mEz1y&_nc_ht=scontent.fcai20-3.fna&oh=c57289ed14aa8816ad5d716496d98fd2&oe=60D323BF
+  " alt="Travencia Logo">
+      
+      
+      <p style="text-align: left !important;" > <span style="font-weight:bold!important; font-size:14px; font-family: 'Roboto', sans-serif;">Tel:  </span> <a style="font-size: 14px; font-weight:400 !important;color:#0e1111 !important;" href="tel:98989988876
+      "> 989-899-88876
+      </a></p>
+      <p  style="text-align: left !important;"> <span style="font-weight:bold!important;font-weight:bold!important; font-size:14px; font-family: 'Roboto', sans-serif; ">Email:  </span> <a style="font-size: 14px; font-weight:400 !important;color:#0e1111 !important;" href="mailto:reservations@travencia.com"> reservations@travencia.com</a></p>
+      
+      
+      
+      <p  style="text-align: left !important;"><a href="https://www.travencia.com" style="font-weight:500!important; font-size:14px;font-family: 'Roboto', sans-serif;color:black !important;"><span style="font-weight:bold!important;font-weight:bold!important; font-size:14px; font-family: 'Roboto', sans-serif; ">Website: </span>www.travencia.com</a></p>
+
+
+      <h1  style="text-align: left !important;color:darkblue; display: none; font-weight:bold !important;padding-right:10px; font-size:24px;font-family: 'Roboto', sans-serif; padding:5px;
+      "> Invoice</h1>
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="container" style="width: 90%; margin: auto;" >
+
+<!-- <table class="table table-bordered table-dark">  -->
+
+    <div class="table-responsive-md" style="border:1px solid black !important; width:100%; padding-left: 5px;">        
+
+    <table class="table" >
+      
+
+     
+      <p  style="font-weight: bold;padding-top:5px; padding-bottom:5px;font-family: 'Roboto', sans-serif; font-size:14px; color:black !important;"> Invoice NO:  <span style="font-weight: 300 !important;padding-top:5px; padding-bottom:5px;font-family: 'Roboto', sans-serif; font-size:14px;color:#0e1111 !important;"> {{order_num}}</span></p>
+  
+      <p style="font-family: 'Roboto', sans-serif; font-size:14px; font-weight:300 !important;color:#0e1111 !important;"><span style="font-family: 'Roboto', sans-serif; font-size:14px; font-weight:400; color:#0e1111 !important;"><span style="font-weight: bold;padding-top:5px; padding-bottom:5px;font-family: 'Roboto', sans-serif; font-size:14px; color:black !important;">Date:</span> {{date_time_var}}</p>
+
+<p style="font-weight: bold !important;padding-top:5px; padding-bottom:5px;font-family: 'Roboto', sans-serif; font-size:14px; color:black !important;">Company Name: <span style="font-weight: 300!important; color:#0e1111 !important;"> {{Company_Name}} </span></p>
+
+
+
+
+<p style="font-weight: bold !important;padding-top:5px; padding-bottom:5px;font-family: 'Roboto', sans-serif; font-size:14px; color:black !important;">Authorized Person:  <span style="font-weight: 300!important; color:#0e1111 !important;"> {{Detail_Full_Name}} </span>
+
+
+
+
+<p style="font-weight: bold !important;padding-top:5px; padding-bottom:5px;font-family: 'Roboto', sans-serif; font-size:14px;color:black !important;">Hotel Name: <span style="font-weight: 300!important;color:#0e1111 !important;">{{Hotel}} </span>
+
+
+<p style="font-weight: bold !important;padding-top:5px; padding-bottom:5px;font-family: 'Roboto', sans-serif; font-size:14px;color:black !important;">Total Nights: <span style="font-weight: 300!important; color:#0e1111 !important;">{{Nights}}</span>
+
+
+
+
+<p style="font-weight: bold !important;padding-top:5px; padding-bottom:5px;font-family: 'Roboto', sans-serif; font-size:14px;color:black !important;">Rate Per Night: <span style="font-weight: 300!important; color:#0e1111 !important;">${{Hotel_price|floatformat:2}}</span> <span style="font-weight: 300 !important;padding-top:5px; padding-bottom:5px;font-family: 'Roboto', sans-serif; font-size:14px;color:#0e1111 !important;">Price is inclusive of all Taxes & Fees payable in Respect to all local services</span>
+
+
+
+
+<p style="font-weight: bold !important;padding-top:5px; padding-bottom:5px;font-family: 'Roboto', sans-serif; font-size:14px;color:black !important;">Deposit: <span style="font-weight: 300!important;  color:#0e1111 !important;">${{Detail_Deposit|floatformat:2}}</span>
+
+
+
+
+<p style="font-weight: bold !important;padding-top:5px; display:none !important; padding-bottom:5px;font-family: 'Roboto', sans-serif; font-size:14px;color:black !important;">Tax: <span style="font-weight: 300!important; padding-left:145px; color:#0e1111 !important;">${{Detail_Tax}}</span>
+
+  <p style="font-weight: bold !important;padding-top:5px; padding-bottom:5px;font-family: 'Roboto', sans-serif; font-size:14px;color:black !important;">Rest of Amount:<span style="font-weight: 300!important; color:#0e1111 !important;"> ${{Detail_Rest|floatformat:2}}</span>
+
+
+
+    <p style="font-weight: bold !important;padding-top:5px; padding-bottom:5px;font-family: 'Roboto', sans-serif; font-size:14px;color:black !important;">Total:<span style="font-weight: 300!important;  color:#0e1111 !important;"> ${{Total|floatformat:2}}</span>
+
+
+
+      <br>
+      <br>
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+     
+
+
+ 
+
+
+
+    </tbody>
+  </table>
+</div>
+</div>
+
+
+<div class="container" style="width: 90%; margin: auto;">
+    <p style="text-align: left !important;font-size:14px; padding:0px !important; color:#0e1111 !important;font-family: 'Roboto', sans-serif;"> This is a Travel Operator Margin Scheme Supply  </p>
+
+    <p style="text-align: left !important; font-size:14px; padding:0px !important;color:#0e1111 !important; font-family: 'Roboto', sans-serif;">Credit Card Received With Thanks</p>
+    <p style="text-align: left !important; font-size:14px; padding:0px !important; font-family: 'Roboto', sans-serif;color:#0e1111 !important;"> Please note the name "Travencia" will appear on your card statement </p>
+    <p style="text-align: left !important; font-size:14px; padding:0px !important;color:#0e1111 !important; font-family: 'Roboto', sans-serif;">Any changes to the guest name or chek in / chekout dates requested at least 14 days prior to check in date will not incur any fees</p>
+
+    <p style="text-align: left !important; font-size:14px; padding:0px !important; color:#0e1111 !important;font-family: 'Roboto', sans-serif;"> Modification requested after Hotel Deadline will incur a penalty Fees</p>
+
+
+    <h3 style="color: rgb(5, 5, 111);font-size:24px; font-weight:bold !important; font-family: 'Roboto', sans-serif;color:rgb(8, 8, 102) !important; padding-top: 15px; padding-bottom: 15px;">Thank you for your Business with us</h3>
+
+
+
+
+
+<div class="row" style="text-align: left !important;">
+
+<div class="col-md-12"  style="text-align: left !important;">
+
+
+
+
+
+
+ <img class="img-fluid" style="width:170px; height:60px;text-align: left !important;" src="https://scontent.fcai20-3.fna.fbcdn.net/v/t1.6435-9/172472728_487599435754496_587051161348249069_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=730e14&_nc_ohc=j32j7ASYGwEAX_mEz1y&_nc_ht=scontent.fcai20-3.fna&oh=c57289ed14aa8816ad5d716496d98fd2&oe=60D323BF
+  " alt="Travencia Logo">
+      
+              <p style="text-align: left !important;" > <span style="font-weight:bold!important; font-size:14px; font-family: 'Roboto', sans-serif;">Tel:  </span> <a style="font-size: 14px; font-weight:400 !important; color:#0e1111 !important;" href="tel:98989988876
+              "> 989-899-88876
+              </a></p>
+              <p  style="text-align: right !important;text-align: left !important;"> <span style="font-weight:bold!important;font-weight:bold!important; font-size:14px; font-family: 'Roboto', sans-serif; ">Email:  </span> <a style="font-size: 14px; font-weight:400 !important;color:#0e1111 !important;" href="mailto:reservations@travencia.com"> reservations@travencia.com</a></p>
+              
+              
+              
+              <p  style="text-align: left !important;"><a href="https://www.travencia.com" style="font-weight:500!important; font-size:14px;font-family: 'Roboto', sans-serif;color:black !important;"><span style="font-weight:bold!important;font-weight:bold!important; font-size:14px; font-family: 'Roboto', sans-serif; ">Website: </span>www.travencia.com</a></p>
+        
+            </div>
+
+
+            </div>
+
+<br>
+<br>
+<br>
+<p style="text-align: center !important;font-family: 'Roboto', sans-serif; font-size:14px;font-weight:600 !important;"><a href="https://www.travencia.com">Travencia</a></p>
+
+
+<p style="text-align: center !important;font-family: 'Roboto', sans-serif; font-size:14px;font-weight:600 !important;">       <a href="https://www.Travencia.com/about/">About Us</a> <span style="padding-left: 5px !important;">  | </span>  <a href="https://www.Travencia.com/Contact/">  Contact Us  </a>           </p>
+
+<p style="text-align: center !important;font-family: 'Roboto', sans-serif; font-size:14px;font-weight:400 !important; color:#0e1111 !important;" >You are receiving booking confirmations emails</p>
+
+<p style="text-align: center !important;font-family: 'Roboto', sans-serif; font-size:14px;font-weight:400 !important; color:#0e1111 !important;">This email was intended for {{Detail_Full_Name}}({{Company_Name}})</p>
+<p style="text-align: center !important;font-family: 'Roboto', sans-serif; font-size:14px;font-weight:400 !important; color:#0e1111 !important; "></p>
+<p style="text-align: center !important;font-family: 'Roboto', sans-serif; font-size:14px;font-weight:400 !important; color:#0e1111 !important;">Travencia Business Growth - © 2021 Travencia Unlimited Company, Address: 1065 SW 8th St #1189 Miami FL 33130. Travencia is a registered business name of Travencia Unlimited Company. Travencia and the Travencia logo are registered trademarks of Travencia</p>
+
+
+
+
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Programmer: Saleh Babers-->
+<!--Mobile: 01111662946-->
+<!--Email:medsaleh902@yahoo.com-->
+</body>
+</html>

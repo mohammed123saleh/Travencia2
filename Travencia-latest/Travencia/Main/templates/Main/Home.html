@@ -1,0 +1,2426 @@
+{% extends 'Main/Base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+ <title>Travencia | Home</title>
+ <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+<body style="background-color: rgb(22, 22, 22);">
+    
+
+
+<style>
+
+
+.pimg1, .pimg2, .pimg3{
+  position:relative;
+  opacity:0.70;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+
+  /*
+    fixed = parallax
+    scroll = normal
+  */
+  background-attachment:fixed !important;
+}
+
+.pimg1{
+  background-image:url('{% static "Main/img/Homepage.jpeg"%}');
+  min-height:100%;
+  padding-top: -15px !important; 
+}
+
+.pimg2{
+  background-image:url('../img/image2.jpg');
+  min-height:400px;
+}
+
+.pimg3{
+  background-image:url('../img/image3.jpg');
+  min-height:400px;
+}
+
+.section{
+  text-align:center;
+  padding:50px 80px;
+}
+
+.section-light{
+  background-color: rgb(22, 22, 22) !important;
+  color:#fff;
+}
+
+.section-dark{
+  background-color:black !important;
+  color:#ddd;
+}
+.section-dark h1{
+  text-transform:capitalize !important;
+ font-family: 'Poppins', sans-serif;
+
+}
+.section-light h1{
+  text-transform:capitalize !important;
+ font-family: 'Poppins', sans-serif;
+
+}
+
+
+
+
+
+.section-dark p{
+  text-transform:capitalize !important;
+ font-family: 'Poppins', sans-serif;
+
+}
+.section-light p{
+ text-transform:capitalize !important;
+ font-family: 'Poppins', sans-serif;
+
+}
+
+
+
+
+
+.ptext{
+  position:absolute;
+  top:50%;
+  width:100%;
+  text-align:center;
+  color:#000;
+  font-size:27px;
+  letter-spacing:8px;
+  text-transform:uppercase;
+}
+
+.ptext .border{
+ 
+  color:#fff;
+  padding:20px;
+}
+
+.ptext .border.trans{
+  background-color:transparent;
+}
+
+@media(max-width:568px){
+  .pimg1, .pimg2, .pimg3{
+    background-attachment:scroll;
+  }
+}
+#bn{
+  display: none;
+}
+</style>
+
+
+
+
+<style>
+
+  *{
+      box-sizing:border-box;
+  }
+  .Abdelzaher-slider{
+      width: 100%;
+      height:87vh;
+      position: relative;
+      overflow:hidden;
+      
+  }
+  .Abdelzaher-slider .item{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      position: absolute;
+      z-index: -1;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      object-fit: contain !important;
+  }
+  .Abdelzaher-slider .item .example
+  {
+      color:#fff;
+      position: absolute;
+      top:-20%;
+      width:100%;
+      height:100%;
+      display: flex;
+      font-weight: bold !important;
+      justify-content: center;
+      align-items: center;
+      font-size:100px !important;
+      font-family: 'Lato', sans-serif !important;
+      text-transform: capitalize;
+      font-size: bold !important;
+  }
+  
+  
+  
+  
+  @media only screen and (max-device-width: 480px) {
+    .Abdelzaher-slider .item .example
+  {
+      color:#fff;
+      position: absolute;
+      top:-20%;
+      width:100%;
+      height:100%;
+      display: flex;
+      font-weight: bold !important;
+      justify-content: center;
+      align-items: center;
+      font-size:50px !important;
+      font-family: 'Lato', sans-serif !important;
+      text-transform: capitalize;
+      font-size: bold !important;
+  }
+  
+      }
+  
+  
+  
+  
+  
+  .Abdelzaher-slider .item::before{
+      content: "";
+      position: absolute;
+      top:0px;
+      left:0px;
+      width:100%;
+      height:100%;
+      background-color: rgba(0,0,0,.5);
+      object-fit: contain !important;
+  }
+  .Abdelzaher-slider .item:nth-child(1){
+   
+      background-image: url("{% static 'Main/img/Homepage.jpeg'%}");
+  }
+  .Abdelzaher-slider .item:nth-child(2){
+    background-image: url("{% static 'Main/img/1.jpeg'%}");
+  }
+  
+  .Abdelzaher-slider .item:nth-child(3){
+      background-image: url("{% static 'Main/img/2.jpeg'%}");
+  }
+  .Abdelzaher-slider .item:nth-child(4){
+    background-image: url("{% static 'Main/img/3.jpeg'%}");
+   
+  }
+  
+
+  
+  
+  
+  
+  .Abdelzaher-slider .item.top{
+      transition: .5s ease transform;
+      z-index:3
+  }
+  .Abdelzaher-slider .left{
+      transform: translateX(-100%);
+  }
+  .Abdelzaher-slider .right{
+      transform: translateX(100%);
+  }
+  .Abdelzaher-slider .item.active{
+      transform: translateX(0%);
+  }
+  .Abdelzaher-slider .controls{
+      position: absolute;
+      bottom: 20px;
+      display:none;
+      justify-content: center;
+      width:100%
+  }
+  .Abdelzaher-slider .controls span{
+      width:10px;
+      height:10px;
+      border-radius:10px;
+      background-color:#bbb;
+      margin: 0px 7px;
+      cursor: pointer;
+      transition: width .5s ease;
+  }
+  .Abdelzaher-slider .controls span.active{
+      width:30px;
+      background-color:#fff;
+      border-radius: 5px;
+  }
+  .controlsButtons{
+      position: absolute;
+      width:100%;
+      height:100%;
+      top:0px;
+      left:0px;
+  
+  }
+  .controlsButtons button{
+      position: absolute;
+      top:50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      width:70px;
+      height:70px;
+      border-radius:80px;
+      border:none;
+      outline:none;
+      font-size:25pt;
+      font-weight:bold;
+      color:#bbb;
+      background-color:transparent;
+      text-align:center;
+      cursor:pointer;
+  }
+  .controlsButtons button:hover{
+      outline: none;
+      color: #fff;
+      background-color: rgba(0,0,0,.2);
+  }
+  .controlsButtons .next{
+      right:0px
+  }
+  .controlsButtons .next i {
+      position: relative;
+      left:2px
+  }
+  .controlsButtons .prev{
+      left:0px
+  }
+  .controlsButtons .prev i {
+      position: relative;
+      left:-4px
+  }
+  .sound{
+      position: absolute;
+      display:none
+  }
+  
+  
+
+
+@media only screen 
+    and (min-width : 320px) and (max-width:415px) {
+
+  .Abdelzaher-slider{
+    height:88vh !important
+    
+  }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+  </style>
+  
+  
+  
+  
+  
+  <!--
+      This page made by : Youssef Abdelzaher Front-end developer 
+   -->
+  
+  <!-- You must write number in data-change to start the change or "none" to stop the change -->
+  <div class="Abdelzaher-slider" data-change="5000"> <!-- write number in data-change to start the change or "none" to stop the change -->
+    <div class="item active">
+    
+    </div>
+    <div class="item">
+     
+    </div>
+    <div class="item">
+      
+    </div>
+    <div class="item">
+
+    </div>
+  
+    ..
+    <div class="controls"></div>
+    <div class="controlsButtons">
+      <button class="prev"><i class="fa fa-chevron-left"></i></button>
+      <button class="next"><i class="fa fa-chevron-right"></i></button>
+    </div>
+  
+    <audio src="music/song.mp3" class="sound"></audio>
+  
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <script>
+    /* 
+      This page made by : Youssef Abdelzaher Front-end developer 
+  */
+  
+  /* Start Get Elements  */
+  let AbdelzaherSlider = document.querySelector(".Abdelzaher-slider");
+  let items = Array.from(document.querySelectorAll(".Abdelzaher-slider .item"));
+  let controls = document.querySelector(".Abdelzaher-slider .controls");
+  // Creat controls spans by items number 
+  for (let i = 0; i < items.length; i++) {
+      let controlsSpan = document.createElement("span");
+      controlsSpan.dataset.index = i;
+      controls.appendChild(controlsSpan);  
+  }
+  let controlsSpans = Array.from(document.querySelectorAll(".Abdelzaher-slider .controls span"));
+  let controlsButtons = Array.from(document.querySelectorAll(".Abdelzaher-slider .controlsButtons button"));
+  let audioEffect  = document.querySelector(".sound");
+  /* End Get Elements  */
+  
+  /* Start Controls span Function  */
+  controlsSpans.forEach((span,index) => {
+      // Add z-index for spans 
+      span.style.zIndex = items.length + 2;
+  
+      span.onclick = function(){
+          let activeItem = document.querySelector(".Abdelzaher-slider .item.active");
+          let activeIndex = items.indexOf(activeItem);
+          if (index > activeIndex) {
+              startAudio();
+              // Cleear Interval function for this Function work without problems
+              clearInterval(autoInterval);
+              setTimeout(autoTranstion(),5000);
+              // Remove and Add class "active" for items to make transform
+              activeItem.style.transform = 'translate(-100%)';
+              activeItem.classList.remove('active');
+              items[index].style.transform = 'translate(0)';
+              items[index].classList.add('active');
+              // Add this function for transform work good without any problems in the end of transform
+              getPosition();
+              
+          }else if(index < activeIndex) {
+              startAudio();
+              // Cleear Interval function for this Function work without problems
+              clearInterval(autoInterval);
+              setTimeout(autoTranstion(),5000);
+              // Remove and Add class "active" for items to make transform
+              activeItem.style.transform = 'translate(100%)';
+              activeItem.classList.remove('active');
+              items[index].style.transform = 'translate(0)';
+              items[index].classList.add('active');
+              // Add this function for transform work good without any problems in the end of transform
+              getPosition();
+          }
+  
+      };
+  });
+  /* End Controls span Function  */
+  
+  /* Start prev and next rules Function */
+  function getPrevAndNext() {
+      let activeItem = document.querySelector(".Abdelzaher-slider .item.active");
+      let activeIndex = items.indexOf(activeItem);
+      let prevSlide,nextSlide;
+      if (activeIndex === items.length - 1) {
+          nextSlide = items[0];
+      } else {
+          nextSlide = items[activeIndex + 1];
+      }
+      if (activeIndex === 0) {
+          prevSlide = items[items.length - 1]
+      } else {
+          prevSlide = items[activeIndex - 1];
+      }
+      return[prevSlide,nextSlide];
+  }
+  getPrevAndNext();
+  /* End prev and next rules Function */
+  
+  /* Start Position function */
+  function getPosition() {
+      let activeItem = document.querySelector(".Abdelzaher-slider .item.active");
+      let activeIndex = items.indexOf(activeItem);
+      const [prevSlide,nextSlide] = getPrevAndNext();
+      items.forEach((item,index)=>{
+          if (index === activeIndex) {
+              item.style.transform = "translateX(0%)";
+          }else if (item === prevSlide) {
+              item.style.transform = "translateX(-100%)";
+          }else if (item === nextSlide) {
+              item.style.transform = "translateX(100%)";
+          }else{
+              item.style.transform = "translateX(100%)";
+          }
+          item.addEventListener("transitionend",()=>{
+              item.classList.remove("top");
+          });
+          // Add and remove "active" class for controls spans
+          controlsSpans.forEach(span => {
+              span.classList.remove("active")
+          });
+          controlsSpans[activeIndex].classList.add("active");
+      });
+  };
+  getPosition();
+  /* End Position function */
+  
+  // Add events for controls buttons
+  controlsButtons.forEach(button =>{
+      // Add z-index for buttons 
+      button.style.zIndex = items.length + 2;
+      button.addEventListener("click",()=>{
+          if (button.classList.contains("next")) {
+              startAudio();
+              // Cleear Interval function for this Function work without problems
+              clearInterval(autoInterval);
+              setTimeout(autoTranstion(),intervalTimeNume);
+              getNextSlide();
+          }else if (button.classList.contains("prev")) {
+              startAudio();
+              clearInterval(autoInterval);
+              setTimeout(autoTranstion(),intervalTimeNume);
+              getPrevSlide();
+          }
+      });
+  });
+  
+  /* Start nextSlide function */
+  function getNextSlide() {
+  
+      let activeItem = document.querySelector(".Abdelzaher-slider .item.active");
+      const [prevSlide,nextSlide] = getPrevAndNext();
+      if (activeItem.classList.contains("top")) {
+          return;
+      }
+      // Add class "top" to active item to show his transform
+      activeItem.classList.add("top");
+      nextSlide.classList.add("top");
+      // Remove and Add class "active" for items to make transform
+      activeItem.classList.remove('active');
+      activeItem.style.transform = 'translate(-100%)';
+      nextSlide.classList.add('active');
+      nextSlide.style.transform = 'translateX(0)';
+      // Add this function for transform work good without any problems in the end of transform
+      getPosition();
+  }
+  /* End nextSlide function */
+  
+  /* Start prevSlide function */
+  function getPrevSlide() {
+  
+      let activeItem = document.querySelector(".Abdelzaher-slider .item.active");
+      const [prevSlide,nextSlide] = getPrevAndNext();
+      if (activeItem.classList.contains("top")) {
+          return;
+      }
+      // Add class "top" to active item to show his transform
+      activeItem.classList.add("top");
+      prevSlide.classList.add("top");
+      // Remove and Add class "active" for items to make transform
+      activeItem.classList.remove('active');
+      activeItem.style.transform = 'translate(100%)';
+      prevSlide.classList.add('active');
+      prevSlide.style.transform = 'translateX(0)';
+      // Add this function for transform work good without any problems in the end of transform
+      getPosition();
+  }
+  /* Start prevSlide function */
+  
+  /* Start autoInterval function for change item every 5 secound */
+  let intervalTimeNume = parseInt(AbdelzaherSlider.dataset.change);
+  let intervalTimeString = AbdelzaherSlider.dataset.change;
+  function autoTranstion() {
+      autoInterval = setInterval(()=>{
+          getNextSlide();
+      },intervalTimeNume);
+  }
+  autoTranstion();
+  
+  // Remove autoInterval function 
+  if (intervalTimeNume === 0 || intervalTimeString === "none") {
+      
+      clearInterval(autoInterval);
+  
+  }
+  /* End autoInterval function for change item every 5 secound */
+  
+  
+  /* Start sctiveControl function for add and remove "active" class for controls spans */
+  function activeControl() {
+      let activeItem = document.querySelector(".Abdelzaher-slider .item.active");
+      let activeIndex = items.indexOf(activeItem);
+      controlsSpans.forEach(span => {
+          span.classList.remove("active")
+      });
+      controlsSpans[activeIndex].classList.add("active");
+  }
+  activeControl();
+  /* End sctiveControl function for add and remove "active" class for controls spans */
+  
+  function startAudio() {
+      audioEffect.play();
+  }
+  </script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+  <section class="section section-dark">
+    <h4 style="font-weight: 800;">Low rates <br> <i class="fas fa-dollar-sign " style="color: chartreuse; border:solid 2px white; padding:5px; "></i> </h4>
+    <p style="font-size: 10px; font-weight: 600;"> Travencia.com guarantees to offer you the best available rates. <br> And with our promise to price match, you can rest assured that you’re always getting a great deal. </p>
+    
+   
+  </section>
+
+
+  <section class="section section-light">
+    <h4  style="font-weight: 800;">Instant confirmation <br> <i class="fas fa-tachometer-alt" style="color:chocolate;"></i></h4>
+    <p  style="font-size: 10px; font-weight: 600;">At Travencia.com, every reservation is instantly confirmed.<br> Once you’ve found your perfect stay, a few clicks are all it takes.</p>
+    
+   
+  </section>
+
+
+
+
+  <section class="section section-dark">
+    <h4   style="font-weight: 800;">No reservation fees <br> <i style="color: cornflowerblue;" class="far fa-surprise"></i> </h4>
+    <p style="font-size: 10px; font-weight: 600;">We don’t charge you any booking fees or add any administrative charges.<br> And in many cases, your Travencia can be cancelled free of charge.</p>
+    
+   
+  </section>
+
+
+  
+  <section class="section section-light">
+    <h4  style="font-weight: 800;">Secure Booking <br> <i style="color: crimson;" class="fas fa-shield-alt"></i> </h4>
+  <p style="font-size: 10px; font-weight: 600;">We facilitate hundreds of transactions every day through our secure platform, and work to the highest standards to guarantee your privacy.<br> For further details, please check our Privacy Statement.</p>
+    
+
+   
+  </section>
+
+
+
+
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  @import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
+  :root {
+    --d: 700ms;
+    --e: cubic-bezier(0.19, 1, 0.22, 1);
+    --font-sans: 'Rubik', sans-serif;
+    --font-serif: 'Cardo', serif;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+
+  
+  .page-content {
+    display: grid;
+    place-items: center;
+  }
+  
+  .page-content {
+    display: grid;
+    grid-gap: 1rem;
+    padding: 1rem;
+    max-width: 1024px;
+    margin: 0 auto;
+    font-family: var(--font-sans);
+  }
+  @media (min-width: 600px) {
+    .page-content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 800px) {
+    .page-content {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .card {
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: end;
+            align-items: flex-end;
+    overflow: hidden;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    color: whitesmoke;
+    background-color: whitesmoke;
+    box-shadow: 0 1px 1px rgba(128, 3, 3, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+  }
+  @media (min-width: 600px) {
+    .card {
+      height: 350px;
+    }
+  }
+  .card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    background-size: cover;
+    background-position: 0 0;
+    -webkit-transition: -webkit-transform calc(var(--d) * 1.5) var(--e);
+    transition: -webkit-transform calc(var(--d) * 1.5) var(--e);
+    transition: transform calc(var(--d) * 1.5) var(--e);
+    transition: transform calc(var(--d) * 1.5) var(--e), -webkit-transform calc(var(--d) * 1.5) var(--e);
+    pointer-events: none;
+  }
+  .card:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    pointer-events: none;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(11.7%, rgba(0, 0, 0, 0.009)), color-stop(22.1%, rgba(0, 0, 0, 0.034)), color-stop(31.2%, rgba(0, 0, 0, 0.072)), color-stop(39.4%, rgba(0, 0, 0, 0.123)), color-stop(46.6%, rgba(0, 0, 0, 0.182)), color-stop(53.1%, rgba(0, 0, 0, 0.249)), color-stop(58.9%, rgba(0, 0, 0, 0.32)), color-stop(64.3%, rgba(0, 0, 0, 0.394)), color-stop(69.3%, rgba(0, 0, 0, 0.468)), color-stop(74.1%, rgba(0, 0, 0, 0.54)), color-stop(78.8%, rgba(0, 0, 0, 0.607)), color-stop(83.6%, rgba(0, 0, 0, 0.668)), color-stop(88.7%, rgba(0, 0, 0, 0.721)), color-stop(94.1%, rgba(0, 0, 0, 0.762)), to(rgba(0, 0, 0, 0.79)));
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    -webkit-transition: -webkit-transform calc(var(--d) * 2) var(--e);
+    transition: -webkit-transform calc(var(--d) * 2) var(--e);
+    transition: transform calc(var(--d) * 2) var(--e);
+    transition: transform calc(var(--d) * 2) var(--e), -webkit-transform calc(var(--d) * 2) var(--e);
+  }
+
+  
+  .content {
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-align: center;
+            align-items: center;
+    width: 100%;
+    padding: 1rem;
+    -webkit-transition: -webkit-transform var(--d) var(--e);
+    transition: -webkit-transform var(--d) var(--e);
+    transition: transform var(--d) var(--e);
+    transition: transform var(--d) var(--e), -webkit-transform var(--d) var(--e);
+    z-index: 1;
+  }
+  .content > * + * {
+    margin-top: 1rem;
+  }
+  
+  .title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  
+  .copy {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    font-style: italic;
+    line-height: 1.35;
+  }
+  
+  .btn {
+    cursor: pointer;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.65rem;
+    font-weight: bold;
+    letter-spacing: 0.025rem;
+    text-transform: uppercase;
+    color: white;
+    background-color: black;
+    border: none;
+  }
+  .btn:hover {
+    background-color: #0d0d0d;
+  }
+  .btn:focus {
+    outline: 1px dashed yellow;
+    outline-offset: 3px;
+  }
+  
+  @media (hover: hover) and (min-width: 600px) {
+    .card:after {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+  
+    .content {
+      -webkit-transform: translateY(calc(100% - 4.5rem));
+              transform: translateY(calc(100% - 4.5rem));
+    }
+    .content > *:not(.title) {
+      opacity: 0;
+      -webkit-transform: translateY(1rem);
+              transform: translateY(1rem);
+      -webkit-transition: opacity var(--d) var(--e), -webkit-transform var(--d) var(--e);
+      transition: opacity var(--d) var(--e), -webkit-transform var(--d) var(--e);
+      transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+      transition: transform var(--d) var(--e), opacity var(--d) var(--e), -webkit-transform var(--d) var(--e);
+    }
+  
+    .card:hover,
+    .card:focus-within {
+      -webkit-box-align: center;
+              align-items: center;
+    }
+    .card:hover:before,
+    .card:focus-within:before {
+      -webkit-transform: translateY(-4%);
+              transform: translateY(-4%);
+    }
+    .card:hover:after,
+    .card:focus-within:after {
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+    }
+    .card:hover .content,
+    .card:focus-within .content {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    .card:hover .content > *:not(.title),
+    .card:focus-within .content > *:not(.title) {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      -webkit-transition-delay: calc(var(--d) / 8);
+              transition-delay: calc(var(--d) / 8);
+    }
+  
+    .card:focus-within:before, .card:focus-within:after,
+    .card:focus-within .content,
+    .card:focus-within .content > *:not(.title) {
+      -webkit-transition-duration: 0s;
+              transition-duration: 0s;
+    }
+  }
+  
+  </style>
+  
+<div class="container" style="color: rgb(0, 131, 144); text-align:center !important;">
+  <h1 style="font-weight:bold !important;    ;font-size: 32px;    overflow-wrap: break-word;    font-family: 'Archivo Black', arial, sans-serif;">RECOMMENDED HOTELS</h1>
+</div>
+
+<br> <br>
+  <div class="container">
+ 
+    <div class="row">
+
+<div class="col-lg-3" style="margin-bottom: 10px !important;">
+<img id="imgie" class="img-fluid" style="width: 100% !important; height:350px !important;" src="{% static 'Main/img/hilton1.png'%}" alt="">
+</div>
+<div class="col-lg-3" style="margin-bottom: 10px !important;">
+ <img id="imgie"  class="img-fluid"  style="width: 100% !important;   height:350px !important;" src="{% static 'Main/img/Hyatt.jpg'%}" alt="">
+</div>
+<div class="col-lg-3" style="margin-bottom: 10px !important;">
+  <img  class="img-fluid"  id="imgie" style="width: 100% !important;  height:350px !important;" src="{% static 'Main/img/sheraton3.jpg'%}" alt="">
+</div>
+<div class="col-lg-3" style="margin-bottom: 10px !important;">
+  <img  class="img-fluid"  id="imgie" style="width: 100% !important;  height:350px !important;" src="{% static 'Main/img/Mars.jpg'%}" alt="">
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+<style>
+
+  .fnc {
+    /* you can add color names and their values here
+    and then simply add classes like .m--blend-$colorName to .fnc-slide 
+    to apply specific color for mask blend mode */
+  }
+  .fnc-slider {
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    height:85vh !important;
+    margin-bottom: 600px !important;
+    background-color: white !important;
+  }
+  .fnc-slider *, .fnc-slider *:before, .fnc-slider *:after {
+    box-sizing: border-box;
+  }
+  .fnc-slider__slides {
+    position: relative;
+    height:85vh !important;
+    -webkit-transition: -webkit-transform 1s 0.6666666667s;
+    transition: -webkit-transform 1s 0.6666666667s;
+    transition: transform 1s 0.6666666667s;
+    transition: transform 1s 0.6666666667s, -webkit-transform 1s 0.6666666667s;
+  }
+  .fnc-slider .m--blend-dark .fnc-slide__inner {
+    background-color: #8a8a8a;
+  }
+  .fnc-slider .m--blend-dark .fnc-slide__mask-inner {
+    background-color: #575757;
+  }
+  .fnc-slider .m--navbg-dark {
+    background-color: #575757;
+  }
+  .fnc-slider .m--blend-green .fnc-slide__inner {
+    background-color: #6d9b98;
+  }
+  .fnc-slider .m--blend-green .fnc-slide__mask-inner {
+    background-color: #42605E;
+  }
+  .fnc-slider .m--navbg-green {
+    background-color: #42605E;
+  }
+  .fnc-slider .m--blend-red .fnc-slide__inner {
+    background-color: #ea2329;
+  }
+  .fnc-slider .m--blend-red .fnc-slide__mask-inner {
+    background-color: #990e13;
+  }
+  .fnc-slider .m--navbg-red {
+    background-color: #990e13;
+  }
+  .fnc-slider .m--blend-blue .fnc-slide__inner {
+    background-color: #59aecb;
+  }
+  .fnc-slider .m--blend-blue .fnc-slide__mask-inner {
+    background-color: #2D7791;
+  }
+  .fnc-slider .m--navbg-blue {
+    background-color: #2D7791;
+  }
+  .fnc-slide {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  .fnc-slide.m--before-sliding {
+    z-index: 2 !important;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+  .fnc-slide.m--active-slide {
+    z-index: 1;
+    -webkit-transition: -webkit-transform 1s 0.6666666667s ease-in-out;
+    transition: -webkit-transform 1s 0.6666666667s ease-in-out;
+    transition: transform 1s 0.6666666667s ease-in-out;
+    transition: transform 1s 0.6666666667s ease-in-out, -webkit-transform 1s 0.6666666667s ease-in-out;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  .fnc-slide__inner {
+    position: relative;
+    height: 100%;
+    background-size: cover;
+    background-position: center top;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  .m--global-blending-active .fnc-slide__inner, .m--blend-bg-active .fnc-slide__inner {
+    background-blend-mode: luminosity;
+  }
+  .m--before-sliding .fnc-slide__inner {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+  .m--active-slide .fnc-slide__inner {
+    -webkit-transition: -webkit-transform 1s 0.6666666667s ease-in-out;
+    transition: -webkit-transform 1s 0.6666666667s ease-in-out;
+    transition: transform 1s 0.6666666667s ease-in-out;
+    transition: transform 1s 0.6666666667s ease-in-out, -webkit-transform 1s 0.6666666667s ease-in-out;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  .fnc-slide__mask {
+    overflow: hidden;
+    z-index: 1;
+    position: absolute;
+    right: 60%;
+    top: 15%;
+    width: 50.25vh;
+    height: 67vh;
+    margin-right: -90px;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0, 6vh 0, 6vh 61vh, 44vh 61vh, 44vh 6vh, 6vh 6vh);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0, 6vh 0, 6vh 61vh, 44vh 61vh, 44vh 6vh, 6vh 6vh);
+    -webkit-transform-origin: 50% 0;
+            transform-origin: 50% 0;
+    -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+  }
+  .m--before-sliding .fnc-slide__mask {
+    -webkit-transform: rotate(-10deg) translate3d(200px, 0, 0);
+            transform: rotate(-10deg) translate3d(200px, 0, 0);
+    opacity: 0;
+  }
+  .m--active-slide .fnc-slide__mask {
+    -webkit-transition: opacity 0.35s 1.2222222222s, -webkit-transform 0.7s 1.2222222222s;
+    transition: opacity 0.35s 1.2222222222s, -webkit-transform 0.7s 1.2222222222s;
+    transition: transform 0.7s 1.2222222222s, opacity 0.35s 1.2222222222s;
+    transition: transform 0.7s 1.2222222222s, opacity 0.35s 1.2222222222s, -webkit-transform 0.7s 1.2222222222s;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  .m--previous-slide .fnc-slide__mask {
+    -webkit-transition: opacity 0.35s 0.6833333333s, -webkit-transform 0.7s 0.3333333333s;
+    transition: opacity 0.35s 0.6833333333s, -webkit-transform 0.7s 0.3333333333s;
+    transition: transform 0.7s 0.3333333333s, opacity 0.35s 0.6833333333s;
+    transition: transform 0.7s 0.3333333333s, opacity 0.35s 0.6833333333s, -webkit-transform 0.7s 0.3333333333s;
+    -webkit-transform: rotate(10deg) translate3d(-200px, 0, 0);
+            transform: rotate(10deg) translate3d(-200px, 0, 0);
+    opacity: 0;
+  }
+  .fnc-slide__mask-inner {
+    z-index: -1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100vw;
+    height: 100vh;
+    margin-left: -50vw;
+    margin-top: -50vh;
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode: luminosity;
+    -webkit-transform-origin: 50% 16.5vh;
+            transform-origin: 50% 16.5vh;
+    -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+  }
+  .m--before-sliding .fnc-slide__mask-inner {
+    -webkit-transform: translateY(0) rotate(10deg) translateX(-200px) translateZ(0);
+            transform: translateY(0) rotate(10deg) translateX(-200px) translateZ(0);
+  }
+  .m--active-slide .fnc-slide__mask-inner {
+    -webkit-transition: -webkit-transform 0.7s 1.2222222222s;
+    transition: -webkit-transform 0.7s 1.2222222222s;
+    transition: transform 0.7s 1.2222222222s;
+    transition: transform 0.7s 1.2222222222s, -webkit-transform 0.7s 1.2222222222s;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .m--previous-slide .fnc-slide__mask-inner {
+    -webkit-transition: -webkit-transform 0.7s 0.3333333333s;
+    transition: -webkit-transform 0.7s 0.3333333333s;
+    transition: transform 0.7s 0.3333333333s;
+    transition: transform 0.7s 0.3333333333s, -webkit-transform 0.7s 0.3333333333s;
+    -webkit-transform: translateY(0) rotate(-10deg) translateX(200px) translateZ(0);
+            transform: translateY(0) rotate(-10deg) translateX(200px) translateZ(0);
+  }
+  .fnc-slide__content {
+    z-index: 2;
+    position: absolute;
+    left:5%;
+    top: 40%;
+  }
+  .fnc-slide__heading {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .fnc-slide__heading-line {
+    overflow: hidden;
+    position: relative;
+    padding-right: 20px;
+    font-size: 100px;
+    color: #fff;
+    word-spacing: 10px;
+  }
+  .fnc-slide__heading-line:nth-child(2) {
+    padding-left: 30px;
+  }
+  .m--before-sliding .fnc-slide__heading-line {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  .m--active-slide .fnc-slide__heading-line {
+    -webkit-transition: -webkit-transform 1.5s 1s;
+    transition: -webkit-transform 1.5s 1s;
+    transition: transform 1.5s 1s;
+    transition: transform 1.5s 1s, -webkit-transform 1.5s 1s;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .m--previous-slide .fnc-slide__heading-line {
+    -webkit-transition: -webkit-transform 1.5s;
+    transition: -webkit-transform 1.5s;
+    transition: transform 1.5s;
+    transition: transform 1.5s, -webkit-transform 1.5s;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  .fnc-slide__heading-line span {
+    display: block;
+  }
+  .m--before-sliding .fnc-slide__heading-line span {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  .m--active-slide .fnc-slide__heading-line span {
+    -webkit-transition: -webkit-transform 1.5s 1s;
+    transition: -webkit-transform 1.5s 1s;
+    transition: transform 1.5s 1s;
+    transition: transform 1.5s 1s, -webkit-transform 1.5s 1s;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .m--previous-slide .fnc-slide__heading-line span {
+    -webkit-transition: -webkit-transform 1.5s;
+    transition: -webkit-transform 1.5s;
+    transition: transform 1.5s;
+    transition: transform 1.5s, -webkit-transform 1.5s;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  .fnc-slide__action-btn {
+    position: relative;
+    margin-left: 200px;
+    padding: 5px 15px;
+    font-size: 20px;
+    line-height: 1;
+    color: transparent;
+    border: none;
+    text-transform: uppercase;
+    background: transparent;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+  }
+  .fnc-slide__action-btn span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-perspective: 1000px;
+            perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+    -webkit-transform-origin: 50% 0;
+            transform-origin: 50% 0;
+    line-height: 30px;
+    color: #fff;
+  }
+  .fnc-slide__action-btn span:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height:90% !important;
+    
+    border-top: none;
+    border-bottom: none;
+  }
+  .fnc-slide__action-btn span:after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 30px;
+    background: #1F2833;
+    opacity: 0;
+    -webkit-transform-origin: 50% 0;
+            transform-origin: 50% 0;
+    -webkit-transform: translateY(100%) rotateX(-90deg);
+            transform: translateY(100%) rotateX(-90deg);
+    -webkit-transition: opacity 0.15s 0.15s;
+    transition: opacity 0.15s 0.15s;
+  }
+  .fnc-slide__action-btn:hover span {
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+  }
+  .fnc-slide__action-btn:hover span:after {
+    opacity: 1;
+    -webkit-transition: opacity 0.15s;
+    transition: opacity 0.15s;
+  }
+  .fnc-nav {
+    z-index: 5;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .fnc-nav__bgs {
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .fnc-nav__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .fnc-nav__bg.m--nav-bg-before {
+    z-index: 2 !important;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  .fnc-nav__bg.m--active-nav-bg {
+    z-index: 1;
+    -webkit-transition: -webkit-transform 1s 0.6666666667s;
+    transition: -webkit-transform 1s 0.6666666667s;
+    transition: transform 1s 0.6666666667s;
+    transition: transform 1s 0.6666666667s, -webkit-transform 1s 0.6666666667s;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .fnc-nav__controls {
+    font-size: 0;
+  }
+  .fnc-nav__control {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 100px;
+    height: 50px;
+    font-size: 12px;
+    text-align: center !important;
+    color: #fff;
+    text-transform: uppercase;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  
+    -webkit-transition: background-color 0.5s;
+    transition: background-color 0.5s;
+  }
+
+  
+  .fnc-nav__control.m--active-control {
+    background: #1F2833;
+  }
+  .fnc-nav__control-progress {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    -webkit-transform-origin: 0 50%;
+            transform-origin: 0 50%;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transition-timing-function: linear !important;
+            transition-timing-function: linear !important;
+  }
+  .m--with-autosliding .m--active-control .fnc-nav__control-progress {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  .m--prev-control .fnc-nav__control-progress {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: -webkit-transform 0.5s !important;
+    transition: -webkit-transform 0.5s !important;
+    transition: transform 0.5s !important;
+    transition: transform 0.5s, -webkit-transform 0.5s !important;
+  }
+  .m--reset-progress .fnc-nav__control-progress {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transition: -webkit-transform 0s 0s !important;
+    transition: -webkit-transform 0s 0s !important;
+    transition: transform 0s 0s !important;
+    transition: transform 0s 0s, -webkit-transform 0s 0s !important;
+  }
+  .m--autosliding-blocked .fnc-nav__control-progress {
+    -webkit-transition: all 0s 0s !important;
+    transition: all 0s 0s !important;
+    -webkit-transform: scaleX(0) !important;
+            transform: scaleX(0) !important;
+  }
+  
+  /* NOT PART OF COMMON SLIDER STYLES */
+  
+  
+  .demo-cont {
+    overflow: hidden;
+    position: relative;
+    height: 85vh;
+    -webkit-perspective: 1500px;
+            perspective: 1500px;
+    background: rgb(22, 22, 22);
+    object-fit: contain !important;
+  }
+  .demo-cont__credits {
+    box-sizing: border-box;
+    overflow-y: auto;
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 400px;
+    height: 100%;
+    padding: 20px 10px 30px;
+    background: #303030;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+    -webkit-transition: -webkit-transform 0.7s;
+    transition: -webkit-transform 0.7s;
+    transition: transform 0.7s;
+    transition: transform 0.7s, -webkit-transform 0.7s;
+    -webkit-transform: translate3d(100%, 0, 0) rotateY(-45deg);
+            transform: translate3d(100%, 0, 0) rotateY(-45deg);
+    will-change: transform;
+  }
+  .credits-active .demo-cont__credits {
+    -webkit-transition: -webkit-transform 0.7s 0.2333333333s;
+    transition: -webkit-transform 0.7s 0.2333333333s;
+    transition: transform 0.7s 0.2333333333s;
+    transition: transform 0.7s 0.2333333333s, -webkit-transform 0.7s 0.2333333333s;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  .demo-cont__credits *, .demo-cont__credits *:before, .demo-cont__credits *:after {
+    box-sizing: border-box;
+  }
+  .demo-cont__credits-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+  }
+  .demo-cont__credits-close:before, .demo-cont__credits-close:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    margin-top: -1px;
+    background: #fff;
+  }
+  .demo-cont__credits-close:before {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .demo-cont__credits-close:after {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  .demo-cont__credits-heading {
+    text-transform: uppercase;
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  .demo-cont__credits-img {
+    display: block;
+    width: 60%;
+    margin: 0 auto 30px;
+    border-radius: 10px;
+  }
+  .demo-cont__credits-name {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+  .demo-cont__credits-link {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #fff;
+  }
+  .demo-cont__credits-blend {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .example-slider {
+    z-index: 2;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform 0.7s;
+    transition: -webkit-transform 0.7s;
+    transition: transform 0.7s;
+    transition: transform 0.7s, -webkit-transform 0.7s;
+  }
+  .credits-active .example-slider {
+    -webkit-transform: translate3d(-400px, 0, 0) rotateY(10deg) scale(0.9);
+            transform: translate3d(-400px, 0, 0) rotateY(10deg) scale(0.9);
+  }
+  .example-slider .fnc-slide-1 .fnc-slide__inner,
+  .example-slider .fnc-slide-1 .fnc-slide__mask-inner {
+    background-image: url("{% static 'Main/img/Manda.jpg' %}");
+  }
+  .example-slider .fnc-slide-2 .fnc-slide__inner,
+  .example-slider .fnc-slide-2 .fnc-slide__mask-inner {
+    background-image: url("https://i2.wp.com/thepointsguy.co.uk/wp-content/uploads/2020/03/Hilton_Dorde-1.jpg?fit=1600%2C1067px&ssl=1");
+  }
+  .example-slider .fnc-slide-3 .fnc-slide__inner,
+  .example-slider .fnc-slide-3 .fnc-slide__mask-inner {
+    background-image: url("https://www.gannett-cdn.com/presto/2019/04/16/USAT/15d11370-b0e6-4743-adf0-387d1fa95ab5-AP_Marriott_Starwood_Sale.JPG?crop=4851,2740,x0,y0&width=3200&height=1808&format=pjpg&auto=webp");
+  }
+  .example-slider .fnc-slide-3 .fnc-slide__inner:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .example-slider .fnc-slide-4 .fnc-slide__inner,
+  .example-slider .fnc-slide-4 .fnc-slide__mask-inner {
+    background-image: url("https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/itemimages/77/61/77615_v3.jpeg");
+  }
+  .example-slider .fnc-slide-4 .fnc-slide__inner:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  .example-slider .fnc-slide__heading,
+  .example-slider .fnc-slide__action-btn,
+  .example-slider .fnc-nav__control {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  }
+  
+  /* COLORFUL SWITCH STYLES 
+     ORIGINAL DEMO - https://codepen.io/suez/pen/WQjwOb */
+  .colorful-switch {
+    position: relative;
+    width: 180px;
+    height: 77.1428571429px;
+    margin: 0 auto;
+    border-radius: 32.1428571429px;
+    background: #cfcfcf;
+  }
+  .colorful-switch:before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    width: 190px;
+    height: 87.1428571429px;
+    border-radius: 37.1428571429px;
+    background: #314239;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+  }
+  .colorful-switch:hover:before {
+    background: #4C735F;
+  }
+  .colorful-switch__checkbox {
+    z-index: -10;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+  .colorful-switch__label {
+    z-index: 1;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 32.1428571429px;
+    cursor: pointer;
+  }
+  .colorful-switch__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 540px;
+    height: 100%;
+    background: linear-gradient(90deg, #14DCD6 0, #10E7BD 180px, #EF9C29 360px, #E76339 100%);
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+    -webkit-transform: translate3d(-360px, 0, 0);
+            transform: translate3d(-360px, 0, 0);
+  }
+  .colorful-switch__checkbox:checked ~ .colorful-switch__label .colorful-switch__bg {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  .colorful-switch__dot {
+    position: absolute;
+    left: 131.1428571429px;
+    top: 50%;
+    width: 5.1428571429px;
+    height: 5.1428571429px;
+    margin-left: -2.5714285714px;
+    margin-top: -2.5714285714px;
+    border-radius: 50%;
+    background: #fff;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  .colorful-switch__checkbox:checked ~ .colorful-switch__label .colorful-switch__dot {
+    -webkit-transform: translate3d(-80.3571428571px, 0, 0);
+            transform: translate3d(-80.3571428571px, 0, 0);
+  }
+  .colorful-switch__on {
+    position: absolute;
+    left: 104.1428571429px;
+    top: 22.5px;
+    width: 19.2857142857px;
+    height: 36px;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  .colorful-switch__checkbox:checked ~ .colorful-switch__label .colorful-switch__on {
+    -webkit-transform: translate3d(-80.3571428571px, 0, 0);
+            transform: translate3d(-80.3571428571px, 0, 0);
+  }
+  .colorful-switch__on__inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: -webkit-transform 0.25s 0s cubic-bezier(0.52, -0.96, 0.51, 1.28);
+    transition: -webkit-transform 0.25s 0s cubic-bezier(0.52, -0.96, 0.51, 1.28);
+    transition: transform 0.25s 0s cubic-bezier(0.52, -0.96, 0.51, 1.28);
+    transition: transform 0.25s 0s cubic-bezier(0.52, -0.96, 0.51, 1.28), -webkit-transform 0.25s 0s cubic-bezier(0.52, -0.96, 0.51, 1.28);
+    -webkit-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+    -webkit-transform: rotate(45deg) scale(0) translateZ(0);
+            transform: rotate(45deg) scale(0) translateZ(0);
+  }
+  .colorful-switch__checkbox:checked ~ .colorful-switch__label .colorful-switch__on__inner {
+    -webkit-transition: -webkit-transform 0.25s 0.25s cubic-bezier(0.67, -0.16, 0.47, 1.61);
+    transition: -webkit-transform 0.25s 0.25s cubic-bezier(0.67, -0.16, 0.47, 1.61);
+    transition: transform 0.25s 0.25s cubic-bezier(0.67, -0.16, 0.47, 1.61);
+    transition: transform 0.25s 0.25s cubic-bezier(0.67, -0.16, 0.47, 1.61), -webkit-transform 0.25s 0.25s cubic-bezier(0.67, -0.16, 0.47, 1.61);
+    -webkit-transform: rotate(45deg) scale(1) translateZ(0);
+            transform: rotate(45deg) scale(1) translateZ(0);
+  }
+  .colorful-switch__on__inner:before, .colorful-switch__on__inner:after {
+    content: "";
+    position: absolute;
+    border-radius: 2.5714285714px;
+    background: #fff;
+  }
+  .colorful-switch__on__inner:before {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 6.1428571429px;
+  }
+  .colorful-switch__on__inner:after {
+    right: 0;
+    top: 0;
+    width: 6.1428571429px;
+    height: 100%;
+  }
+  .colorful-switch__off {
+    position: absolute;
+    left: 131.1428571429px;
+    top: 50%;
+    width: 41.1428571429px;
+    height: 41.1428571429px;
+    margin-left: -20.5714285714px;
+    margin-top: -20.5714285714px;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  .colorful-switch__checkbox:checked ~ .colorful-switch__label .colorful-switch__off {
+    -webkit-transform: translate3d(-80.3571428571px, 0, 0);
+            transform: translate3d(-80.3571428571px, 0, 0);
+  }
+  .colorful-switch__off:before, .colorful-switch__off:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 5.1428571429px;
+    margin-top: -2.5714285714px;
+    border-radius: 2.5714285714px;
+    background: #fff;
+    -webkit-transition: -webkit-transform 0.25s 0.25s;
+    transition: -webkit-transform 0.25s 0.25s;
+    transition: transform 0.25s 0.25s;
+    transition: transform 0.25s 0.25s, -webkit-transform 0.25s 0.25s;
+  }
+  .colorful-switch__checkbox:checked ~ .colorful-switch__label .colorful-switch__off:before, .colorful-switch__checkbox:checked ~ .colorful-switch__label .colorful-switch__off:after {
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+  }
+  .colorful-switch__off:before {
+    -webkit-transform: rotate(45deg) scaleX(1) translateZ(0);
+            transform: rotate(45deg) scaleX(1) translateZ(0);
+  }
+  .colorful-switch__checkbox:checked ~ .colorful-switch__label .colorful-switch__off:before {
+    -webkit-transform: rotate(45deg) scaleX(0) translateZ(0);
+            transform: rotate(45deg) scaleX(0) translateZ(0);
+  }
+  .colorful-switch__off:after {
+    -webkit-transition-timing-function: cubic-bezier(0.67, -0.16, 0.47, 1.61);
+            transition-timing-function: cubic-bezier(0.67, -0.16, 0.47, 1.61);
+    -webkit-transform: rotate(-45deg) scaleX(1) translateZ(0);
+            transform: rotate(-45deg) scaleX(1) translateZ(0);
+  }
+  .colorful-switch__checkbox:checked ~ .colorful-switch__label .colorful-switch__off:after {
+    -webkit-transition-timing-function: ease;
+            transition-timing-function: ease;
+    -webkit-transform: rotate(-45deg) scaleX(0) translateZ(0);
+            transform: rotate(-45deg) scaleX(0) translateZ(0);
+  }
+  </style>
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="demo-cont">
+  <!-- slider start -->
+  <div class="fnc-slider example-slider">
+    <div class="fnc-slider__slides">
+      <!-- slide start -->
+      <div class="fnc-slide m--blend-green m--active-slide">
+        <div class="fnc-slide__inner">
+          <div class="fnc-slide__mask">
+            <div class="fnc-slide__mask-inner"></div>
+          </div>
+          <div class="fnc-slide__content">
+            <h2 class="fnc-slide__heading">
+              <div class="fnc-slide__heading-line">
+                <span ></span>
+              </div>
+              <div class="fnc-slide__heading-line">
+                <span></span>
+              </div>
+            </h2>
+            <button type="button" class="fnc-slide__action-btn">
+              
+              <span data-text=""></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- slide end -->
+      <!-- slide start -->
+      <div class="fnc-slide m--blend-dark">
+        <div class="fnc-slide__inner">
+          <div class="fnc-slide__mask">
+            <div class="fnc-slide__mask-inner"></div>
+          </div>
+          <div class="fnc-slide__content">
+            <h2 class="fnc-slide__heading">
+              <div class="fnc-slide__heading-line">
+                <span></span>
+              </div>
+              <div class="fnc-slide__heading-line">
+                <span></span>
+              </div>
+            </h2>
+            <button type="button" class="fnc-slide__action-btn">
+             
+              <span data-text=""></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- slide end -->
+      <!-- slide start -->
+      <div class="fnc-slide m--blend-red">
+        <div class="fnc-slide__inner">
+          <div class="fnc-slide__mask">
+            <div class="fnc-slide__mask-inner"></div>
+          </div>
+          <div class="fnc-slide__content">
+            <h2 class="fnc-slide__heading">
+              <div class="fnc-slide__heading-line">
+                <span></span>
+              </div>
+              <div class="fnc-slide__heading-line">
+                <span></span>
+              </div>
+            </h2>
+            <button type="button" class="fnc-slide__action-btn">
+           
+              <span data-text=""></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- slide end -->
+      <!-- slide start -->
+      <div class="fnc-slide m--blend-blue">
+        <div class="fnc-slide__inner">
+          <div class="fnc-slide__mask">
+            <div class="fnc-slide__mask-inner"></div>
+          </div>
+          <div class="fnc-slide__content">
+            <h2 class="fnc-slide__heading">
+              <div class="fnc-slide__heading-line">
+                <span></span>
+              </div>
+              <div class="fnc-slide__heading-line">
+                <span></span>
+              </div>
+            </h2>
+            <button type="button" class="fnc-slide__action-btn">
+            
+              <span data-text=""></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- slide end -->
+    </div>
+    <nav class="fnc-nav">
+      <div class="fnc-nav__bgs">
+        <div class="fnc-nav__bg m--navbg-green m--active-nav-bg"></div>
+        <div class="fnc-nav__bg m--navbg-dark"></div>
+        <div class="fnc-nav__bg m--navbg-red"></div>
+        <div class="fnc-nav__bg m--navbg-blue"></div>
+      </div>
+      <div class="fnc-nav__controls">
+        <button class="fnc-nav__control">
+          Mandalay Bay
+          <span class="fnc-nav__control-progress"></span>
+        </button>
+        <button class="fnc-nav__control">
+          Hilton
+          <span class="fnc-nav__control-progress"></span>
+        </button>
+        <button class="fnc-nav__control">
+          marriott
+          <span class="fnc-nav__control-progress"></span>
+        </button>
+        <button class="fnc-nav__control">
+          sheraton
+          <span class="fnc-nav__control-progress"></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+  <!-- slider end -->
+ 
+</div>
+
+
+
+<script>
+
+(function() {
+
+var $$ = function(selector, context) {
+  var context = context || document;
+  var elements = context.querySelectorAll(selector);
+  return [].slice.call(elements);
+};
+
+function _fncSliderInit($slider, options) {
+  var prefix = ".fnc-";
+
+  var $slider = $slider;
+  var $slidesCont = $slider.querySelector(prefix + "slider__slides");
+  var $slides = $$(prefix + "slide", $slider);
+  var $controls = $$(prefix + "nav__control", $slider);
+  var $controlsBgs = $$(prefix + "nav__bg", $slider);
+  var $progressAS = $$(prefix + "nav__control-progress", $slider);
+
+  var numOfSlides = $slides.length;
+  var curSlide = 1;
+  var sliding = false;
+  var slidingAT = +parseFloat(getComputedStyle($slidesCont)["transition-duration"]) * 1000;
+  var slidingDelay = +parseFloat(getComputedStyle($slidesCont)["transition-delay"]) * 1000;
+
+  var autoSlidingActive = false;
+  var autoSlidingTO;
+  var autoSlidingDelay = 5000; // default autosliding delay value
+  var autoSlidingBlocked = false;
+
+  var $activeSlide;
+  var $activeControlsBg;
+  var $prevControl;
+
+  function setIDs() {
+    $slides.forEach(function($slide, index) {
+      $slide.classList.add("fnc-slide-" + (index + 1));
+    });
+
+    $controls.forEach(function($control, index) {
+      $control.setAttribute("data-slide", index + 1);
+      $control.classList.add("fnc-nav__control-" + (index + 1));
+    });
+
+    $controlsBgs.forEach(function($bg, index) {
+      $bg.classList.add("fnc-nav__bg-" + (index + 1));
+    });
+  };
+
+  setIDs();
+
+  function afterSlidingHandler() {
+    $slider.querySelector(".m--previous-slide").classList.remove("m--active-slide", "m--previous-slide");
+    $slider.querySelector(".m--previous-nav-bg").classList.remove("m--active-nav-bg", "m--previous-nav-bg");
+
+    $activeSlide.classList.remove("m--before-sliding");
+    $activeControlsBg.classList.remove("m--nav-bg-before");
+    $prevControl.classList.remove("m--prev-control");
+    $prevControl.classList.add("m--reset-progress");
+    var triggerLayout = $prevControl.offsetTop;
+    $prevControl.classList.remove("m--reset-progress");
+
+    sliding = false;
+    var layoutTrigger = $slider.offsetTop;
+
+    if (autoSlidingActive && !autoSlidingBlocked) {
+      setAutoslidingTO();
+    }
+  };
+
+  function performSliding(slideID) {
+    if (sliding) return;
+    sliding = true;
+    window.clearTimeout(autoSlidingTO);
+    curSlide = slideID;
+
+    $prevControl = $slider.querySelector(".m--active-control");
+    $prevControl.classList.remove("m--active-control");
+    $prevControl.classList.add("m--prev-control");
+    $slider.querySelector(prefix + "nav__control-" + slideID).classList.add("m--active-control");
+
+    $activeSlide = $slider.querySelector(prefix + "slide-" + slideID);
+    $activeControlsBg = $slider.querySelector(prefix + "nav__bg-" + slideID);
+
+    $slider.querySelector(".m--active-slide").classList.add("m--previous-slide");
+    $slider.querySelector(".m--active-nav-bg").classList.add("m--previous-nav-bg");
+
+    $activeSlide.classList.add("m--before-sliding");
+    $activeControlsBg.classList.add("m--nav-bg-before");
+
+    var layoutTrigger = $activeSlide.offsetTop;
+
+    $activeSlide.classList.add("m--active-slide");
+    $activeControlsBg.classList.add("m--active-nav-bg");
+
+    setTimeout(afterSlidingHandler, slidingAT + slidingDelay);
+  };
+
+
+
+  function controlClickHandler() {
+    if (sliding) return;
+    if (this.classList.contains("m--active-control")) return;
+    if (options.blockASafterClick) {
+      autoSlidingBlocked = true;
+      $slider.classList.add("m--autosliding-blocked");
+    }
+
+    var slideID = +this.getAttribute("data-slide");
+
+    performSliding(slideID);
+  };
+
+  $controls.forEach(function($control) {
+    $control.addEventListener("click", controlClickHandler);
+  });
+
+  function setAutoslidingTO() {
+    window.clearTimeout(autoSlidingTO);
+    var delay = +options.autoSlidingDelay || autoSlidingDelay;
+    curSlide++;
+    if (curSlide > numOfSlides) curSlide = 1;
+
+    autoSlidingTO = setTimeout(function() {
+      performSliding(curSlide);
+    }, delay);
+  };
+
+  if (options.autoSliding || +options.autoSlidingDelay > 0) {
+    if (options.autoSliding === false) return;
+    
+    autoSlidingActive = true;
+    setAutoslidingTO();
+    
+    $slider.classList.add("m--with-autosliding");
+    var triggerLayout = $slider.offsetTop;
+    
+    var delay = +options.autoSlidingDelay || autoSlidingDelay;
+    delay += slidingDelay + slidingAT;
+    
+    $progressAS.forEach(function($progress) {
+      $progress.style.transition = "transform " + (delay / 1000) + "s";
+    });
+  }
+  
+  $slider.querySelector(".fnc-nav__control:first-child").classList.add("m--active-control");
+
+};
+
+var fncSlider = function(sliderSelector, options) {
+  var $sliders = $$(sliderSelector);
+
+  $sliders.forEach(function($slider) {
+    _fncSliderInit($slider, options);
+  });
+};
+
+window.fncSlider = fncSlider;
+}());
+
+/* not part of the slider scripts */
+
+/* Slider initialization
+options:
+autoSliding - boolean
+autoSlidingDelay - delay in ms. If audoSliding is on and no value provided, default value is 5000
+blockASafterClick - boolean. If user clicked any sliding control, autosliding won't start again
+*/
+fncSlider(".example-slider", {autoSlidingDelay: 4000});
+
+var $demoCont = document.querySelector(".demo-cont");
+
+[].slice.call(document.querySelectorAll(".rfnc-slide__action-btn")).forEach(function($btn) {
+$btn.addEventListener("click", function() {
+  $demoCont.classList.toggle("credits-active");
+});
+});
+
+document.querySelector(".demo-cont__credits-close").addEventListener("click", function() {
+$demoCont.classList.remove("credits-active");
+});
+
+document.querySelector(".js-activate-global-blending").addEventListener("click", function() {
+document.querySelector(".example-slider").classList.toggle("m--global-blending-active");
+});
+
+</script>
+
+ 
+  
+<br>
+
+
+
+
+
+<style>
+
+@import url(//fonts.googleapis.com/css?family=Montserrat:300,400,500);
+.contact4 {
+  font-family: "Montserrat", sans-serif;
+	color: #8d97ad;
+  font-weight: 300;
+}
+
+.contact4 h1, .contact4 h2, .contact4 h3, .contact4 h4, .contact4 h5, .contact4 h6 {
+  color: #3e4555;
+}
+
+.contact4 .font-weight-medium {
+	font-weight: 500;
+}
+
+::placeholder{
+  color:black !important;
+  font-weight: bold !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+.contact4 .form-control {
+  background: white;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color:black !important;
+}
+
+.contact4 .form-control:focus {
+  border-color: #ffffff;
+}
+
+.contact4 input::-webkit-input-placeholder,
+.contact4 textarea::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact4 input:-ms-input-placeholder,
+.contact4 textarea:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact4 input::placeholder,
+.contact4 textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact4 .right-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.contact4.bg-info {
+   /* background-color: #188ef4 !important;*/
+   background-color: rgb(22, 22, 22) !important;
+}
+
+.contact4 .text-inverse {
+    color: #3e4555 !important;
+}
+
+@media (min-width: 1024px) {
+	.contact4 .contact-box {
+    padding: 80px 105px 80px 0px;
+	}
+}
+
+@media (max-width: 767px) {
+	.contact4 .contact-box {
+    padding-left: 15px;
+    padding-right: 15px;
+	}
+}
+
+@media (max-width: 1023px) {
+	.contact4 .right-image {
+			position: relative;
+			bottom: -95px;
+	}
+}
+
+
+
+
+</style>
+
+<div class="container-fluid">
+
+
+
+<div class="bg-info contact4 overflow-hiddedn position-relative">
+  <!-- Row  -->
+  <div class="row no-gutters">
+    <div class="container">
+      <div class="col-lg-6 contact-box mb-2 mb-md-0">
+        <div class="">
+          <h1 class="title font-weight-light text-white mt-2" style="font-weight: bolder;"> Drop us a line!
+            <i class="fas fa-comments"></i>   </h1>
+          <form class="mt-3" method="POST">{% csrf_token %}
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="form-group mt-2" >
+              {{form.name}}
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="form-group mt-2">
+                  {{form.email}}
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="form-group mt-1">
+                  {{form.message}}
+                </div>
+              </div>
+
+              <style>
+                #bty:hover{
+                  color:white !important;
+                  z-index: 3000 !important;
+                }
+              </style>
+              <div class="col-lg-12 d-flex align-items-center mt-4">
+                <button id="bty" type="submit" class="btn bg-default btn-block"><span> Submit</span></button>
+                <span class="ml-auto text-white align-self-center"><i class="icon-phone mr-2"></i></span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 right-image p-r-0">
+      <br>
+      <br>
+      <br>
+         <br>
+      <br>
+    
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.135872606215!2d-80.21467988497898!3d25.766075283634724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b6f30a1f3d19%3A0x5d59bca4b8c9556b!2s1065%20SW%208th%20St%20%231189%2C%20Miami%2C%20FL%2033130%2C%20USA!5e0!3m2!1sen!2seg!4v1617195734916!5m2!1sen!2seg" width="100%" height="435" style="border:0; margin-top:15px !important;" allowfullscreen="" loading="lazy"></iframe>
+  
+
+
+    </div>
+  </div>
+</div>
+
+
+<!-- the div below is from the container-->
+
+</div>
+
+<style>
+  #termid{
+    font-family: 'Roboto', sans-serif;
+     font-weight: 350 !important; 
+     font-size: 14px;
+
+  }
+
+</style>
+
+
+<div class="container">
+  
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalScrollable" style="font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 700; background-color:rgb(22, 22, 22) !important; box-shadow: none !important; ">
+  Terms And Conditions
+ </button>
+ 
+ <!-- Modal -->
+ <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" >
+   <div class="modal-dialog modal-dialog-scrollable" role="document">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="exampleModalScrollableTitle" style="font-size: 16px;font-family: 'Roboto', sans-serif; font-weight: 900; color: white; background-color: black; padding-top: 10px; padding-bottom: 10px ; padding-left: 10px; padding-right: 10px; border-radius: 4px;">Terms And Conditions</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+       <div class="modal-body" >
+
+
+
+         <p style="font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 900;">AGREEMENT BETWEEN CUSTOMER AND TRAVENCIA.</p>
+
+        <p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;"> These terms and conditions, may be amended from time to time, apply to all our services directly or indirectly (through distributors) made available online, through any mobile device, by email or by telephone. By accessing, browsing and using our website or any of our applications through whatever platform (hereafter collectively referred to as the “website”) and/or by completing a reservation, you acknowledge and agree to have read, understood and agreed to the terms and conditions set out below (including the privacy statement)</p>
+
+        <p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">
+
+        Welcome to the Travencia.com website  ("This Website") is <span style="font-weight: 700 !important;">provided</span> to assist customers in gathering travel information, determining the availability of travel—related goods and services, making legitimate reservations or otherwise transacting business with travel suppliers, and for no other usage. The terms "we", "us", "our", “Travencia” and "Travencia." refer to Travencia., a Florida corporation. The term "you" refers to the customer visiting the Website and/or booking a reservation through us on this Website, or through our customer service agents. 
+        </p>
+
+
+        <p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 400;">This Website is offered to you conditioned upon your acceptance without modification of all the terms, conditions, and notices set forth below (collectively, the "Terms of Use” or "Agreement").</p>
+
+<p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;"> 
+
+       <span style="font-weight: 700 !important;">Please read these Terms of Use carefully</span>, as they contain important information about limitations of liability and resolution of disputes through arbitration rather than in court. By accessing or using this Website, booking any reservations for travel products or services on this Website, or contacting our call center agents, you agree that the Terms of Use then in force shall apply. If you do not agree to the Terms of Use, Please do not use or book any reservations through this Website or our call center agents.
+
+      </p>
+
+
+
+<p  style="font-size: 16px;font-family: 'Roboto', sans-serif; font-weight: 900; line-height: 1.7rem;"> USE OF THE WEBSITE</p>
+
+<p  style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;"> As a condition of your use of this Website, you warrant that</p>
+
+
+
+<ol style="     padding-left: 10px !important;
+margin-left: 0px !important;">
+
+  <li id="termid"> You are at least 18 years of age. </li>
+  <li id="termid">You possess the legal authority to create a binding legal obligation.  </li>
+  <li id="termid">You will use this Website in conformity with these Terms of Use.  </li>
+  <li id="termid">You will only use this Website to make legitimate reservations for you or for another person for whom you are legally authorized to act.  </li>
+  <li id="termid">You will inform such other persons about the Terms of Use that apply to the reservations you have made on their behalf, including all rules and restrictions applicable thereto.  </li>
+  <li id="termid">All information supplied by you on this Website is true, correct, current and complete</li>
+</ol>
+
+<p  style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">We retain the right at our sole discretion to deny access to anyone to this Website and the services we offer, at any time and for any reason, including, but not limited to, for violation of these Terms of Use.</p>
+
+
+
+
+
+
+
+
+
+<p style="font-size: 16px;font-family: 'Roboto', sans-serif; font-weight: 900; line-height: 1.7rem;">DISPUTES</p>
+
+<p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">Travencia is committed to customer satisfaction, so if you have a problem or dispute, we will try to resolve your concerns. But if we are unsuccessful, you may pursue claims as explained in this section.</p>
+
+
+
+<p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">You agree to give us an opportunity to resolve any disputes or claims relating in any way to the Website, any dealings with our customer service agents, any services or products provided, any representations made by us, or our Privacy Policy (“Claims”) by contacting Travencia Customer Support or (878) 676-0987. If we are not able to resolve your Claims within 60 days, you may seek relief through arbitration or in small claims court, as set forth below.</p>
+
+<p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">Any and all Claims will be resolved by binding arbitration, rather than in court, except you may assert Claims on an individual basis in small claims court if they qualify. This includes any Claims you assert against us, our subsidiaries, travel suppliers or any companies offering products or services through us (which are beneficiaries of this arbitration agreement). This also includes any Claims that arose before you accepted these Terms of Use, regardless of whether prior versions of the Terms of Use required arbitration.</p>
+
+<p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">
+  There is no judge or jury in arbitration, and court review of an arbitration award is limited. However, an arbitrator can award on an individual basis the same damages and relief as a court (including statutory damages, attorneys’ fees and costs), and must follow and enforce these Terms of Use as a court would.
+</p>
+
+
+
+<p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;"> To begin an arbitration proceeding, you must send a letter requesting arbitration and describing your Claims to “Travencia Legal: Claim Manager,” at Travencia 1065 SW 8th St #1189 Miami FL 33130. If we request arbitration against you, we will give you notice at the email address or street address you have provided.</p>
+
+
+<p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">Any and all proceedings to resolve Claims will be conducted only on an individual basis and not in a class, consolidated or representative action. If for any reason a Claim proceeds in court rather than in arbitration, we each waive any right to a jury trial. The Federal Arbitration Act and </p>
+
+
+<p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">federal arbitration law apply to this agreement. An arbitration decision may be confirmed by any court with competent jurisdiction.</p>
+
+
+<p style="font-size: 16px;font-family: 'Roboto', sans-serif; font-weight: 900; line-height: 1.7rem;">ROPHIBITED ACTIVITIES</p>
+
+
+
+
+<p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">The content and information on this Website (including, but not limited to, price and availability of travel services) as well as the infrastructure used to provide such content and information, is proprietary to us or our suppliers and providers. While you may make limited copies of your travel itinerary (and related documents) for travel or service  </p>
+
+<p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;"> Reservations booked through this Website, you agree not to otherwise modify, copy, distribute, transmit, display, perform, reproduce, publish, license, create derivative works from, transfer, or sell or re-sell any information, software, products, or services obtained from or through this Website. Additionally, you agree not to: </p>
+
+
+<ol style="     padding-left: 10px !important;
+margin-left: 0px !important;">
+
+  <li id="termid">use this Website or its contents for any commercial purpose; </li>
+  <li id="termid">make any speculative, false, or fraudulent reservation or any reservation in anticipation of demand;  </li>
+  <li id="termid">access, monitor or copy any content or information of this Website using any robot, scraper or other automated means or any manual process for any purpose without our express written permission;   </li>
+  <li id="termid">violate the restrictions in any robot exclusion headers on this Website or bypass or circumvent other measures employed to prevent or limit access to this Website;</li>
+  <li id="termid">take any action that imposes, or may impose, in our discretion, an unreasonable or disproportionately large load on our infrastructure;</li>
+  <li id="termid">deep—link to any portion of this Website (including, without limitation, the purchase path for any travel services) for any purpose without our express written permission;</li>
+  <li id="termid">frame", "mirror" or otherwise incorporate any part of this Website into any other website without our prior written authorization.</li>
+</ol>
+
+<p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">If your booking or account shows signs of fraud, abuse or suspicious activity, Travencia may cancel any travel or service reservations associated with your name, email address or account, and close any associated Travencia accounts. If you have conducted any fraudulent activity, Travencia reserves the right to take any necessary legal action and you may be liable for monetary losses to Travencia, including litigation costs and damages. To contest the cancellation of a booking or freezing or closure of an account, please contact Travencia Customer Service.</p>
+
+
+
+
+<p style="font-size: 16px;font-family: 'Roboto', sans-serif; font-weight: 900; line-height: 1.7rem;">PREPAID HOTEL RESERVATIONS</p>
+
+
+<p style="font-size: 16px;font-family: 'Roboto', sans-serif; font-weight: 900; line-height: 1.7rem;">Agreement</p>
+
+<p  style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">
+
+  You acknowledge that the Travencia Group pre-negotiate certain room rate with hotel suppliers to facilitate the booking of reservations. You also acknowledge that the Travencia Group provide you services to facilitate such booking of reservations for a consideration (the "facilitation fee") the rooms rate provided is a compound of the pre-negotiated room rate for rooms reserved on your behalf by the Travencia Group and the facilitation fee retained by the Travencia Group for their services. You authorize the Travencia Group to book reservations for the total reservation price, plus tax recovery charges, service fee, and where applicable, taxes on the Travencia Group Services.
+</p>
+
+<p  style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">Travencia is a privately-owned company not affiliated with any event or other organization. You agree to arrange payment no later than 24 hours after submitting this booking form.</p>
+
+<p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">You authorize the Travencia Group to facilitate hotel reservation on your behalf, including making payment arrangements with hotel Suppliers .You acknowledge that except as provided below with respect to tax obligations on the amounts we retain for our services, the Travencia Group do not collect taxes for remittance to applicable taxing authorities. The tax recovery charges on prepaid hotel transactions are a recovery of the estimated taxes (e.g. sales and use occupancy, room tax, excise tax, value added tax, etc.) that the Travencia Group pay to the hotel supplier for taxes due on the hotel's supplier for taxes due on the hotel's rental rate for the room. The hotel suppliers invoice the Travencia Group for certain charges, including tax amounts. The hotel suppliers are responsible for remitting applicable taxes to the applicable taxing jurisdictions. None of the Travencia Group act as co-vendors with the supplier with whom we book or reserve our customer's travel arrangements. Taxability and the appropriate tax rate 20%. The actual tax amounts paid by the Travencia Group to the hotel suppliers may vary from tax recovery charge amounts, depending upon the rates, taxability, etc. in effect at the time of the actual use of the hotel by our customers. We retain services fees as additional compensation. Service fees retained by the Travencia Group for their services vary based on the amount and type of hotel reservation.</p>
+
+
+<p style="font-size: 16px;font-family: 'Roboto', sans-serif; font-weight: 900; line-height: 1.7rem;">Confirmation</p>
+
+<p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">Upon submitting your reservation request you receive Proforma invoice and your booking form information also hotel confirmation number later if your guests names TBD make sure completed before check in at least 30 days prior.</p>
+
+
+
+<p style="font-size: 16px;font-family: 'Roboto', sans-serif; font-weight: 900; line-height: 1.7rem;">Cancellation and Modification Policy:</p>
+
+
+
+<p  style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">You may cancel or change your prepaid hotel reservation, but you will be charged the cancellation or change fee indicated in the rules and restrictions for the hotel reservation. If you do not cancel or change your reservation before the cancellation policy period applicable to the hotel you reserved, which varies by hotel (usually 24 to 72 hours) prior to your date of arrival, you will be subject to a charge equal to applicable nightly rates, tax recovery charges and service fees. In the event you do not show for the first night of the reservation and plan to check-in for subsequent nights in your reservation, you must confirm the reservation changes with us no later than the date of the first night of the reservation to prevent cancellation of your reservation.</p>
+
+
+
+<p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;"> You agree to pay any cancellation or change fees that you incur. In limited cases, some hotels do not permit changes to or cancellations of reservations after they are made, as indicated in the rules and restrictions for the hotel reservation. You agree to abide by the Terms of Use imposed with respect to your prepaid hotel reservations.</p>
+       
+
+
+<p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;"> Sales, use and/or local hotel occupancy taxes are imposed on the amounts that we charge for our services (service fee and/or facilitation fee) in certain jurisdictions. The actual tax amounts on our services may vary depending on the rates in effect at the time of your hotel stay.</p>
+
+
+<p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">You may not book reservations for more than 8 rooms online for the same hotel/stay dates. If we determine that you have booked reservations for more than 8 rooms in total in separate reservations, we may cancel your reservations, and charge you a cancellation fee, if applicable. If you paid a non-refundable deposit, your deposit will be forfeited. If you wish to book reservations for 9 or more rooms, you must contact Travencia group travel specialists by phone at (878) 676-0987) or by filling out the group travel form online. One of our group travel specialists will research your request and contact you to complete your reservation. You may be asked to sign a written contract and/or pay a nonrefundable deposit. 
+ 
+  Some hotel suppliers may require you to present a credit card or cash deposit upon check-in to cover additional expenses incurred during your stay. Such deposit is unrelated to any payment received by Travencia, for your hotel booking.
+  </p>
+
+<p style="font-size: 16px;font-family: 'Roboto', sans-serif; font-weight: 900; line-height: 1.7rem;">BANK AND CREDIT CARD FEES</p>
+
+
+<p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">Some banks and credit card companies impose fees for international transactions. If you are making a booking inside the United States or Canada on a US credit card or Canadian Credit Card to our local bank outside United States the amount settlement in our bank as our currency so if you need money back you will lose Convert the exchange rate and the transaction Fees.</p>
+
+
+<p  style="font-size: 16px;font-family: 'Roboto', sans-serif; font-weight: 900; line-height: 1.7rem;">INTERNATIONAL TRAVEL</p>
+
+<p  style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;"> You are responsible for ensuring that you meet foreign entry requirements and that your travel documents, such as passports and visas (transit, business, tourist, and otherwise), are in order and any other foreign entry requirements are met. Travencia has no special knowledge regarding foreign entry requirements or travel documents. We urge customers to review travel prohibitions, warnings, announcements, and advisories issued by the relevant governments prior to booking travel to international destinations. </p>
+
+
+
+<p style="font-size: 16px;font-family: 'Roboto', sans-serif; font-weight: 900; line-height: 1.7rem;">LIABILITY DISCLAIMER</p>
+
+
+<p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">The Information, Software, Products and Services published on this Website may include inaccuracies or errors, including pricing errors. In particular, Travencia and Travencia Partners do not guarantee the accuracy of, and disclaim all liability for any errors or other inaccuracies relating to the information and description of the hotel, and services displayed on this Website (including, without limitation, the pricing, photographs, list of hotel amenities, general product descriptions, etc.). In addition, Travencia, expressly reserves the right to correct any pricing errors on our Website and/or pending reservations made under an incorrect price. In such event, if available, we will offer you the opportunity to keep your pending reservation at the correct price or we will cancel your reservation without penalty.
+   
+  </p>
+
+  <p  style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">Hotel ratings displayed on this Website are intended as only general guidelines, and the Travencia Group and Travencia Partners do not guarantee the accuracy of the ratings. The Travencia Group, the Travencia Partners and their respective suppliers make no guarantees about the availability of specific products and services. The Travencia Group, the Travencia Partners and their respective suppliers may make improvements and/or changes on the Website at any time.</p>
+
+<p style="font-size: 16px;font-family: 'Roboto', sans-serif; font-weight: 900; line-height: 1.7rem;">COPYRIGHT AND TRADEMARK NOTICES</p>
+
+<p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">All contents of this Website are ©2021 Travencia, All rights reserved.</p>
+
+<p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">If you are aware of an infringement of our brand, please let us know by emailing us at Helpdesk@ Travencia.com.</p>
+
+
+
+
+
+<p style="font-size: 16px;font-family: 'Roboto', sans-serif; font-weight: 900; line-height: 1.7rem;">SERVICE HELP</p>
+
+<p style="line-height: 1.5rem; font-size: 14px;font-family: 'Roboto', sans-serif; font-weight: 350;">For quick answers to your questions or ways to contact us, visit our Customer Support Center. Or, you can write to us at:</p>
+
+<ul style="padding-left: 15px;">
+
+  <li id="termid">Attn: Customer Service</li>
+
+  <li id="termid"> <a href="mailto:support@travencia.com"> support@travencia.com</a> </li>
+  <li id="termid"> <a href="mailto:helpdesk@travencia.com"> helpdesk@travencia.com</a> </li>
+  <li id="termid">1065 SW 8th St #1189 Miami FL 33130.</li>
+  
+</ul>
+
+
+</div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+         <button style="display: none;" type="button" class="btn btn-primary">Save changes</button>
+       </div>
+     </div>
+   </div>
+ </div>
+ 
+</div>
+
+
+{% include 'Main/footer.html'%}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock  %}

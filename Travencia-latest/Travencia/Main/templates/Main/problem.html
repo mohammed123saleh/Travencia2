@@ -1,0 +1,2140 @@
+
+
+
+    <script>
+
+
+    
+        $('#div_id_Number_OF_Guests').change(function(){
+        
+        
+        let all_datepickers = document.getElementsByClassName('form-control datepickerinput form-control');
+        console.log(all_datepickers);
+        
+        // check-ins and check-outs room number one
+        let guest_one_checkin_room_one = (all_datepickers[0]);
+        let guest_one_checkout_room_one = (all_datepickers[1]);
+        let guest_two_checkin_room_one = (all_datepickers[2]);
+        let guest_two_checkout_room_one = (all_datepickers[3]);
+        
+        // check-ins and check-outs room number two
+        let guest_one_checkin_room_two = (all_datepickers[4]);
+        let guest_one_checkout_room_two = (all_datepickers[5]);
+        let guest_two_checkin_room_two = (all_datepickers[6]);
+        let guest_two_checkout_room_two = (all_datepickers[7]);
+        
+        
+        // check-ins and check-outs room number three
+        let guest_one_checkin_room_three = (all_datepickers[8]);
+        let guest_one_checkout_room_three = (all_datepickers[9]);
+        let guest_two_checkin_room_three = (all_datepickers[10]);
+        let guest_two_checkout_room_three = (all_datepickers[11]);
+        
+        
+        // check-ins and check-outs room number four
+        let guest_one_checkin_room_four = (all_datepickers[12]);
+        let guest_one_checkout_room_four = (all_datepickers[13]);
+        let guest_two_checkin_room_four = (all_datepickers[14]);
+        let guest_two_checkout_room_four = (all_datepickers[15]);
+        
+        
+        // check-ins and check-outs room number five
+        let guest_one_checkin_room_five = (all_datepickers[16]);
+        let guest_one_checkout_room_five = (all_datepickers[17]);
+        let guest_two_checkin_room_five = (all_datepickers[18]);
+        let guest_two_checkout_room_five = (all_datepickers[19]);
+        
+        
+        // check-ins and check-outs room number six
+        let guest_one_checkin_room_six = (all_datepickers[20]);
+        let guest_one_checkout_room_six = (all_datepickers[21]);
+        let guest_two_checkin_room_six = (all_datepickers[22]);
+        let guest_two_checkout_room_six = (all_datepickers[23]);
+        
+        
+        // check-ins and check-outs room number seven
+        let guest_one_checkin_room_seven = (all_datepickers[24]);
+        let guest_one_checkout_room_seven = (all_datepickers[25]);
+        let guest_two_checkin_room_seven = (all_datepickers[26]);
+        let guest_two_checkout_room_seven = (all_datepickers[27]);
+        
+        
+        // check-ins and check-outs room number eight
+        let guest_one_checkin_room_eight = (all_datepickers[28]);
+        let guest_one_checkout_room_eight = (all_datepickers[29]);
+        let guest_two_checkin_room_eight = (all_datepickers[30]);
+        let guest_two_checkout_room_eight = (all_datepickers[31]);
+        
+        // check-ins and check-outs room number nine
+        let guest_one_checkin_room_nine = (all_datepickers[32]);
+        let guest_one_checkout_room_nine = (all_datepickers[33]);
+        let guest_two_checkin_room_nine = (all_datepickers[34]);
+        let guest_two_checkout_room_nine = (all_datepickers[35]);
+        
+        // check-ins and check-outs room number ten
+        let guest_one_checkin_room_ten = (all_datepickers[36]);
+        let guest_one_checkout_room_ten = (all_datepickers[37]);
+        let guest_two_checkin_room_ten = (all_datepickers[38]);
+        let guest_two_checkout_room_ten = (all_datepickers[39]);
+        
+        
+        // check-ins and check-outs room number eleven
+        let guest_one_checkin_room_eleven = (all_datepickers[40]);
+        let guest_one_checkout_room_eleven = (all_datepickers[41]);
+        let guest_two_checkin_room_eleven = (all_datepickers[42]);
+        let guest_two_checkout_room_eleven = (all_datepickers[43]);
+        
+        
+        // check-ins and check-outs room number twelve
+        let guest_one_checkin_room_twelve = (all_datepickers[44]);
+        let guest_one_checkout_room_twelve = (all_datepickers[45]);
+        let guest_two_checkin_room_twelve = (all_datepickers[46]);
+        let guest_two_checkout_room_twelve = (all_datepickers[47]);
+        
+        
+        // check-ins and check-outs room number thirteen
+        let guest_one_checkin_room_thirteen = (all_datepickers[48]);
+        let guest_one_checkout_room_thirteen = (all_datepickers[49]);
+        let guest_two_checkin_room_thirteen = (all_datepickers[50]);
+        let guest_two_checkout_room_thirteen = (all_datepickers[51]);
+        
+        
+        
+        // check-ins and check-outs room number fourteen
+        let guest_one_checkin_room_fourteen = (all_datepickers[52]);
+        let guest_one_checkout_room_fourteen = (all_datepickers[53]);
+        let guest_two_checkin_room_fourteen = (all_datepickers[54]);
+        let guest_two_checkout_room_fourteen = (all_datepickers[55]);
+        
+        
+        
+        // check-ins and check-outs room number fifteen
+        let guest_one_checkin_room_fifteen = (all_datepickers[56]);
+        let guest_one_checkout_room_fifteen = (all_datepickers[57]);
+        let guest_two_checkin_room_fifteen = (all_datepickers[58]);
+        let guest_two_checkout_room_fifteen = (all_datepickers[59]);
+        
+        // check-ins and check-outs room number sixteen
+        let guest_one_checkin_room_sixteen = (all_datepickers[60]);
+        let guest_one_checkout_room_sixteen = (all_datepickers[61]);
+        let guest_two_checkin_room_sixteen = (all_datepickers[62]);
+        let guest_two_checkout_room_sixteen = (all_datepickers[63]);
+        
+        
+        // check-ins and check-outs room number seventeen
+        let guest_one_checkin_room_seventeen = (all_datepickers[64]);
+        let guest_one_checkout_room_seventeen = (all_datepickers[65]);
+        let guest_two_checkin_room_seventeen = (all_datepickers[66]);
+        let guest_two_checkout_room_seventeen = (all_datepickers[67]);
+        
+        
+        // check-ins and check-outs room number eighteen
+        let guest_one_checkin_room_eighteen = (all_datepickers[68]);
+        let guest_one_checkout_room_eighteen = (all_datepickers[69]);
+        let guest_two_checkin_room_eighteen = (all_datepickers[70]);
+        let guest_two_checkout_room_eighteen = (all_datepickers[71]);
+        
+        
+        
+        // check-ins and check-outs room number nineteen
+        let guest_one_checkin_room_nineteen = (all_datepickers[72]);
+        let guest_one_checkout_room_nineteen = (all_datepickers[73]);
+        let guest_two_checkin_room_nineteen = (all_datepickers[74]);
+        let guest_two_checkout_room_nineteen = (all_datepickers[75]);
+        
+        
+        // check-ins and check-outs room number twenty
+        let guest_one_checkin_room_twenty = (all_datepickers[76]);
+        let guest_one_checkout_room_twenty = (all_datepickers[77]);
+        let guest_two_checkin_room_twenty = (all_datepickers[78]);
+        let guest_two_checkout_room_twenty = (all_datepickers[79]);
+        
+        
+        
+        guest_one_checkin_room_one.addEventListener("blur", (e) =>{
+        let value = e.target.value;
+        console.log(value);    
+         
+        
+        
+            //11111111111111111111
+        if ($('#Monty').val() == 1) {
+        
+        
+        
+        $("input[type='radio']").on('change', function () {
+        var selectedValue = $("input[name='Room_1']:checked").val();
+        if (selectedValue == 'D') {
+        
+        guest_two_checkin_room_one.value = value;
+        
+        
+        }
+        
+        
+        
+        else{
+            guest_two_checkin_room_one.value = null;
+            
+        }
+        
+        });  // this is for room 1 radio 
+        
+        }
+        
+            // 222222222222222222222222222222222222222222222222222
+            
+            
+                if ($('#Monty').val() >= 2) {
+        
+        
+                $("input[type='radio']").on('change', function () {
+                var selectedValue = $("input[name='Room_2']:checked").val();
+                if (selectedValue == 'D') {
+        
+        
+                guest_one_checkin_room_two.value = value;
+                guest_two_checkin_room_two.value = value;
+        
+        
+                }
+        
+        
+             
+        
+                else{
+        
+                guest_one_checkin_room_two.value = value;
+                guest_two_checkin_room_two.value = null;
+               
+            }
+        
+        
+        
+        
+        
+                });  // this is for room 2 radio 
+        
+        
+            }
+        
+        
+        
+        
+        
+        
+        
+                
+            // 33333333333333
+            
+            
+            if ($('#Monty').val() >= 3) {
+        
+        
+        $("input[type='radio']").on('change', function () {
+        var selectedValue = $("input[name='Room_3']:checked").val();
+        if (selectedValue == 'D') {
+        
+        
+            guest_one_checkin_room_three.value = value;
+        
+            guest_two_checkin_room_three.value = value;
+        
+        
+        }
+        
+        
+        
+        
+        else{
+        
+            guest_one_checkin_room_three.value = value;
+        
+            guest_two_checkin_room_three.value = null;
+        
+        }
+        
+        
+        
+        
+        
+        });  // this is for room 3 radio 
+        
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+             
+            // 44444444444
+            
+            
+            if ($('#Monty').val() >= 4) {
+        
+        
+        $("input[type='radio']").on('change', function () {
+        var selectedValue = $("input[name='Room_4']:checked").val();
+        if (selectedValue == 'D') {
+        
+        
+            guest_one_checkin_room_four.value = value;
+        
+            guest_two_checkin_room_four.value = value;
+        
+        
+        }
+        
+        
+        
+        
+        else{
+        
+            guest_one_checkin_room_four.value = value;
+        
+            guest_two_checkin_room_four.value = null;
+        
+        }
+        
+        
+        
+        
+        
+        });  // this is for room 4 radio 
+        
+        
+        }
+        
+        
+        
+        
+        
+            //555555555
+            
+            
+            if ($('#Monty').val() >= 5) {
+        
+        
+        $("input[type='radio']").on('change', function () {
+        var selectedValue = $("input[name='Room_5']:checked").val();
+        if (selectedValue == 'D') {
+        
+        
+            guest_one_checkin_room_five.value = value;
+            guest_two_checkin_room_five.value = value;
+        
+        
+        }
+        
+        
+        
+        
+        else{
+        
+            guest_one_checkin_room_five.value = value;
+            guest_two_checkin_room_five.value = null;
+        
+        }
+        
+        
+        
+        
+        
+        });  // this is for room 5 radio 
+        
+        }
+        
+        
+        
+        
+        
+        
+        
+            //666666666
+            
+            
+            if ($('#Monty').val() >= 6) {
+        
+        
+        $("input[type='radio']").on('change', function () {
+        var selectedValue = $("input[name='Room_6']:checked").val();
+        if (selectedValue == 'D') {
+        
+        
+            guest_one_checkin_room_six.value = value;
+            guest_two_checkin_room_six.value = value;
+        
+        
+        }
+        
+        
+        
+        
+        else{
+        
+        
+            guest_one_checkin_room_six.value = value;
+            guest_two_checkin_room_six.value = null;
+        
+        }
+        
+        
+        
+        
+        
+        
+        });  // this is for room 6 radio 
+        
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            //7777777777
+            
+            
+            if ($('#Monty').val() >= 7) {
+        
+        
+        $("input[type='radio']").on('change', function () {
+        var selectedValue = $("input[name='Room_7']:checked").val();
+        if (selectedValue == 'D') {
+        
+        
+            guest_one_checkin_room_seven.value = value;
+            guest_two_checkin_room_seven.value = value;
+        
+        
+        }
+        
+        
+        
+        
+        else{
+        
+        
+            guest_one_checkin_room_seven.value = value;
+            guest_two_checkin_room_seven.value = null;
+        
+        }
+        
+        
+        
+        
+        
+        
+        });  // this is for room 7 radio 
+        
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        if ($('#Monty').val() >= 8) {
+        
+        
+        $("input[type='radio']").on('change', function () {
+        var selectedValue = $("input[name='Room_8']:checked").val();
+        if (selectedValue == 'D') {
+        
+        
+            guest_one_checkin_room_eight.value = value;
+            guest_two_checkin_room_eight.value = value;
+        
+        
+        }
+        
+        
+        
+        
+        else{
+        
+        
+            guest_one_checkin_room_eight.value = value;
+            guest_two_checkin_room_eight.value = null;
+        
+        }
+        
+        
+        
+        
+        
+        
+        });  // this is for room 8 radio 
+        
+        
+        }
+        
+        
+        
+        if ($('#Monty').val() >= 9) {
+        
+        
+        $("input[type='radio']").on('change', function () {
+        var selectedValue = $("input[name='Room_9']:checked").val();
+        if (selectedValue == 'D') {
+        
+        
+            guest_one_checkin_room_nine.value = value;
+            guest_two_checkin_room_nine.value = value;
+        
+        
+        }
+        
+        
+        
+        
+        else{
+        
+        
+            guest_one_checkin_room_nine.value = value;
+            guest_two_checkin_room_nine.value = null;
+        
+        }
+        
+        
+        
+        
+        
+        
+        });  // this is for room 9 radio 
+        
+        }
+        
+        
+        
+        
+        
+        
+        if ($('#Monty').val() >= 10) {
+        
+        
+        $("input[type='radio']").on('change', function () {
+        var selectedValue = $("input[name='Room_10']:checked").val();
+        if (selectedValue == 'D') {
+        
+        
+            guest_one_checkin_room_ten.value = value;
+            guest_two_checkin_room_ten.value = value;
+        
+        
+        }
+        
+        
+        
+        
+        else{
+        
+        
+            guest_one_checkin_room_ten.value = value;
+            guest_two_checkin_room_ten.value = null;
+        
+        
+        }
+        
+        
+        
+        
+        
+        
+        });  // this is for room 10 radio 
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        if ($('#Monty').val() >= 11) {
+        
+        
+        $("input[type='radio']").on('change', function () {
+        var selectedValue = $("input[name='Room_11']:checked").val();
+        if (selectedValue == 'D') {
+        
+        
+            guest_one_checkin_room_eleven.value = value;
+            guest_two_checkin_room_eleven.value = value;
+        
+        
+        }
+        
+        
+        
+        
+        else{
+        
+            guest_one_checkin_room_eleven.value = value;
+            guest_two_checkin_room_eleven.value = null;
+        
+        }
+        
+        
+        
+        
+        
+        
+        });  // this is for room 11 radio 
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        if ($('#Monty').val() >= 12) {
+        
+        
+        $("input[type='radio']").on('change', function () {
+        var selectedValue = $("input[name='Room_12']:checked").val();
+        if (selectedValue == 'D') {
+        
+        
+            guest_one_checkin_room_twelve.value = value;
+            guest_two_checkin_room_twelve.value = value;
+        
+        
+        }
+        
+        
+        
+        
+        else{
+        
+        
+            guest_one_checkin_room_twelve.value = value;
+            guest_two_checkin_room_twelve.value = null;
+        
+        }
+        
+        
+        
+        
+        
+        
+        });  // this is for room 12 radio 
+        
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        if ($('#Monty').val() >= 13) {
+        
+        
+        $("input[type='radio']").on('change', function () {
+        var selectedValue = $("input[name='Room_13']:checked").val();
+        if (selectedValue == 'D') {
+        
+        
+            guest_one_checkin_room_thirteen.value = value;
+            guest_two_checkin_room_thirteen.value = value;
+        
+        
+        }
+        
+        
+        
+        
+        else{
+        
+            guest_one_checkin_room_thirteen.value = value;
+            guest_two_checkin_room_thirteen.value = null;
+        
+        }
+        
+        
+        
+        
+        
+        
+        });  // this is for room 13 radio 
+        
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        if ($('#Monty').val() >= 14) {
+        
+        
+        $("input[type='radio']").on('change', function () {
+        var selectedValue = $("input[name='Room_14']:checked").val();
+        if (selectedValue == 'D') {
+        
+        
+            guest_one_checkin_room_fourteen.value = value;
+            guest_two_checkin_room_fourteen.value = value;
+        
+        
+        }
+        
+        
+        
+        
+        else{
+        
+            guest_one_checkin_room_fourteen.value = value;
+            guest_two_checkin_room_fourteen.value = null;
+        
+        }
+        
+        
+        
+        
+        
+        
+        });  // this is for room 14 radio 
+        
+        
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        if ($('#Monty').val() >= 15) {
+        
+        
+        $("input[type='radio']").on('change', function () {
+        var selectedValue = $("input[name='Room_15']:checked").val();
+        if (selectedValue == 'D') {
+        
+        
+            guest_one_checkin_room_fifteen.value = value;
+            guest_two_checkin_room_fifteen.value = value;
+        
+        
+        
+        }
+        
+        
+        
+        
+        else{
+        
+            guest_one_checkin_room_fifteen.value = value;
+            guest_two_checkin_room_fifteen.value = null;
+        
+        
+        }
+        
+        
+        
+        
+        
+        
+        });  // this is for room 15 radio 
+        
+        }
+        
+        
+        
+        
+        
+        
+        
+        if ($('#Monty').val() >=16) {
+        
+        
+        $("input[type='radio']").on('change', function () {
+        var selectedValue = $("input[name='Room_16']:checked").val();
+        if (selectedValue == 'D') {
+        
+        
+            guest_one_checkin_room_sixteen.value = value;
+            guest_two_checkin_room_sixteen.value = value;
+        
+        
+        
+        }
+        
+        
+        
+        
+        else{
+        
+            guest_one_checkin_room_sixteen.value = value;
+            guest_two_checkin_room_sixteen.value = null;
+        
+        }
+        
+        
+        
+        
+        
+        
+        });  // this is for room 16 radio 
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        if ($('#Monty').val() >=17) {
+        
+        
+        $("input[type='radio']").on('change', function () {
+        var selectedValue = $("input[name='Room_17']:checked").val();
+        if (selectedValue == 'D') {
+        
+        
+            guest_one_checkin_room_seventeen.value = value;
+            guest_two_checkin_room_seventeen.value = value;
+        
+        
+        
+        }
+        
+        
+        
+        
+        else{
+        
+            guest_one_checkin_room_seventeen.value = value;
+            guest_two_checkin_room_seventeen.value = null;
+        
+        
+        }
+        
+        
+        
+        
+        
+        
+        });  // this is for room 17 radio 
+        
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        if ($('#Monty').val() >=18) {
+        
+        
+        $("input[type='radio']").on('change', function () {
+        var selectedValue = $("input[name='Room_18']:checked").val();
+        if (selectedValue == 'D') {
+        
+        
+            guest_one_checkin_room_eighteen.value = value;
+            guest_two_checkin_room_eighteen.value = value;
+        
+        
+        
+        }
+        
+        
+        
+        
+        else{
+        
+            guest_one_checkin_room_eighteen.value = value;
+            guest_two_checkin_room_eighteen.value = null;
+        
+        
+        
+        }
+        
+        
+        
+        
+        
+        
+        });  // this is for room 18 radio 
+        
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        if ($('#Monty').val() >=19) {
+        
+        
+        $("input[type='radio']").on('change', function () {
+        var selectedValue = $("input[name='Room_19']:checked").val();
+        if (selectedValue == 'D') {
+        
+            guest_one_checkin_room_nineteen.value = value;
+            guest_two_checkin_room_nineteen.value = value;
+        
+        
+        
+        }
+        
+        
+        
+        
+        else{
+        
+            guest_one_checkin_room_nineteen.value = value;
+            guest_two_checkin_room_nineteen.value = null;
+        
+        
+        
+        
+        }
+        
+        
+        
+        
+        
+        
+        });  // this is for room 19 radio 
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        if ($('#Monty').val() >=20) {
+        
+        
+        $("input[type='radio']").on('change', function () {
+        var selectedValue = $("input[name='Room_20']:checked").val();
+        if (selectedValue == 'D') {
+        
+            guest_one_checkin_room_twenty.value = value;
+            guest_two_checkin_room_twenty.value = value;
+        
+        
+        
+        }
+        
+        
+        
+        
+        else{
+        
+            guest_one_checkin_room_twenty.value = value;
+            guest_two_checkin_room_twenty.value = null;
+        
+        
+        
+        
+        
+        }
+        
+        
+        
+        
+        });
+        
+        }  // this is for room 20 radio 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        });
+        });
+             
+        
+        
+        
+        
+           
+            
+        
+        </script> 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <script>
+        
+            
+        
+        
+        
+        
+        
+        
+            
+            $('#div_id_Number_OF_Guests').change(function(){
+        
+        
+        
+        
+        
+                let all_datepickers = document.getElementsByClassName('form-control datepickerinput form-control');
+        console.log(all_datepickers);
+        
+        // check-ins and check-outs room number one
+        let guest_one_checkin_room_one = (all_datepickers[0]);
+        let guest_one_checkout_room_one = (all_datepickers[1]);
+        let guest_two_checkin_room_one = (all_datepickers[2]);
+        let guest_two_checkout_room_one = (all_datepickers[3]);
+        
+        // check-ins and check-outs room number two
+        let guest_one_checkin_room_two = (all_datepickers[4]);
+        let guest_one_checkout_room_two = (all_datepickers[5]);
+        let guest_two_checkin_room_two = (all_datepickers[6]);
+        let guest_two_checkout_room_two = (all_datepickers[7]);
+        
+        
+        // check-ins and check-outs room number three
+        let guest_one_checkin_room_three = (all_datepickers[8]);
+        let guest_one_checkout_room_three = (all_datepickers[9]);
+        let guest_two_checkin_room_three = (all_datepickers[10]);
+        let guest_two_checkout_room_three = (all_datepickers[11]);
+        
+        
+        // check-ins and check-outs room number four
+        let guest_one_checkin_room_four = (all_datepickers[12]);
+        let guest_one_checkout_room_four = (all_datepickers[13]);
+        let guest_two_checkin_room_four = (all_datepickers[14]);
+        let guest_two_checkout_room_four = (all_datepickers[15]);
+        
+        
+        // check-ins and check-outs room number five
+        let guest_one_checkin_room_five = (all_datepickers[16]);
+        let guest_one_checkout_room_five = (all_datepickers[17]);
+        let guest_two_checkin_room_five = (all_datepickers[18]);
+        let guest_two_checkout_room_five = (all_datepickers[19]);
+        
+        
+        // check-ins and check-outs room number six
+        let guest_one_checkin_room_six = (all_datepickers[20]);
+        let guest_one_checkout_room_six = (all_datepickers[21]);
+        let guest_two_checkin_room_six = (all_datepickers[22]);
+        let guest_two_checkout_room_six = (all_datepickers[23]);
+        
+        
+        // check-ins and check-outs room number seven
+        let guest_one_checkin_room_seven = (all_datepickers[24]);
+        let guest_one_checkout_room_seven = (all_datepickers[25]);
+        let guest_two_checkin_room_seven = (all_datepickers[26]);
+        let guest_two_checkout_room_seven = (all_datepickers[27]);
+        
+        
+        // check-ins and check-outs room number eight
+        let guest_one_checkin_room_eight = (all_datepickers[28]);
+        let guest_one_checkout_room_eight = (all_datepickers[29]);
+        let guest_two_checkin_room_eight = (all_datepickers[30]);
+        let guest_two_checkout_room_eight = (all_datepickers[31]);
+        
+        // check-ins and check-outs room number nine
+        let guest_one_checkin_room_nine = (all_datepickers[32]);
+        let guest_one_checkout_room_nine = (all_datepickers[33]);
+        let guest_two_checkin_room_nine = (all_datepickers[34]);
+        let guest_two_checkout_room_nine = (all_datepickers[35]);
+        
+        // check-ins and check-outs room number ten
+        let guest_one_checkin_room_ten = (all_datepickers[36]);
+        let guest_one_checkout_room_ten = (all_datepickers[37]);
+        let guest_two_checkin_room_ten = (all_datepickers[38]);
+        let guest_two_checkout_room_ten = (all_datepickers[39]);
+        
+        
+        // check-ins and check-outs room number eleven
+        let guest_one_checkin_room_eleven = (all_datepickers[40]);
+        let guest_one_checkout_room_eleven = (all_datepickers[41]);
+        let guest_two_checkin_room_eleven = (all_datepickers[42]);
+        let guest_two_checkout_room_eleven = (all_datepickers[43]);
+        
+        
+        // check-ins and check-outs room number twelve
+        let guest_one_checkin_room_twelve = (all_datepickers[44]);
+        let guest_one_checkout_room_twelve = (all_datepickers[45]);
+        let guest_two_checkin_room_twelve = (all_datepickers[46]);
+        let guest_two_checkout_room_twelve = (all_datepickers[47]);
+        
+        
+        // check-ins and check-outs room number thirteen
+        let guest_one_checkin_room_thirteen = (all_datepickers[48]);
+        let guest_one_checkout_room_thirteen = (all_datepickers[49]);
+        let guest_two_checkin_room_thirteen = (all_datepickers[50]);
+        let guest_two_checkout_room_thirteen = (all_datepickers[51]);
+        
+        
+        
+        // check-ins and check-outs room number fourteen
+        let guest_one_checkin_room_fourteen = (all_datepickers[52]);
+        let guest_one_checkout_room_fourteen = (all_datepickers[53]);
+        let guest_two_checkin_room_fourteen = (all_datepickers[54]);
+        let guest_two_checkout_room_fourteen = (all_datepickers[55]);
+        
+        
+        
+        // check-ins and check-outs room number fifteen
+        let guest_one_checkin_room_fifteen = (all_datepickers[56]);
+        let guest_one_checkout_room_fifteen = (all_datepickers[57]);
+        let guest_two_checkin_room_fifteen = (all_datepickers[58]);
+        let guest_two_checkout_room_fifteen = (all_datepickers[59]);
+        
+        // check-ins and check-outs room number sixteen
+        let guest_one_checkin_room_sixteen = (all_datepickers[60]);
+        let guest_one_checkout_room_sixteen = (all_datepickers[61]);
+        let guest_two_checkin_room_sixteen = (all_datepickers[62]);
+        let guest_two_checkout_room_sixteen = (all_datepickers[63]);
+        
+        
+        // check-ins and check-outs room number seventeen
+        let guest_one_checkin_room_seventeen = (all_datepickers[64]);
+        let guest_one_checkout_room_seventeen = (all_datepickers[65]);
+        let guest_two_checkin_room_seventeen = (all_datepickers[66]);
+        let guest_two_checkout_room_seventeen = (all_datepickers[67]);
+        
+        
+        // check-ins and check-outs room number eighteen
+        let guest_one_checkin_room_eighteen = (all_datepickers[68]);
+        let guest_one_checkout_room_eighteen = (all_datepickers[69]);
+        let guest_two_checkin_room_eighteen = (all_datepickers[70]);
+        let guest_two_checkout_room_eighteen = (all_datepickers[71]);
+        
+        
+        
+        // check-ins and check-outs room number nineteen
+        let guest_one_checkin_room_nineteen = (all_datepickers[72]);
+        let guest_one_checkout_room_nineteen = (all_datepickers[73]);
+        let guest_two_checkin_room_nineteen = (all_datepickers[74]);
+        let guest_two_checkout_room_nineteen = (all_datepickers[75]);
+        
+        
+        // check-ins and check-outs room number twenty
+        let guest_one_checkin_room_twenty = (all_datepickers[76]);
+        let guest_one_checkout_room_twenty = (all_datepickers[77]);
+        let guest_two_checkin_room_twenty = (all_datepickers[78]);
+        let guest_two_checkout_room_twenty = (all_datepickers[79]);
+        
+        
+        
+        
+        
+            guest_one_checkout_room_one.addEventListener("blur", (e) =>{
+            let value = e.target.value;
+            console.log(value);    
+            
+            
+                //11111111111111111111
+            if ($('#Monty').val() == 1) {
+            
+            
+            
+            $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_1']:checked").val();
+            if (selectedValue == 'D') {
+            
+            guest_two_checkout_room_one.value = value;
+            
+            
+            }
+            
+            
+            
+            else{
+                guest_two_checkout_room_one.value = null;
+                
+            }
+            
+            });  // this is for room 1 radio 
+        }
+            
+            
+                // 222222222222222222222222222222222222222222222222222
+                
+                
+                    if ($('#Monty').val() >= 2) {
+            
+            
+                    $("input[type='radio']").on('change', function () {
+                    var selectedValue = $("input[name='Room_2']:checked").val();
+                    if (selectedValue == 'D') {
+            
+            
+                    guest_one_checkout_room_two.value = value;
+                    guest_two_checkout_room_two.value = value;
+            
+            
+                    }
+            
+            
+                 
+            
+                    else{
+            
+                    guest_one_checkout_room_two.value = value;
+                    guest_two_checkout_room_two.value = null;
+                   
+                }
+            
+            
+            
+            
+            
+                    });  // this is for room 2 radio 
+            
+            
+                }
+            
+            
+            
+            
+            
+            
+            
+                    
+                // 33333333333333
+                
+                
+                if ($('#Monty').val() >= 3) {
+            
+            
+            $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_3']:checked").val();
+            if (selectedValue == 'D') {
+            
+            
+                guest_one_checkout_room_three.value = value;
+            
+                guest_two_checkout_room_three.value = value;
+            
+            
+            }
+            
+            
+            
+            
+            else{
+            
+                guest_one_checkout_room_three.value = value;
+            
+                guest_two_checkout_room_three.value = null;
+            
+            }
+            
+            
+            
+            
+            
+            });  // this is for room 3 radio 
+            
+            
+            
+        }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                 
+                // 44444444444
+                
+                
+                if ($('#Monty').val() >= 4) {
+            
+            
+            $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_4']:checked").val();
+            if (selectedValue == 'D') {
+            
+            
+                guest_one_checkout_room_four.value = value;
+            
+                guest_two_checkout_room_four.value = value;
+            
+            
+            }
+            
+            
+            
+            
+            else{
+            
+                guest_one_checkout_room_four.value = value;
+            
+                guest_two_checkout_room_four.value = null;
+            
+            }
+            
+            
+            
+            
+            
+            });  // this is for room 4 radio 
+            
+        } 
+            
+            
+            
+            
+            
+            
+                //555555555
+                
+                
+                if ($('#Monty').val() >= 5) {
+            
+            
+            $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_5']:checked").val();
+            if (selectedValue == 'D') {
+            
+            
+                guest_one_checkout_room_five.value = value;
+                guest_two_checkout_room_five.value = value;
+            
+            
+            }
+            
+            
+            
+            
+            else{
+            
+                guest_one_checkout_room_five.value = value;
+                guest_two_checkout_room_five.value = null;
+            
+            }
+            
+            
+            
+            
+            
+            });  // this is for room 5 radio 
+            
+        }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                //666666666
+                
+                
+                if ($('#Monty').val() >= 6) {
+            
+            
+            $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_6']:checked").val();
+            if (selectedValue == 'D') {
+            
+            
+                guest_one_checkout_room_six.value = value;
+                guest_two_checkout_room_six.value = value;
+            
+            
+            }
+            
+            
+            
+            
+            else{
+            
+            
+                guest_one_checkout_room_six.value = value;
+                guest_two_checkout_room_six.value = null;
+            
+            }
+            
+            
+            
+            
+            
+            
+            });  // this is for room 6 radio 
+            
+        }
+            
+            
+            
+                //7777777777
+                
+                
+                if ($('#Monty').val() >= 7) {
+            
+            
+            $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_7']:checked").val();
+            if (selectedValue == 'D') {
+            
+            
+                guest_one_checkout_room_seven.value = value;
+                guest_two_checkout_room_seven.value = value;
+            
+            
+            }
+            
+            
+            
+            
+            else{
+            
+            
+                guest_one_checkout_room_seven.value = value;
+                guest_two_checkout_room_seven.value = null;
+            
+            }
+            
+            
+            
+            
+            
+            
+            });  // this is for room 7 radio 
+            
+        }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+            if ($('#Monty').val() >= 8) {
+            
+            
+            $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_8']:checked").val();
+            if (selectedValue == 'D') {
+            
+            
+                guest_one_checkout_room_eight.value = value;
+                guest_two_checkout_room_eight.value = value;
+            
+            
+            }
+            
+            
+            
+            
+            else{
+            
+            
+                guest_one_checkout_room_eight.value = value;
+                guest_two_checkout_room_eight.value = null;
+            
+            }
+            
+            
+            
+            
+            
+            
+            });  // this is for room 8 radio 
+            
+            
+        }
+            
+            
+            
+            if ($('#Monty').val() >= 9) {
+            
+            
+            $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_9']:checked").val();
+            if (selectedValue == 'D') {
+            
+            
+                guest_one_checkout_room_nine.value = value;
+                guest_two_checkout_room_nine.value = value;
+            
+            
+            }
+            
+            
+            
+            
+            else{
+            
+            
+                guest_one_checkout_room_nine.value = value;
+                guest_two_checkout_room_nine.value = null;
+            
+            }
+            
+            
+            
+            
+            
+            
+            });  // this is for room 9 radio 
+            
+        } 
+            
+            
+            
+            
+            
+            
+            if ($('#Monty').val() >= 10) {
+            
+            
+            $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_10']:checked").val();
+            if (selectedValue == 'D') {
+            
+            
+                guest_one_checkout_room_ten.value = value;
+                guest_two_checkout_room_ten.value = value;
+            
+            
+            }
+            
+            
+            
+            
+            else{
+            
+            
+                guest_one_checkout_room_ten.value = value;
+                guest_two_checkout_room_ten.value = null;
+            
+            
+            }
+            
+            
+            
+            
+            
+            
+            });  // this is for room 10 radio 
+            
+            
+        }
+            
+            
+            
+            
+            
+            
+            if ($('#Monty').val() >= 11) {
+            
+            
+            $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_11']:checked").val();
+            if (selectedValue == 'D') {
+            
+            
+                guest_one_checkout_room_eleven.value = value;
+                guest_two_checkout_room_eleven.value = value;
+            
+            
+            }
+            
+            
+            
+            
+            else{
+            
+                guest_one_checkout_room_eleven.value = value;
+                guest_two_checkout_room_eleven.value = null;
+            
+            }
+            
+            
+            
+            
+            
+            
+            });  // this is for room 11 radio 
+        }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            if ($('#Monty').val() >= 12) {
+            
+            
+            $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_12']:checked").val();
+            if (selectedValue == 'D') {
+            
+            
+                guest_one_checkout_room_twelve.value = value;
+                guest_two_checkout_room_twelve.value = value;
+            
+            
+            }
+            
+            
+            
+            
+            else{
+            
+            
+                guest_one_checkout_room_twelve.value = value;
+                guest_two_checkout_room_twelve.value = null;
+            
+            }
+            
+            
+            
+            
+            
+            
+            });  // this is for room 12 radio 
+        }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            if ($('#Monty').val() >= 13) {
+            
+            
+            $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_13']:checked").val();
+            if (selectedValue == 'D') {
+            
+            
+                guest_one_checkout_room_thirteen.value = value;
+                guest_two_checkout_room_thirteen.value = value;
+            
+            
+            }
+            
+            
+            
+            
+            else{
+            
+                guest_one_checkout_room_thirteen.value = value;
+                guest_two_checkout_room_thirteen.value = null;
+            
+            }
+            
+            
+            
+            
+            
+            
+            });  // this is for room 13 radio 
+        }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            if ($('#Monty').val() >= 14) {
+            
+            
+            $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_14']:checked").val();
+            if (selectedValue == 'D') {
+            
+            
+                guest_one_checkout_room_fourteen.value = value;
+                guest_two_checkout_room_fourteen.value = value;
+            
+            
+            }
+            
+            
+            
+            
+            else{
+            
+                guest_one_checkout_room_fourteen.value = value;
+                guest_two_checkout_room_fourteen.value = null;
+            
+            }
+            
+            
+            
+            
+            
+            
+            });  // this is for room 14 radio 
+            
+        }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            if ($('#Monty').val() >= 15) {
+            
+            
+            $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_15']:checked").val();
+            if (selectedValue == 'D') {
+            
+            
+                guest_one_checkout_room_fifteen.value = value;
+                guest_two_checkout_room_fifteen.value = value;
+            
+            
+            
+            }
+            
+            
+            
+            
+            else{
+            
+                guest_one_checkout_room_fifteen.value = value;
+                guest_two_checkout_room_fifteen.value = null;
+            
+            
+            }
+            
+            
+            
+            
+            
+            
+            });  // this is for room 15 radio 
+            
+        }
+            
+            
+            
+            
+            
+            
+            
+            if ($('#Monty').val() >=16) {
+            
+            
+            $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_16']:checked").val();
+            if (selectedValue == 'D') {
+            
+            
+                guest_one_checkout_room_sixteen.value = value;
+                guest_two_checkout_room_sixteen.value = value;
+            
+            
+            
+            }
+            
+            
+            
+            
+            else{
+            
+                guest_one_checkout_room_sixteen.value = value;
+                guest_two_checkout_room_sixteen.value = null;
+            
+            }
+            
+            
+            
+            
+            
+            
+            });  // this is for room 16 radio 
+            
+        }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            if ($('#Monty').val() >=17) {
+            
+            
+            $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_17']:checked").val();
+            if (selectedValue == 'D') {
+            
+            
+                guest_one_checkout_room_seventeen.value = value;
+                guest_two_checkout_room_seventeen.value = value;
+            
+            
+            
+            }
+            
+            
+            
+            
+            else{
+            
+                guest_one_checkout_room_seventeen.value = value;
+                guest_two_checkout_room_seventeen.value = null;
+            
+            
+            }
+            
+            
+            
+            
+            
+            
+            });  // this is for room 17 radio 
+            
+            
+            
+        }
+            
+            
+            
+            
+            
+            
+            
+            
+            if ($('#Monty').val() >=18) {
+            
+            
+            $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_18']:checked").val();
+            if (selectedValue == 'D') {
+            
+            
+                guest_one_checkout_room_eighteen.value = value;
+                guest_two_checkout_room_eighteen.value = value;
+            
+            
+            
+            }
+            
+            
+            
+            
+            else{
+            
+                guest_one_checkout_room_eighteen.value = value;
+                guest_two_checkout_room_eighteen.value = null;
+            
+            
+            
+            }
+            
+            
+            
+            
+            
+            
+            });  // this is for room 18 radio 
+            
+            
+        }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            if ($('#Monty').val() >=19) {
+            
+            
+            $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_19']:checked").val();
+            if (selectedValue == 'D') {
+            
+                guest_one_checkout_room_nineteen.value = value;
+                guest_two_checkout_room_nineteen.value = value;
+            
+            
+            
+            }
+            
+            
+            
+            
+            else{
+            
+                guest_one_checkout_room_nineteen.value = value;
+                guest_two_checkout_room_nineteen.value = null;
+            
+            
+            
+            
+            }
+            
+            
+            
+            
+            
+            
+            });  // this is for room 19 radio 
+            
+        } 
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            if ($('#Monty').val() >=20) {
+            
+            
+            $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_20']:checked").val();
+            if (selectedValue == 'D') {
+            
+                guest_one_checkout_room_twenty.value = value;
+                guest_two_checkout_room_twenty.value = value;
+            
+            
+            
+            }
+            
+            
+            
+            
+            else{
+            
+                guest_one_checkout_room_twenty.value = value;
+                guest_two_checkout_room_twenty.value = null;
+            
+            
+            
+            
+            
+            }
+            
+            
+            
+            
+            
+            
+            });  // this is for room 20 radio 
+            
+            
+        }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        });
+        });
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+        </script>
+

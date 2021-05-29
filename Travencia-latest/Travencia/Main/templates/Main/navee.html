@@ -1,0 +1,106 @@
+ {% load static %}
+ {% load cart_template_tags %}
+
+ {% load activeurl %}
+
+ <style>
+#BookFA:hover{
+  color:green !important;
+}
+
+ </style>
+ {% comment%}
+ <link rel="icon" href="{% static 'Main/img/konifav.jpg' %}" type="image/x-icon"/>  
+ {% endcomment %}
+ {% activeurl %}
+ 
+   <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+
+       <!-- Brand -->
+       <a class="navbar-brand waves-effect" href="/"  >
+         <strong id="koni" class="blue-text">Travencia</strong>
+       </a>
+ 
+       <!-- Collapse -->
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+ 
+       <!-- Links -->
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     
+         <!-- Left -->
+         <ul class="navbar-nav mr-auto">
+           <li id="ITN" class="nav-item  waves-effect">
+            
+             <a  class="nav-link waves-effect " href="/" >Home
+            </a>
+           </li>
+           <li id="ITN" class="nav-item">
+            
+             <a class="nav-link waves-effect" href="/about/"  >About Us </a>
+           </li>
+           <li id="ITN" class="nav-item">
+             <a class="nav-link waves-effect " href="/book/" >Book</a>
+           </li>
+               <li id="ITN" class="nav-item">
+             <a class="nav-link waves-effect " href="/Contact/" >Contact Us</a>
+           </li>
+           <li id="ITN" class="nav-item">
+             <a class="nav-link waves-effect " href="/NewsLetter/" >Newsletters</a>
+           </li>
+             <li id="ITN" class="nav-item">
+             <a class="nav-link waves-effect " href="/Mission/" >Mission</a>
+           </li>
+            <li id="ITN" class="nav-item">
+             <a class="nav-link waves-effect " href="/FAQ/" >FAQ</a>
+           </li>
+         </ul-->
+         
+ 
+         <!-- Right -->
+
+         <ul class="navbar-nav nav-flex-icons" style="margin-left: 350px;">
+     
+                 
+           {% if request.user.is_authenticated %}
+          <li class="nav-item">
+          <a href="{% url 'Main:order-summary' %}" class="nav-link waves-effect">
+            <span style="color:red; margin-top:5px" class="badge red z-depth-2 mr-1"> {{ request.user|cart_item_count }} </span>
+          <i style="color:red; margin-top:5px" class="fas fa-hotel"></i>
+            <span id="BookFA" style="color:red;" class="clearfix d-none d-sm-inline-block"> Book </span>
+            </a>
+            </li>
+          
+           <li class="nav-item">
+             <a href="{% url 'account_logout' %}" class="nav-link" >
+             Logout
+   
+             </a>
+           </li>
+         
+           {% else %}
+           <li class="nav-item">
+             <a href="{% url 'account_login' %}" class="nav-link" >
+            Login
+             </a>
+           </li>
+           
+           <li class="nav-item">
+             <a href="{% url 'account_signup' %}" class="nav-link" >
+               Signup  
+             </a>
+           </li>
+ 
+         {% endif %}
+          
+         </ul>
+ 
+       </div>
+ 
+     </div>
+   </nav>
+ 
+ 
+   {% endactiveurl %}

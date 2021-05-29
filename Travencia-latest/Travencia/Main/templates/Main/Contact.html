@@ -1,0 +1,177 @@
+{% extends 'Main/Base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travencia | Contact Us</title>
+</head>
+<body style="background-color: rgb(22,22,22);">
+  
+  <style>
+
+    input::placeholder{
+      color: black !important;
+
+    }
+    textarea::placeholder{
+      color: black !important;
+
+    }
+
+
+
+
+
+
+  </style>
+
+
+
+  <br>
+  <br>
+
+<div class="container" style="color: white !important;">
+  <h1 style="color: rgb(0, 131, 144); text-align:center !important; font-weight:700 !important; font-family: 'Archivo Black', arial, sans-serif;">Contact Us</h1>
+<br>
+<br>
+ 
+
+ 
+<div class="row">
+
+
+
+  
+ 
+
+
+
+
+
+
+
+  <div class="col-md-6">  
+
+   <form style="height: 100%; width: 100%;" method="POST" style="color: white !important;" autocomplete="off">{% csrf_token %}
+       {{form|crispy}}
+   
+     <button style="border-radius: 6px; background-color:rgb(0, 131, 144) !important;" type="submit" class="btn btn-primary btn-block "> Submit</button>
+    
+   </form>
+  
+  </div>
+
+<div class="col-md-6">  
+<img style="height:420px !important; width: 100% !important;"  src="{% static 'Main/img/contact.jpeg'%}" class="img-fluid" alt="">
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br>
+
+<div class="row">
+
+<div class="col-md-12">
+
+
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.135872606215!2d-80.21467988497898!3d25.766075283634724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b6f30a1f3d19%3A0x5d59bca4b8c9556b!2s1065%20SW%208th%20St%20%231189%2C%20Miami%2C%20FL%2033130%2C%20USA!5e0!3m2!1sen!2seg!4v1617195734916!5m2!1sen!2seg" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  
+
+ 
+
+  </div>
+  </div>
+
+
+
+
+
+  {% include 'Main/footer2.html'%}
+
+
+
+
+<br>
+<br>
+<br>
+
+  <script>
+  
+  $('document').ready(function(){
+
+
+    $('.requiredField').css('color', 'black');
+
+    $('.form-control').css('background-color', 'white');
+    $('.form-control').css('color', 'black');
+
+    $('.requiredField').css('color', 'black');
+
+    });
+
+    $('document').ready(function(){ 
+    $('#mit').css('background-color', 'black');
+    $('.Subscribe').hide();
+    $('.footer-text').hide();
+    $('.subscribe-form').hide();
+
+    
+    });
+  </script>
+
+
+
+
+
+
+<script>
+    $('document').ready(function(){ 
+
+      $('.Subscribe').hide();
+      $('.footer-text').hide();
+      $('.subscribe-form').hide();
+  
+    
+    });
+
+</script>
+
+</div>
+
+</body>
+</html>
+
+{% endblock content %}
+
+
+
+
+

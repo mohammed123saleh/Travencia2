@@ -1,0 +1,109 @@
+{% load static %}
+{% load cart_template_tags %}
+
+{% load activeurl %}
+
+<style>
+#BookFA:hover{
+ color:green !important;
+}
+
+#monty ul{
+
+ margin:2px 2px 2px 2px !important;
+
+}
+#ITN ul{
+ margin:2px 2px 2px 2px !important;
+}
+
+#bur a{
+ color: white !important;
+}
+
+
+</style>
+
+<link rel="icon" href="{% static 'Main/img/icon.jpg' %}" type="image/x-icon"/>  
+
+{% activeurl %}
+
+  <nav id="monty" class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar" style="background-color: rgb(61, 61, 61) !important;  ">
+
+      <!-- Brand -->
+      <a class="navbar-brand waves-effect" href="/"  id="ITN2" style="color:white; font-size:16px" >
+        <strong id="koni" style="color: black !important;" class="blue-text"></strong>
+        <img style="height: 60px; max-width:100px; margin-top: 0px !important; margin-bottom: 0px; " src="{% static 'Main/img/TravenciaNewLogo.jpg'%}" alt="">
+        
+      </a>
+
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li id="ITN" class="nav-item  waves-effect">
+           
+            <a   style="color: white !important; margin-right:10pxpx !important;  margin-left:10pxpx !important;" class="nav-link waves-effect " href="/" >Home
+           </a>
+          </li>
+          <li id="ITN"  style="color: white !important;" class="nav-item">
+           
+            <a class="nav-link waves-effect" href="/about/"   style="color: white !important; margin-right:10pxpx !important;  margin-left:10pxpx !important;" >About Us </a>
+          </li>
+          <li id="ITN" class="nav-item">
+            <a class="nav-link waves-effect " href="/BookList/"  style="color: white !important; margin-right:10pxpx !important;  margin-left:10pxpx !important;">Book</a>
+          </li>
+              <li id="ITN" class="nav-item">
+            <a class="nav-link waves-effect " href="/Contact/"   style="color: white !important; margin-right:10pxpx !important;  margin-left:10pxpx !important;">Contact Us</a>
+          </li>
+        
+      
+           <li id="ITN" class="nav-item">
+            <a class="nav-link waves-effect " href="/Terms&Conditions/"  style="color: white !important; margin-right:10pxpx !important;  margin-left:10pxpx !important;" > Terms and Conditons </a>
+          </li>
+        </ul-->
+        
+
+        <!-- Right -->
+
+
+
+        <ul class="navbar-nav nav-flex-icons" style="margin-top: 7px !important; padding-left:200px; ">
+    
+                
+        <li class="nav-item">
+          <a href="">
+          <i  style="color:white; font-size: 20px;" class="fab fa-facebook-square"></i>
+        </a>
+        </li>
+        
+        <li class="nav-item">
+          <a href="">
+            <i style="color:white !important;font-size: 20px; padding-left:10px;" class="fab fa-twitter-square"></i>
+   
+        </a>
+        </li>
+        
+
+ <li class="nav-item">
+   <a href="">
+    <i style="color:white !important;font-size: 20px; padding-left:10px;"    class="fab fa-instagram"></i>
+   </a>
+ </li>
+         
+        </ul>
+     
+      </div>
+
+    </div>
+  </nav>
+
+
+  {% endactiveurl %}

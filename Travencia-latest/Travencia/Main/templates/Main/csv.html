@@ -1,0 +1,148 @@
+{% extends 'Main/Base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV</title>
+</head>
+<body >
+
+<style>
+
+*{
+    font-family: 'Roboto', sans-serif !important;
+}
+
+
+    .table td, .table th {
+    padding: 3px !important;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    text-align: center !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    text-transform: capitalize !important;
+    width: min-content !important;
+    font-size: 16px !important;
+   
+}
+
+
+</style>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container" >
+        <h2>CSV Data </h2>
+        <br>
+        <div class="container" style="border: black solid 1px;" >
+        <div class="form-group">
+
+     
+
+            <form method="POST" enctype="multipart/form-data" > {%csrf_token%}
+
+                {{form}}
+                <button type="submit" class="btn btn-primary" > submit</button>
+            </form>
+
+            <br>
+            <br>
+        
+
+    
+
+        </div>
+</div>
+<br>
+    <h2>CSV Content Reference </h2>
+    <br>
+    <br>
+    <table class="table table-bordered table-dark" >
+  <thead style="background-color: black !important; padding:2px !important;">
+    <tr >
+        <th style="padding-top: 15px !important; padding-bottom: 15px !important;" scope="col">title</th>
+        <th  style="padding-top: 15px !important; padding-bottom: 15px !important;"  scope="col">convention</th>
+        <th  style="padding-top: 15px !important; padding-bottom: 15px !important;"  scope="col">price</th>
+        <th  style="padding-top: 15px !important; padding-bottom: 15px !important;"  scope="col">address</th>
+        <th  style="padding-top: 15px !important; padding-bottom: 15px !important;"  scope="col">start_date</th>
+        <th  style="padding-top: 15px !important; padding-bottom: 15px !important;"  scope="col">end_date</th>
+
+        <th  style="padding-top: 15px !important; padding-bottom: 15px !important;"  scope="col" >convention_address</th>
+       <th  style="padding-top: 15px !important; padding-bottom: 15px !important;"  scope="col" >Promo Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row" >Title1</th>
+      <td>convention 1</td>
+      <td>Price 1</td>
+      <td>address 1</td>
+      <td>5/7/2021</td>
+      <td>5/10/2021</td>
+      <td>Avenue 99</td>
+      <td style="font-size: 12px !important;">H95ME4 <br> (repeat promo code <br> for all hotels)</td>
+    </tr>
+    <tr>
+      <th scope="row">Title 2</th>
+      <td>convention 1</td>
+      <td>Price 2</td>
+      <td>address 2</td>
+      
+      
+    </tr>
+    <tr>
+      <th scope="row">Title 3</th>
+      <td>convention 1</td>
+      <td>Price 3</td>
+      <td>address 3</td>
+      
+    </tr>
+
+    
+
+  </tbody>
+</table>
+
+</div>
+<br>
+<br>
+<div class="container">
+<h2>Rules:</h2>
+
+
+<ul class="list-group">
+    <li class="list-group-item" style="background-color:  orange !important;">CSV files only allowed</li>
+  
+    
+    <li class="list-group-item list-group-item-primary">In case an error has occurred, make sure to go to CSV app, in the admin page and delete the last file that caused the error</li>
+    <li class="list-group-item list-group-item-secondary">Errors should not happen at all, although it could happen for two reasons, related to the price fields. The two reasons for Price errors are mentioned below: </li>
+    <li class="list-group-item list-group-item-success">Price-error one: you entered a non number inside this field, make sure the price fields have  numbers only</li>
+    <li class="list-group-item list-group-item-danger">Price-error Two: this error could happen if you aligned the numbers to the right or to the center. If you aligned the number to the right or to the center, you will get an error. </li>
+    <li class="list-group-item list-group-item-warning">Click <a href="https://www.youtube.com/watch?v=aPurQSRbSVQ" target="_blank
+      ">here</a> to watch a video for the errors and how to avoid them</li>
+
+  </ul>
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>
+
+
+
+{% endblock %}

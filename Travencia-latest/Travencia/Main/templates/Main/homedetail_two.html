@@ -1,0 +1,5600 @@
+{% extends "Main/Base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{{ form.media }}
+{% bootstrap_javascript jquery='full' %}
+
+{% block extrahead %}
+{{ form.media }}     
+{% endblock %}
+{% load crispy_forms_tags %}
+
+
+
+
+{% block content %}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ItmeDetail.title}}</title>
+    
+<script src="{% static 'Main/javascript/jquery.js' %}"></script> 
+<script src="{% static 'Main/javascript/jquery-ui.min.js' %}"></script> 
+
+
+</head>
+
+
+
+
+
+
+
+<style>
+    .container{
+        width: 80% !important;
+    }
+
+    @media only screen and (max-width: 600px)  {
+        
+        .container{
+        width: 90% !important;
+    }
+    }
+
+
+
+    .ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl{
+       
+        font-size: 12px !important;
+        text-align: left !important;
+        
+        /*border: black solid 1px !important;*/
+        border-radius: 10px 10px 10px 10px !important;
+        width: 230px;
+   
+        background-color: white !important;
+        z-index: 900000 !important;
+       
+        opacity: 1 !important;
+       
+    }
+
+    .ui-helper-hidden-accessible{
+        
+        z-index: 900000 !important;
+        background-color: white !important;
+    }
+
+    .tooltip.show {
+     
+        z-index: 1000 !important;
+        background-color: white !important;
+        }
+
+        .ui-tooltip, .ui-corner-all, .ui-widget-shadow, .ui-widget, .ui-widget-content{
+        background-color: white !important;
+        z-index: 900000 !important;
+       
+        opacity: 1 !important;
+
+    }
+
+</style>
+
+
+
+
+
+
+
+
+
+
+<body>
+    
+
+
+
+
+{% if ItmeDetail.show == False  %}
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+ <div class="container" style="text-align: center; background-color: #333; color: white; padding: 30px; border-radius:10px;  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
+     <h2 style="font-weight: bold;">Sorry This offer is not available Now <i style="color: #ffffff;" class="far fa-sad-tear"></i></h2>
+     <h4>  
+     For availability please contact us at <a href="mailto:reservations@travencia.com">reservations@travencia.com</a></h4>
+
+        <p>  we reply within 24 hours maxmium!  </p> 
+    </div>
+{% endif %}
+
+{% if ItmeDetail.show %}
+  
+
+<br>
+<br>
+<br>
+<br>
+
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{{ form.media }}
+<link href="{% static 'Main/css/bootstrap.min.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/mdb.min.css' %}" rel="stylesheet">
+<link href="{% static 'Main/css/style.min.css' %}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+$( function() {
+  $( document ).tooltip();
+} );
+</script>
+  <title>Travencia | {{ItmeDetail.title}}</title>
+
+   
+
+
+
+
+    <div class="container" style="background-color:rgb(0, 0, 0, 0.6) ; border-radius: 50px 80px 30px 20px !important;  color: white; padding: 30px;">
+  
+        <br>
+        <br>
+      
+      
+       
+        <style>
+         *{
+             font-weight: 600 !important;
+         }
+
+     
+            img{
+                -o-object-fit: contain;
+                object-fit: contain;
+            }  
+          
+
+    body {
+          background-color:black;
+          background-position-x: center !important;
+          background-position-y: center !important;
+          background-size:cover;
+          background-position: center;
+          background-image: url("{{ ItmeDetail.image.url }}");
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          /*-o-object-fit: contain;
+          object-fit: contain;*/
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    }
+      .Texty{
+        overflow-y: scroll;
+        height: 150px;
+        width: 100%;
+        border: 1px solid #DDD;
+        padding: 10px;
+        }
+      
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+                }
+
+      </style>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+
+<div class="form-row">
+
+    <div class="form-group col-md-4 mb-0">
+    </div>
+    <div class="form-group col-md-5 mb-0">
+        
+                    <img src="{% static 'Main/img/Three.png'%}" style="width: 200px; height: 90px; " class="center" alt="">
+                    <br>
+                </div>
+
+
+                </div>
+
+<div class="form-row">
+
+
+                <div class="form-group col-md-4 mb-0">
+            </div>
+            <div class="form-group col-md-5 mb-0">
+                    <h2 class="text-center" style=" font-family: 'Roboto', sans-serif;
+                    ; font-weight: bold;">Hotel Booking Form</h2>
+                 
+                </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+<div class="form-row">
+
+
+    <div class="form-group col-md-4 mb-0">
+    </div>
+
+    
+    <div class="form-group col-md-5 mb-0">
+ 
+
+                    <h5 class="text-center" style="font-weight: bold !important;">Secure booking-only takes 2 minutes</h5>
+
+                        <hr style="background-color:rgb(255, 255, 255) !important;">            
+    
+                    </div>
+                    </div>
+
+                   
+
+<div class="form-row">
+    <div class="form-group col-md-4 mb-0">
+    </div>
+
+    <div class="form-group col-md-5 mb-0">
+
+
+
+                        <h2 class="text-center" style="font-weight: bold !important;">Authorized Contact</h2>
+                        <hr style="background-color:rgb(255, 255, 255) !important;">    
+     
+
+                    </div>
+
+                    </div>
+    <style>
+        .form-control{
+            height: calc(1.2em + .75rem + 2px) !important;
+            border-radius: .5em !important;
+            color:black !important;
+            font-family: 'Roboto', sans-serif !important;
+            font-size:14px !important;
+
+        }
+        .glyphicon{
+            
+            border-radius: 8px  8px !important;
+        }
+        *{
+            font-family: 'Roboto', sans-serif;
+     
+            letter-spacing: 1px;
+        }
+        .mates{
+            position: relative;
+            top: 4em;
+            opacity: 1;
+            z-index: 2;
+        }
+        input::placeholder {
+            font-size: 10px !important;
+            color: black !important;
+            font-weight: 400 !important;
+                        }
+
+        input[type="text"] {
+        color: black !important; 
+        font-family: 'Roboto', sans-serif !important;
+                            }
+
+    </style>    
+    <form class="mates" id="edit_form" action="" method="POST" autocomplete="on">{% csrf_token %}
+ 
+                                                                                                
+    <div class="form-row">
+
+        <div class="form-group col-md-4 mb-0" id="Parm" style="font-weight: bold;">
+            First Name<span style="font-weight: 50; color: red;">*</span>
+        </div>
+    <div class="form-group col-md-5 mb-0" id="Parm">
+        {{form.First_Name|as_crispy_field}}
+    </div>
+ 
+</div>
+<div class="form-row">
+ 
+    <div class="form-group col-md-4 mb-0" id="Parm" style="font-weight: bold;">
+        Last Name<span style="font-weight: 50; color: red;">*</span>
+    </div>
+<div class="form-group col-md-5 mb-0" id="Parm">
+    {{form.Last_Name|as_crispy_field}}
+</div>
+
+</div>
+    
+    
+<div class="form-row">
+   
+    <div class="form-group col-md-4 mb-0" id="Parm" style="font-weight: bold;">
+        Email<span style="font-weight: 50; color: red;">*</span>
+    </div>
+    
+<div class="form-group col-md-5 mb-0" id="Parm" >
+    {{form.EMail|as_crispy_field}}
+</div>
+
+</div>
+
+
+
+    <div class="form-row">
+   
+        <div class="form-group col-md-4 mb-0" id="Parm" style="font-weight: bold;">
+            Company Name<span style="font-weight: 50; color: red;">*</span>
+        </div>
+    <div class="form-group col-md-5 mb-0" id="Parm">
+        {{form.Company_Name|as_crispy_field}}
+    </div>
+    
+    </div>
+
+
+
+
+    <div class="form-row">
+    
+        <div class="form-group col-md-4 mb-0" id="Parm" style="font-weight: bold;">
+            Phone Number<span style="font-weight: 50; color: red;">*</span>
+        </div>
+    <div class="form-group col-md-5 mb-0" id="Parm"  onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" >
+        {{form.Phone_Number|as_crispy_field}}
+    </div>
+    
+    </div>
+
+
+    <div class="form-row">
+
+        <div class="form-group col-md-4 mb-0" style="font-weight: bold;">
+            Hotel Name<span style="font-weight: 50; color: red;">*</span>
+        </div>
+<div class="form-group col-md-5 mb-2">
+        
+         <h6> <span class="form-control" style="color:white !important; border-radius:  6px; background:#1B1E23 !important; text-align:center !important; font-size:14px !important; border:white solid 1px; padding-bottom:8px !important; height:auto !important;" > {{ItmeDetail.title }}  </span></h6>
+
+</div>
+
+</div>
+
+ 
+    {% if ItmeDetail.promo_code %}
+ 
+    
+    <div class="form-row">
+ 
+
+        <div class="form-group col-md-4 mb-0" style="font-weight: bold;">
+            Promo Code<span style="font-weight: 50; color: red;">*</span>
+        </div>
+        <div class="form-group col-md-5 mb-2">
+
+
+
+
+
+
+
+            <h6> <span class="form-control" style="color:white !important; border-radius:  6px; background-color:#1B1E23 !important; text-align:center !important; font-size:14px !important; border:white solid 1px; padding-bottom:8px !important;height:auto !important;" > {{ItmeDetail.promo_code|upper}}  </span></h6>
+
+
+
+
+
+    </div>
+    </div>
+   
+
+    
+        {% endif %}
+  
+      
+    {% if ItmeDetail.discount_price %}
+
+
+
+<h1 style="display: none !important;">Discount</h1>
+
+
+    {% else %}
+    
+
+
+
+    <div class="form-row">
+
+        <div class="form-group col-md-4 mb-0" style="font-weight: bold;">
+            Rate Per Night<span style="font-weight: 50; color: red;">*</span>
+        </div>
+        
+        <div class="form-group col-md-5 mb-0">
+
+
+
+     
+          
+            <h6> <span class="form-control" style="color:white !important; border-radius:  6px; background-color:#1B1E23 !important; text-align:center !important; font-size:14px !important; border:white solid 1px; padding-bottom:8px !important; height:auto !important;  " >  ${{ItmeDetail.price }}0   </span></h6>
+
+       
+       <p style="font-size: 10px !important; text-align:center !important;">Rates are quoted in US Dollar </p>  
+
+
+
+
+
+    </div>
+    </div>
+   
+
+
+       
+
+    {% endif %}
+
+
+
+</p>
+<hr style="background-color:white !important;">         
+    <h3 style="font-weight: 800 !important;">Guest Names and Room Preferences</h3>
+    
+    <hr style="background-color:white !important;">         
+    
+    
+    
+    <div class="form-group col-md-4 mb-0">
+        {{form.Number_OF_Guests|as_crispy_field}}
+    </div>
+    
+    
+
+
+
+
+    </script>
+    
+    
+    
+    
+    <h3>Room NO 1</h3>
+    <div class="form-group col-md-6 mb-0">
+        {{form.Room_1|as_crispy_field}}
+    </div>
+    <div class="form-row"> 
+    <div class="form-group col-md-6 mb-0">
+        <label for="" > First Name</label>  
+        
+
+    
+    {{form.first_name_of_guest_NO_1_R1|as_crispy_field}}   
+    </div>
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" id="G2"> Last Name:</label>  
+        {{form.last_name_of_guest_NO_1_R1|as_crispy_field}}
+    </div>
+    </div>
+    
+    <div class="form-row">
+    <div class="form-group col-md-6 mb-0">
+      
+    {{form.guest_NO_1_check_in_R1|as_crispy_field}}
+    
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+    
+        {{form.guest_NO_1_check_out_R1|as_crispy_field}}
+    </div>
+    </div>
+    
+    
+    <!-- Here is the part that will be hidden in Every Room -->
+    
+    
+    <div class="Room_1_Guest_2"> 
+    
+        <h3>2nd Guest</h3> 
+    
+        <div class="form-row">
+    
+    <div  class="form-group col-md-6 mb-0" id="DG2-R1" >
+        <label for="" > First Name:</label>  
+
+       
+    {{form.first_name_of_guest_NO_2_R1|as_crispy_field}}
+        
+
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0"  id="DG2-R1">
+        <label for="" id="G2"> Last Name:</label>  
+
+      
+        {{form.last_name_of_guest_NO_2_R1|as_crispy_field}}
+       
+    </div>
+    </div>
+    
+    <div class="form-row" style="display: none;">
+    <div class="form-group col-md-6 mb-0">
+     
+    {{form.guest_NO_2_check_in_R1|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+       
+        {{form.guest_NO_2_check_out_R1|as_crispy_field}}
+    </div>
+    <hr>
+    </div>
+    </div>
+    
+    
+    
+    
+    
+    <!-- Here we should start the Room Number Two       -->
+    
+    
+    
+   
+    <div class="Two">
+    
+    
+    
+    <h3>Room NO 2</h3>
+    <div class="form-group col-md-6 mb-0">
+    {{form.Room_2|as_crispy_field}}
+    </div>
+    <div class="form-row"> 
+    <div class="form-group col-md-6 mb-0">
+    <label for=""> First Name:</label>
+    
+    <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_1_R2|as_crispy_field}}
+    </span>
+
+</div>
+    
+    <div  class="form-group col-md-6 mb-0">
+    <label for="" > Last Name:</label>  
+    <span  title="Type TBD if Name isn't available"> 
+    {{form.last_name_of_guest_NO_1_R2|as_crispy_field}}
+    </span>
+
+    </div>
+    </div>
+    
+    <div class="form-row">
+    <div class="form-group col-md-6 mb-0">
+    
+    {{form.guest_NO_1_check_in_R2|as_crispy_field}}
+    </div>
+    
+    
+    
+    <div  class="form-group col-md-6 mb-0">
+    
+    {{form.guest_NO_1_check_out_R2|as_crispy_field}}
+    </div>
+    </div>
+    
+    
+    
+    
+    <div class="Room_2_Guest_2"> 
+    
+    <h3>2nd Guest</h3> 
+    
+    <div class="form-row">
+    
+    <div  class="form-group col-md-6 mb-0">
+    <label for=""> First Name:</label>
+    <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_2_R2|as_crispy_field}}
+    </span>
+    </div>
+    
+    
+    
+    <div  class="form-group col-md-6 mb-0">
+    <label for="" id="G2"> Last Name:</label>  
+    <span  title="Type TBD if Name isn't available"> 
+    {{form.last_name_of_guest_NO_2_R2|as_crispy_field}}
+    </span>
+    </div>
+    </div>
+    
+    <div class="form-row" style="display: none !important;">
+    <div class="form-group col-md-6 mb-0">
+    
+    {{form.guest_NO_2_check_in_R2|as_crispy_field}}
+    </div>
+    
+    
+    
+    <div  class="form-group col-md-6 mb-0">
+    
+    {{form.guest_NO_2_check_out_R2|as_crispy_field}}
+    </div>
+    <hr>
+    </div>
+    </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="Three">
+    
+    
+    
+   
+    <h3>Room NO 3</h3>
+    <div class="form-group col-md-6 mb-0">
+        {{form.Room_3|as_crispy_field}}
+    </div>
+    
+    <div class="form-row"> 
+    
+    <div class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_1_R3|as_crispy_field}}
+        </span>
+    </div>
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" > Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_1_R3|as_crispy_field}}
+        </span>
+    </div>
+    
+    </div>
+    
+    <div class="form-row"> 
+    <div  class="form-group col-md-6 mb-0">
+        
+    {{form.guest_NO_1_check_in_R3|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+    
+        {{form.guest_NO_1_check_out_R3|as_crispy_field}}
+    </div>
+    </div>
+    
+    
+    
+    
+    <!-- Here is the part that will be hidden in Every Room -->
+    
+    
+    
+    
+    
+    <div class="Room_3_Guest_2"> 
+    
+        <h3>2nd Guest</h3> 
+    
+    <div class="form-row">
+    
+               
+    
+        <div class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available">   
+        {{form.first_name_of_guest_NO_2_R3|as_crispy_field}}
+        </span>
+        </div>
+    
+        <div  class="form-group col-md-6 mb-0">
+    
+        <label for="" id="G2"> Last Name:</label>  
+        <span  title="Type TBD if Name isn't available">     
+        {{form.last_name_of_guest_NO_2_R3|as_crispy_field}}
+        </span>
+    </div>
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="form-row" style="display: none !important;">
+    <div class="form-group col-md-6 mb-0">
+     
+    {{form.guest_NO_2_check_in_R3|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+       
+        {{form.guest_NO_2_check_out_R3|as_crispy_field}}
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    
+    </div>
+    
+    
+    
+    
+    <div class="Four">
+    
+    
+    <h3>Room NO 4</h3>
+    
+    <div class="form-group col-md-6 mb-0" >
+        {{form.Room_4|as_crispy_field}}
+    </div>
+    <div class="form-row"> 
+    <div class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_1_R4|as_crispy_field}}
+        </span>
+    </div>
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" > Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_1_R4|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row">
+    <div class="form-group col-md-6 mb-0">
+      
+    {{form.guest_NO_1_check_in_R4|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+    
+        {{form.guest_NO_1_check_out_R4|as_crispy_field}}
+    </div>
+    </div>
+    
+    
+    <!-- Here is the part that will be hidden in Every Room -->
+    
+    
+    <div class="Room_4_Guest_2"> 
+    
+        <h3>2nd Guest</h3> 
+    
+        <div class="form-row">
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_2_R4|as_crispy_field}}
+        </span>
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" id="G2"> Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_2_R4|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row" style="display: none;">
+    <div class="form-group col-md-6 mb-0">
+     
+    {{form.guest_NO_2_check_in_R4|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+       
+        {{form.guest_NO_2_check_out_R4|as_crispy_field}}
+    </div>
+    <hr>
+    </div>
+    </div>
+    </div>
+    
+    
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="Five">
+    
+    
+    <h3>Room NO 5</h3>
+    
+    <div class="form-group col-md-6 mb-0">
+        {{form.Room_5|as_crispy_field}}
+    </div>
+    <div class="form-row"> 
+    <div class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_1_R5|as_crispy_field}}
+        </span>
+    </div>
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" > Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_1_R5|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row">
+    <div class="form-group col-md-6 mb-0">
+      
+    {{form.guest_NO_1_check_in_R5|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+    
+        {{form.guest_NO_1_check_out_R5|as_crispy_field}}
+    </div>
+    </div>
+    
+    
+    <!-- Here is the part that will be hidden in Every Room -->
+    
+    
+    <div class="Room_5_Guest_2"> 
+    
+        <h3>2nd Guest</h3> 
+    
+        <div class="form-row">
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label> 
+        <span  title="Type TBD if Name isn't available">  
+    {{form.first_name_of_guest_NO_2_R5|as_crispy_field}}
+        </span>
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" id="G2"> Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_2_R5|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row" style="display: none !important;">
+    <div class="form-group col-md-6 mb-0">
+     
+    {{form.guest_NO_2_check_in_R5|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+       
+        {{form.guest_NO_2_check_out_R5|as_crispy_field}}
+    </div>
+    <hr>
+    </div>
+    </div>
+    </div>
+    
+    
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!------------------------------>    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="Six">
+    
+    
+    <h3>Room NO 6</h3>
+    
+    <div class="form-group col-md-6 mb-0">
+        {{form.Room_6|as_crispy_field}}
+    </div>
+    <div class="form-row"> 
+    <div class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_1_R6|as_crispy_field}}
+        </span>
+    </div>
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" > Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_1_R6|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row">
+    <div class="form-group col-md-6 mb-0">
+      
+    {{form.guest_NO_1_check_in_R6|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+    
+        {{form.guest_NO_1_check_out_R6|as_crispy_field}}
+    </div>
+    </div>
+    
+    
+    <!-- Here is the part that will be hidden in Every Room -->
+    
+    
+    <div class="Room_6_Guest_2"> 
+    
+        <h3>2nd Guest</h3> 
+    
+        <div class="form-row">
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_2_R6|as_crispy_field}}
+        </span>
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" id="G2"> Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_2_R6|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row" style="display: none !important;">
+    <div class="form-group col-md-6 mb-0">
+     
+    {{form.guest_NO_2_check_in_R6|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+       
+        {{form.guest_NO_2_check_out_R6|as_crispy_field}}
+    </div>
+    <hr>
+    </div>
+    </div>
+    </div>
+    
+    
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-------------------->
+    
+    
+    
+    
+    
+    <div class="Seven">
+    
+    
+    <h3>Room NO 7 </h3>
+    
+    <div class="form-group col-md-6 mb-0">
+        {{form.Room_7|as_crispy_field}}
+    </div>
+    <div class="form-row"> 
+    <div class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_1_R7|as_crispy_field}}
+        </span>
+    </div>
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" > Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_1_R7|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row">
+    <div class="form-group col-md-6 mb-0">
+      
+    {{form.guest_NO_1_check_in_R7|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+    
+        {{form.guest_NO_1_check_out_R7|as_crispy_field}}
+    </div>
+    </div>
+    
+    
+    <!-- Here is the part that will be hidden in Every Room -->
+    
+    
+    <div class="Room_7_Guest_2"> 
+    
+        <h3>2nd Guest</h3> 
+    
+        <div class="form-row">
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_2_R7|as_crispy_field}}
+        </span>
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" id="G2"> Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_2_R7|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row" style="display: none !important;">
+    <div class="form-group col-md-6 mb-0">
+     
+    {{form.guest_NO_2_check_in_R7|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+       
+        {{form.guest_NO_2_check_out_R7|as_crispy_field}}
+    </div>
+    <hr>
+    </div>
+    </div>
+    </div>
+    
+    
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-------------------->
+    
+    
+    
+    <div class="Eight">
+    
+    
+    <h3>Room NO 8 </h3>
+    
+    <div class="form-group col-md-6 mb-0">
+        {{form.Room_8|as_crispy_field}}
+    </div>
+    <div class="form-row"> 
+    <div class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_1_R8|as_crispy_field}}
+        </span>
+    </div>
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" > Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_1_R8|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row">
+    <div class="form-group col-md-6 mb-0">
+      
+    {{form.guest_NO_1_check_in_R8|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+    
+        {{form.guest_NO_1_check_out_R8|as_crispy_field}}
+    </div>
+    </div>
+    
+    
+    <!-- Here is the part that will be hidden in Every Room -->
+    
+    
+    <div class="Room_8_Guest_2"> 
+    
+        <h3>2nd Guest</h3> 
+    
+        <div class="form-row">
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_2_R8|as_crispy_field}}
+        </span>
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" id="G2"> Last Name:</label>
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_2_R8|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row" style="display: none !important;">
+    <div class="form-group col-md-6 mb-0">
+     
+    {{form.guest_NO_2_check_in_R8|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+       
+        {{form.guest_NO_2_check_out_R8|as_crispy_field}}
+    </div>
+    <hr>
+    </div>
+    </div>
+    </div>
+    
+    
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <div class="Nine">
+    
+    
+    <h3>Room NO 9 </h3>
+    
+    <div class="form-group col-md-6 mb-0">
+        {{form.Room_9|as_crispy_field}}
+    </div>
+    <div class="form-row"> 
+    <div class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+            {{form.first_name_of_guest_NO_1_R9|as_crispy_field}}
+        </span>
+    </div>
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" > Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_1_R9|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row">
+    <div class="form-group col-md-6 mb-0">
+      
+    {{form.guest_NO_1_check_in_R9|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+    
+        {{form.guest_NO_1_check_out_R9|as_crispy_field}}
+    </div>
+    </div>
+    
+    
+    <!-- Here is the part that will be hidden in Every Room -->
+    
+    
+    <div class="Room_9_Guest_2"> 
+    
+        <h3>2nd Guest</h3> 
+    
+        <div class="form-row">
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_2_R9|as_crispy_field}}
+        </span>
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" id="G2"> Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_2_R9|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row" style="display: none !important;">
+    <div class="form-group col-md-6 mb-0">
+     
+    {{form.guest_NO_2_check_in_R9|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+       
+        {{form.guest_NO_2_check_out_R9|as_crispy_field}}
+    </div>
+    <hr>
+    </div>
+    </div>
+    </div>
+    
+    
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    <div class="Ten">
+    
+    
+    <h3>Room NO 10 </h3>
+    
+    <div class="form-group col-md-6 mb-0">
+        {{form.Room_10|as_crispy_field}}
+    </div>
+    <div class="form-row"> 
+    <div class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.first_name_of_guest_NO_1_R10|as_crispy_field}}
+        </span>
+    </div>
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" > Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_1_R10|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row">
+    <div class="form-group col-md-6 mb-0">
+      
+    {{form.guest_NO_1_check_in_R10|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+    
+        {{form.guest_NO_1_check_out_R10|as_crispy_field}}
+    </div>
+    </div>
+    
+    
+    <!-- Here is the part that will be hidden in Every Room -->
+    
+    
+    <div class="Room_10_Guest_2"> 
+    
+        <h3>2nd Guest</h3> 
+    
+        <div class="form-row">
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_2_R10|as_crispy_field}}
+        </span>
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" id="G2"> Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_2_R10|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row" style="display: none !important;">
+    <div class="form-group col-md-6 mb-0">
+     
+    {{form.guest_NO_2_check_in_R10|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+       
+        {{form.guest_NO_2_check_out_R10|as_crispy_field}}
+    </div>
+    <hr>
+    </div>
+    </div>
+    </div>
+    
+    
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-------------->
+    
+    
+    
+    <div class="Eleven">
+    
+    
+    <h3>Room NO 11 </h3>
+    
+    <div class="form-group col-md-6 mb-0">
+        {{form.Room_11|as_crispy_field}}
+    </div>
+    <div class="form-row"> 
+    <div class="form-group col-md-6 mb-0">
+       
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_1_R11|as_crispy_field}}
+</span>
+
+    </div>
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" > Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_1_R11|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row">
+    <div class="form-group col-md-6 mb-0">
+      
+    {{form.guest_NO_1_check_in_R11|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0" >
+    
+        {{form.guest_NO_1_check_out_R11|as_crispy_field}}
+    </div>
+    </div>
+    
+    
+    <!-- Here is the part that will be hidden in Every Room -->
+    
+    
+    <div class="Room_11_Guest_2"> 
+    
+        <h3>2nd Guest</h3> 
+    
+        <div class="form-row">
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_2_R11|as_crispy_field}}
+        </span>
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" id="G2"> Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_2_R11|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row" style="display: none !important;">
+    <div class="form-group col-md-6 mb-0">
+     
+    {{form.guest_NO_2_check_in_R11|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+       
+        {{form.guest_NO_2_check_out_R11|as_crispy_field}}
+    </div>
+    <hr>
+    </div>
+    </div>
+    </div>
+    
+    
+      
+      
+    
+    
+    
+    
+    
+    
+    <!--------------->    
+    
+    
+    
+    
+    
+    <div class="Twelve">
+    
+    
+    <h3>Room NO 12 </h3>
+    
+    <div class="form-group col-md-6 mb-0">
+        {{form.Room_12|as_crispy_field}}
+    </div>
+    <div class="form-row"> 
+    <div class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_1_R12|as_crispy_field}}
+        </span>
+    </div>
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" > Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_1_R12|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row">
+    <div class="form-group col-md-6 mb-0">
+      
+    {{form.guest_NO_1_check_in_R12|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+    
+        {{form.guest_NO_1_check_out_R12|as_crispy_field}}
+    </div>
+    </div>
+    
+    
+    <!-- Here is the part that will be hidden in Every Room -->
+    
+    
+    <div class="Room_12_Guest_2"> 
+    
+        <h3>2nd Guest</h3> 
+    
+        <div class="form-row">
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_2_R12|as_crispy_field}}
+        </span>
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" id="G2"> Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_2_R12|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row" style="display: none !important;">
+    <div class="form-group col-md-6 mb-0">
+     
+    {{form.guest_NO_2_check_in_R12|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+       
+        {{form.guest_NO_2_check_out_R12|as_crispy_field}}
+    </div>
+    <hr>
+    </div>
+    </div>
+    </div>
+    
+    
+      
+      
+    
+    
+    
+    
+    
+    <!----------------->
+    
+    
+    
+    
+    
+    
+    <div class="Thirteen">
+    
+    
+    <h3>Room NO 13 </h3>
+    
+    <div class="form-group col-md-6 mb-0">
+        {{form.Room_13|as_crispy_field}}
+    </div>
+    <div class="form-row"> 
+    <div class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_1_R13|as_crispy_field}}
+        </span>
+    </div>
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" > Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_1_R13|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row">
+    <div class="form-group col-md-6 mb-0">
+      
+    {{form.guest_NO_1_check_in_R13|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+    
+        {{form.guest_NO_1_check_out_R13|as_crispy_field}}
+    </div>
+    </div>
+    
+    
+    <!-- Here is the part that will be hidden in Every Room -->
+    
+    
+    <div class="Room_13_Guest_2"> 
+    
+        <h3>2nd Guest</h3> 
+    
+        <div class="form-row">
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label> 
+        <span  title="Type TBD if Name isn't available">  
+    {{form.first_name_of_guest_NO_2_R13|as_crispy_field}}
+        </span>
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" id="G2"> Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_2_R13|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row" style="display: none !important;">
+    <div class="form-group col-md-6 mb-0">
+     
+    {{form.guest_NO_2_check_in_R13|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+       
+        {{form.guest_NO_2_check_out_R13|as_crispy_field}}
+    </div>
+    <hr>
+    </div>
+    </div>
+    </div>
+    
+    
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="Fourteen">
+    
+    
+        <h3>Room NO 14 </h3>
+        
+        <div class="form-group col-md-6 mb-0">
+            {{form.Room_14|as_crispy_field}}
+        </div>
+        <div class="form-row"> 
+        <div class="form-group col-md-6 mb-0">
+            <label for=""> First Name:</label>  
+            <span  title="Type TBD if Name isn't available"> 
+        {{form.first_name_of_guest_NO_1_R14|as_crispy_field}}
+            </span>
+        </div>
+        
+        <div  class="form-group col-md-6 mb-0">
+            <label for="" > Last Name:</label>  
+            <span  title="Type TBD if Name isn't available"> 
+            {{form.last_name_of_guest_NO_1_R14|as_crispy_field}}
+            </span>
+        </div>
+        </div>
+        
+        <div class="form-row">
+        <div class="form-group col-md-6 mb-0">
+          
+        {{form.guest_NO_1_check_in_R14|as_crispy_field}}
+        </div>
+        
+          
+        
+        <div  class="form-group col-md-6 mb-0">
+        
+            {{form.guest_NO_1_check_out_R14|as_crispy_field}}
+        </div>
+        </div>
+        
+        
+        <!-- Here is the part that will be hidden in Every Room -->
+        
+        
+        <div class="Room_14_Guest_2"> 
+        
+            <h3>2nd Guest</h3> 
+        
+            <div class="form-row">
+        
+        <div  class="form-group col-md-6 mb-0">
+            <label for=""> First Name:</label>
+            <span  title="Type TBD if Name isn't available">   
+        {{form.first_name_of_guest_NO_2_R14|as_crispy_field}}
+            </span>
+        </div>
+        
+          
+        
+        <div  class="form-group col-md-6 mb-0">
+            <label for="" id="G2"> Last Name:</label>  
+            <span  title="Type TBD if Name isn't available"> 
+            {{form.last_name_of_guest_NO_2_R14|as_crispy_field}}
+            </span>
+        </div>
+        </div>
+
+        <div class="form-row" style="display: none !important;">
+        <div class="form-group col-md-6 mb-0">
+         
+        {{form.guest_NO_2_check_in_R14|as_crispy_field}}
+        </div>
+        
+          
+        
+        <div  class="form-group col-md-6 mb-0">
+           
+            {{form.guest_NO_2_check_out_R14|as_crispy_field}}
+        </div>
+        <hr>
+        </div>
+        </div>
+        </div>
+        
+        
+          
+          
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="Fifteen">
+    
+    
+    <h3>Room NO 15 </h3>
+    
+    <div class="form-group col-md-6 mb-0">
+        {{form.Room_15|as_crispy_field}}
+    </div>
+    <div class="form-row"> 
+    <div class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_1_R15|as_crispy_field}}
+        </span>
+    </div>
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" > Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_1_R15|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row">
+    <div class="form-group col-md-6 mb-0">
+      
+    {{form.guest_NO_1_check_in_R15|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+    
+        {{form.guest_NO_1_check_out_R15|as_crispy_field}}
+    </div>
+    </div>
+    
+    
+    <!-- Here is the part that will be hidden in Every Room -->
+    
+    
+    <div class="Room_15_Guest_2"> 
+    
+        <h3>2nd Guest</h3> 
+    
+        <div class="form-row">
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_2_R15|as_crispy_field}}
+        </span>
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" id="G2"> Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_2_R15|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+  <div class="form-row" style="display: none !important;">
+    <div class="form-group col-md-6 mb-0">
+     
+    {{form.guest_NO_2_check_in_R15|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+       
+        {{form.guest_NO_2_check_out_R15|as_crispy_field}}
+    </div>
+    <hr>
+    </div>
+    </div>
+    </div>
+    
+    
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="Sixteen">
+    
+    
+    <h3>Room NO 16 </h3>
+    
+    <div class="form-group col-md-6 mb-0">
+        {{form.Room_16|as_crispy_field}}
+    </div>
+    <div class="form-row"> 
+    <div class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_1_R16|as_crispy_field}}
+        </span>
+    </div>
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" > Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_1_R16|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row">
+    <div class="form-group col-md-6 mb-0">
+      
+    {{form.guest_NO_1_check_in_R16|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+    
+        {{form.guest_NO_1_check_out_R16|as_crispy_field}}
+    </div>
+    </div>
+    
+    
+    <!-- Here is the part that will be hidden in Every Room -->
+    
+    
+    <div class="Room_16_Guest_2"> 
+    
+        <h3>2nd Guest</h3> 
+    
+        <div class="form-row">
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_2_R16|as_crispy_field}}
+        </span>
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" id="G2"> Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_2_R16|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row" style="display: none !important;">
+    <div class="form-group col-md-6 mb-0">
+     
+    {{form.guest_NO_2_check_in_R16|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+       
+        {{form.guest_NO_2_check_out_R16|as_crispy_field}}
+    </div>
+    <hr>
+    </div>
+    </div>
+    </div>
+    
+    
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="Seventeen">
+    
+    
+    <h3>Room NO 17 </h3>
+    
+    <div class="form-group col-md-6 mb-0">
+        {{form.Room_17|as_crispy_field}}
+    </div>
+    <div class="form-row"> 
+    <div class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_1_R17|as_crispy_field}}
+        </span>
+    </div>
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" > Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_1_R17|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row">
+    <div class="form-group col-md-6 mb-0">
+      
+    {{form.guest_NO_1_check_in_R17|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+    
+        {{form.guest_NO_1_check_out_R17|as_crispy_field}}
+    </div>
+    </div>
+    
+    
+    <!-- Here is the part that will be hidden in Every Room -->
+    
+    
+    <div class="Room_17_Guest_2"> 
+    
+        <h3>2nd Guest</h3> 
+    
+        <div class="form-row">
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for=""> First Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+    {{form.first_name_of_guest_NO_2_R17|as_crispy_field}}
+        </span>
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+        <label for="" id="G2"> Last Name:</label>  
+        <span  title="Type TBD if Name isn't available"> 
+        {{form.last_name_of_guest_NO_2_R17|as_crispy_field}}
+        </span>
+    </div>
+    </div>
+    
+    <div class="form-row" style="display: none !important;">
+    <div class="form-group col-md-6 mb-0">
+     
+    {{form.guest_NO_2_check_in_R17|as_crispy_field}}
+    </div>
+    
+      
+    
+    <div  class="form-group col-md-6 mb-0">
+       
+        {{form.guest_NO_2_check_out_R17|as_crispy_field}}
+    </div>
+    <hr>
+    </div>
+    </div>
+    </div>
+    
+    
+      
+      
+    
+    
+    
+    
+    
+    <div class="Eightteen">
+    
+    
+        <h3>Room NO 18 </h3>
+        
+        <div class="form-group col-md-6 mb-0">
+            {{form.Room_18|as_crispy_field}}
+        </div>
+        <div class="form-row"> 
+        <div class="form-group col-md-6 mb-0">
+            <label for=""> First Name:</label>  
+            <span  title="Type TBD if Name isn't available"> 
+        {{form.first_name_of_guest_NO_1_R18|as_crispy_field}}
+            </span>
+        </div>
+        
+        <div  class="form-group col-md-6 mb-0">
+            <label for="" > Last Name:</label>  
+            <span  title="Type TBD if Name isn't available"> 
+            {{form.last_name_of_guest_NO_1_R18|as_crispy_field}}
+            </span>
+        </div>
+        </div>
+        
+        <div class="form-row">
+        <div class="form-group col-md-6 mb-0">
+          
+        {{form.guest_NO_1_check_in_R18|as_crispy_field}}
+        </div>
+        
+          
+        
+        <div  class="form-group col-md-6 mb-0">
+        
+            {{form.guest_NO_1_check_out_R18|as_crispy_field}}
+        </div>
+        </div>
+        
+        
+        <!-- Here is the part that will be hidden in Every Room -->
+        
+        
+        <div class="Room_18_Guest_2"> 
+        
+            <h3>2nd Guest</h3> 
+        
+            <div class="form-row">
+        
+        <div  class="form-group col-md-6 mb-0">
+            <label for=""> First Name:</label>  
+            <span  title="Type TBD if Name isn't available"> 
+        {{form.first_name_of_guest_NO_2_R18|as_crispy_field}}
+            </span>
+        </div>
+        
+          
+        
+        <div  class="form-group col-md-6 mb-0">
+            <label for="" id="G2"> Last Name:</label>  
+            <span  title="Type TBD if Name isn't available"> 
+            {{form.last_name_of_guest_NO_2_R18|as_crispy_field}}
+            </span>
+        </div>
+        </div>
+        
+        <div class="form-row" style="display: none !important;">
+        <div class="form-group col-md-6 mb-0">
+         
+        {{form.guest_NO_2_check_in_R18|as_crispy_field}}
+        </div>
+        
+          
+        
+        <div  class="form-group col-md-6 mb-0">
+           
+            {{form.guest_NO_2_check_out_R18|as_crispy_field}}
+        </div>
+        <hr>
+        </div>
+        </div>
+        </div>
+        
+        
+          
+          
+      
+    
+    
+    
+    
+        <div class="Nineteen">
+    
+    
+            <h3>Room NO 19 </h3>
+            
+            <div class="form-group col-md-6 mb-0">
+                {{form.Room_19|as_crispy_field}}
+            </div>
+            <div class="form-row"> 
+            <div class="form-group col-md-6 mb-0">
+                <label for=""> First Name:</label>  
+                <span  title="Type TBD if Name isn't available"> 
+            {{form.first_name_of_guest_NO_1_R19|as_crispy_field}}
+                </span>
+            </div>
+            
+            <div  class="form-group col-md-6 mb-0">
+                <label for="" > Last Name:</label>  
+                <span  title="Type TBD if Name isn't available"> 
+                {{form.last_name_of_guest_NO_1_R19|as_crispy_field}}
+                </span>
+            </div>
+            </div>
+            
+            <div class="form-row">
+            <div class="form-group col-md-6 mb-0">
+              
+            {{form.guest_NO_1_check_in_R19|as_crispy_field}}
+            </div>
+            
+              
+            
+            <div  class="form-group col-md-6 mb-0">
+            
+                {{form.guest_NO_1_check_out_R19|as_crispy_field}}
+            </div>
+            </div>
+            
+            
+            <!-- Here is the part that will be hidden in Every Room -->
+            
+            
+            <div class="Room_19_Guest_2"> 
+            
+                <h3>2nd Guest</h3> 
+            
+                <div class="form-row">
+            
+            <div  class="form-group col-md-6 mb-0">
+                <label for=""> First Name:</label>  
+                <span  title="Type TBD if Name isn't available"> 
+            {{form.first_name_of_guest_NO_2_R19|as_crispy_field}}
+                </span>
+            </div>
+            
+              
+            
+            <div  class="form-group col-md-6 mb-0">
+                <label for="" id="G2"> Last Name:</label>  
+                <span  title="Type TBD if Name isn't available"> 
+                {{form.last_name_of_guest_NO_2_R19|as_crispy_field}}
+                </span>
+            </div>
+            </div>
+            
+            <div class="form-row" style="display: none !important;">
+            <div class="form-group col-md-6 mb-0">
+             
+            {{form.guest_NO_2_check_in_R19|as_crispy_field}}
+            </div>
+            
+              
+            
+            <div  class="form-group col-md-6 mb-0">
+               
+                {{form.guest_NO_2_check_out_R19|as_crispy_field}}
+            </div>
+            <hr>
+            </div>
+            </div>
+            </div>
+            
+            
+              
+              
+         
+    
+    
+    
+    
+            <div class="Twenty">
+    
+    
+                <h3>Room NO 20 </h3>
+                
+                <div class="form-group col-md-6 mb-0">
+                    {{form.Room_20|as_crispy_field}}
+                </div>
+                <div class="form-row"> 
+                <div class="form-group col-md-6 mb-0">
+                    <label for=""> First Name:</label>  
+                    <span  title="Type TBD if Name isn't available"> 
+                {{form.first_name_of_guest_NO_1_R20|as_crispy_field}}
+                    </span>
+                </div>
+                
+                <div  class="form-group col-md-6 mb-0">
+                    <label for="" > Last Name:</label>  
+                    <span  title="Type TBD if Name isn't available"> 
+                    {{form.last_name_of_guest_NO_1_R20|as_crispy_field}}
+                    </span>
+                </div>
+                </div>
+                
+                <div class="form-row">
+                <div class="form-group col-md-6 mb-0">
+                  
+                {{form.guest_NO_1_check_in_R20|as_crispy_field}}
+                </div>
+                
+                  
+                
+                <div  class="form-group col-md-6 mb-0">
+                
+                    {{form.guest_NO_1_check_out_R20|as_crispy_field}}
+                </div>
+                </div>
+                
+                
+                <!-- Here is the part that will be hidden in Every Room -->
+                
+                
+                <div class="Room_20_Guest_2"> 
+                
+                    <h3>2nd Guest</h3> 
+                
+                    <div class="form-row">
+                
+                <div  class="form-group col-md-6 mb-0">
+                    <label for=""> First Name:</label>  
+                    <span  title="Type TBD if Name isn't available"> 
+                {{form.first_name_of_guest_NO_2_R20|as_crispy_field}}
+                    </span>
+                </div>
+                
+                  
+                
+                <div  class="form-group col-md-6 mb-0">
+                    <label for="" id="G2"> Last Name:</label>
+                    <span  title="Type TBD if Name isn't available"> 
+                    {{form.last_name_of_guest_NO_2_R20|as_crispy_field}}
+                    </span>
+                </div>
+                </div>
+                
+                <div class="form-row" style="display: none !important;">
+                <div class="form-group col-md-6 mb-0">
+                 
+                {{form.guest_NO_2_check_in_R20|as_crispy_field}}
+                </div>
+                
+                  
+                
+                <div  class="form-group col-md-6 mb-0">
+                   
+                    {{form.guest_NO_2_check_out_R20|as_crispy_field}}
+                </div>
+                
+                </div>
+                </div>
+                </div>
+                
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    
+
+    
+    <button id="submit_button" type="submit"  class="btn btn-primary"> Next </button>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <script>
+        $('#edit_form').submit( function(event) {
+    
+    $('#submit_button').attr('disabled', true);
+});
+    </script>
+    
+  </form>
+    
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script>
+    
+    
+    
+    $(document).ready(function(){
+    $('.Room_1_Guest_2').hide();
+    $('.Room_2_Guest_2').hide();
+    $('.Room_3_Guest_2').hide();
+    
+    $('.Room_4_Guest_2').hide();
+    $('.Room_5_Guest_2').hide();
+    $('.Room_6_Guest_2').hide();
+    
+    $('.Room_7_Guest_2').hide();
+    $('.Room_8_Guest_2').hide();
+    $('.Room_9_Guest_2').hide();
+    $('.Room_10_Guest_2').hide();
+    
+    $('.Room_11_Guest_2').hide();
+    $('.Room_12_Guest_2').hide();
+    $('.Room_13_Guest_2').hide();
+    
+    $('.Room_14_Guest_2').hide();
+    $('.Room_15_Guest_2').hide();
+    $('.Room_16_Guest_2').hide();
+    
+    $('.Room_17_Guest_2').hide();
+    $('.Room_18_Guest_2').hide();
+    $('.Room_19_Guest_2').hide();
+    $('.Room_20_Guest_2').hide();
+    
+    
+    
+    $('.Two').hide();
+    $('.Three').hide();
+    $('.Four').hide();
+    $('.Five').hide();
+    $('.Six').hide();
+    $('.Seven').hide();
+    $('.Eight').hide();
+    $('.Nine').hide();
+    $('.Ten').hide();
+    $('.Eleven').hide();
+    $('.Twelve').hide();
+    $('.Thirteen').hide();
+    $('.Fourteen').hide();
+    $('.Fifteen').hide();
+    $('.Sixteen').hide();
+    $('.Seventeen').hide();
+    $('.Eightteen').hide();
+    $('.Nineteen').hide();
+    $('.Twenty').hide();
+    
+    
+    
+    
+    
+    
+    });
+    
+    
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script>
+    
+    
+    
+    
+    
+    $('#div_id_Number_OF_Guests').change(function(){
+    
+    // 222222222222222222222222222222222222222222222222222
+    
+
+    let all_datepickers = document.getElementsByClassName('form-control datepickerinput form-control');
+        console.log(all_datepickers);
+        
+        // check-ins and check-outs room number one
+        let guest_one_checkin_room_one = (all_datepickers[0]);
+        let guest_one_checkout_room_one = (all_datepickers[1]);
+        let guest_two_checkin_room_one = (all_datepickers[2]);
+        let guest_two_checkout_room_one = (all_datepickers[3]);
+        
+        // check-ins and check-outs room number two
+        let guest_one_checkin_room_two = (all_datepickers[4]);
+        let guest_one_checkout_room_two = (all_datepickers[5]);
+        let guest_two_checkin_room_two = (all_datepickers[6]);
+        let guest_two_checkout_room_two = (all_datepickers[7]);
+        
+        
+        // check-ins and check-outs room number three
+        let guest_one_checkin_room_three = (all_datepickers[8]);
+        let guest_one_checkout_room_three = (all_datepickers[9]);
+        let guest_two_checkin_room_three = (all_datepickers[10]);
+        let guest_two_checkout_room_three = (all_datepickers[11]);
+        
+        
+        // check-ins and check-outs room number four
+        let guest_one_checkin_room_four = (all_datepickers[12]);
+        let guest_one_checkout_room_four = (all_datepickers[13]);
+        let guest_two_checkin_room_four = (all_datepickers[14]);
+        let guest_two_checkout_room_four = (all_datepickers[15]);
+        
+        
+        // check-ins and check-outs room number five
+        let guest_one_checkin_room_five = (all_datepickers[16]);
+        let guest_one_checkout_room_five = (all_datepickers[17]);
+        let guest_two_checkin_room_five = (all_datepickers[18]);
+        let guest_two_checkout_room_five = (all_datepickers[19]);
+        
+        
+        // check-ins and check-outs room number six
+        let guest_one_checkin_room_six = (all_datepickers[20]);
+        let guest_one_checkout_room_six = (all_datepickers[21]);
+        let guest_two_checkin_room_six = (all_datepickers[22]);
+        let guest_two_checkout_room_six = (all_datepickers[23]);
+        
+        
+        // check-ins and check-outs room number seven
+        let guest_one_checkin_room_seven = (all_datepickers[24]);
+        let guest_one_checkout_room_seven = (all_datepickers[25]);
+        let guest_two_checkin_room_seven = (all_datepickers[26]);
+        let guest_two_checkout_room_seven = (all_datepickers[27]);
+        
+        
+        // check-ins and check-outs room number eight
+        let guest_one_checkin_room_eight = (all_datepickers[28]);
+        let guest_one_checkout_room_eight = (all_datepickers[29]);
+        let guest_two_checkin_room_eight = (all_datepickers[30]);
+        let guest_two_checkout_room_eight = (all_datepickers[31]);
+        
+        // check-ins and check-outs room number nine
+        let guest_one_checkin_room_nine = (all_datepickers[32]);
+        let guest_one_checkout_room_nine = (all_datepickers[33]);
+        let guest_two_checkin_room_nine = (all_datepickers[34]);
+        let guest_two_checkout_room_nine = (all_datepickers[35]);
+        
+        // check-ins and check-outs room number ten
+        let guest_one_checkin_room_ten = (all_datepickers[36]);
+        let guest_one_checkout_room_ten = (all_datepickers[37]);
+        let guest_two_checkin_room_ten = (all_datepickers[38]);
+        let guest_two_checkout_room_ten = (all_datepickers[39]);
+        
+        
+        // check-ins and check-outs room number eleven
+        let guest_one_checkin_room_eleven = (all_datepickers[40]);
+        let guest_one_checkout_room_eleven = (all_datepickers[41]);
+        let guest_two_checkin_room_eleven = (all_datepickers[42]);
+        let guest_two_checkout_room_eleven = (all_datepickers[43]);
+        
+        
+        // check-ins and check-outs room number twelve
+        let guest_one_checkin_room_twelve = (all_datepickers[44]);
+        let guest_one_checkout_room_twelve = (all_datepickers[45]);
+        let guest_two_checkin_room_twelve = (all_datepickers[46]);
+        let guest_two_checkout_room_twelve = (all_datepickers[47]);
+        
+        
+        // check-ins and check-outs room number thirteen
+        let guest_one_checkin_room_thirteen = (all_datepickers[48]);
+        let guest_one_checkout_room_thirteen = (all_datepickers[49]);
+        let guest_two_checkin_room_thirteen = (all_datepickers[50]);
+        let guest_two_checkout_room_thirteen = (all_datepickers[51]);
+        
+        
+        
+        // check-ins and check-outs room number fourteen
+        let guest_one_checkin_room_fourteen = (all_datepickers[52]);
+        let guest_one_checkout_room_fourteen = (all_datepickers[53]);
+        let guest_two_checkin_room_fourteen = (all_datepickers[54]);
+        let guest_two_checkout_room_fourteen = (all_datepickers[55]);
+        
+        
+        
+        // check-ins and check-outs room number fifteen
+        let guest_one_checkin_room_fifteen = (all_datepickers[56]);
+        let guest_one_checkout_room_fifteen = (all_datepickers[57]);
+        let guest_two_checkin_room_fifteen = (all_datepickers[58]);
+        let guest_two_checkout_room_fifteen = (all_datepickers[59]);
+        
+        // check-ins and check-outs room number sixteen
+        let guest_one_checkin_room_sixteen = (all_datepickers[60]);
+        let guest_one_checkout_room_sixteen = (all_datepickers[61]);
+        let guest_two_checkin_room_sixteen = (all_datepickers[62]);
+        let guest_two_checkout_room_sixteen = (all_datepickers[63]);
+        
+        
+        // check-ins and check-outs room number seventeen
+        let guest_one_checkin_room_seventeen = (all_datepickers[64]);
+        let guest_one_checkout_room_seventeen = (all_datepickers[65]);
+        let guest_two_checkin_room_seventeen = (all_datepickers[66]);
+        let guest_two_checkout_room_seventeen = (all_datepickers[67]);
+        
+        
+        // check-ins and check-outs room number eighteen
+        let guest_one_checkin_room_eighteen = (all_datepickers[68]);
+        let guest_one_checkout_room_eighteen = (all_datepickers[69]);
+        let guest_two_checkin_room_eighteen = (all_datepickers[70]);
+        let guest_two_checkout_room_eighteen = (all_datepickers[71]);
+        
+        
+        
+        // check-ins and check-outs room number nineteen
+        let guest_one_checkin_room_nineteen = (all_datepickers[72]);
+        let guest_one_checkout_room_nineteen = (all_datepickers[73]);
+        let guest_two_checkin_room_nineteen = (all_datepickers[74]);
+        let guest_two_checkout_room_nineteen = (all_datepickers[75]);
+        
+        
+        // check-ins and check-outs room number twenty
+        let guest_one_checkin_room_twenty = (all_datepickers[76]);
+        let guest_one_checkout_room_twenty = (all_datepickers[77]);
+        let guest_two_checkin_room_twenty = (all_datepickers[78]);
+        let guest_two_checkout_room_twenty = (all_datepickers[79]);
+        
+        
+        
+
+           
+    if ($('#Monty').val() >= 2) {
+   
+   
+   
+    guest_one_checkin_room_one.addEventListener("blur", (e) =>{
+    let value = e.target.value;
+    console.log(value);    
+
+    $("[name='first_name_of_guest_NO_1_R2']").attr("required", true);
+    $("[name='last_name_of_guest_NO_1_R2']").attr("required", true);
+    $("[name='guest_NO_1_check_in_R2']").attr("required", true);
+    $("[name='guest_NO_1_check_out_R2']").attr("required", true);
+
+
+
+
+    guest_one_checkin_room_two.value = value;
+    });
+   
+   
+   
+    $('.Two').show();
+    }
+      
+    else {
+
+
+    guest_one_checkin_room_two.value = null;
+
+
+    $("[name='first_name_of_guest_NO_1_R2']").attr("required", false);
+    $("[name='last_name_of_guest_NO_1_R2']").attr("required", false);
+    $("[name='guest_NO_1_check_in_R2']").attr("required", false);
+    $("[name='guest_NO_1_check_out_R2']").attr("required", false);
+   
+    $('.Two').hide();
+     };
+    
+    
+    
+    // 333333333333333333333333333333333333
+    
+    if ($('#Monty').val() >= 3) {
+
+
+    guest_one_checkin_room_one.addEventListener("blur", (e) =>{
+    let value = e.target.value;
+    console.log(value);    
+    
+
+    $("[name='first_name_of_guest_NO_1_R3']").attr("required", true);
+    $("[name='last_name_of_guest_NO_1_R3']").attr("required", true);
+    $("[name='guest_NO_1_check_in_R3']").attr("required", true);
+    $("[name='guest_NO_1_check_out_R3']").attr("required", true);
+    
+    
+    guest_one_checkin_room_three.value = value;
+    });
+
+
+    $('.Three').show();
+    }
+      
+    else {
+    
+    guest_one_checkin_room_three.value = null;
+
+    $("[name='first_name_of_guest_NO_1_R3']").attr("required", false);
+    $("[name='last_name_of_guest_NO_1_R3']").attr("required", false);
+    $("[name='guest_NO_1_check_in_R3']").attr("required", false);
+    $("[name='guest_NO_1_check_out_R3']").attr("required", false);
+    $('.Three').hide();
+    
+    
+    };
+    
+    
+    
+    // 444444444444444444444444444444444444444
+    
+    
+    if ($('#Monty').val() >= 4) {
+    
+    guest_one_checkin_room_one.addEventListener("blur", (e) =>{
+    let value = e.target.value;
+    console.log(value);    
+
+
+
+    //$("[name='first_name_of_guest_NO_1_R4]").attr("required", true);
+    //$("[name='last_name_of_guest_NO_1_R4']").attr("required", true);
+    $("[name='guest_NO_1_check_in_R4']").attr("required", true);
+    $("[name='guest_NO_1_check_out_R4']").attr("required", true);
+
+
+    guest_one_checkin_room_four.value = value;
+    });
+
+
+    $('.Four').show();
+    }
+      
+    else {
+    
+    guest_one_checkin_room_four.value = null;
+
+
+    $("[name='first_name_of_guest_NO_1_R4']").attr("required", false);
+    $("[name='last_name_of_guest_NO_1_R4']").attr("required", false);
+    $("[name='guest_NO_1_check_in_R4']").attr("required", false);
+    $("[name='guest_NO_1_check_out_R4']").attr("required", false);
+    $('.Four').hide();
+    
+    
+    };
+    
+    
+    
+    
+    
+    
+    //5555555555555555555555555555555555555555
+    
+    
+    
+    
+    if ($('#Monty').val() >= 5) {
+
+    guest_one_checkin_room_one.addEventListener("blur", (e) =>{
+    let value = e.target.value;
+    console.log(value);    
+
+    
+    
+    $("[name='first_name_of_guest_NO_1_R5]").attr("required", true);
+    $("[name='last_name_of_guest_NO_1_R5']").attr("required", true);
+    $("[name='guest_NO_1_check_in_R5']").attr("required", true);
+    $("[name='guest_NO_1_check_out_R5']").attr("required", true);
+
+
+    guest_one_checkin_room_five.value = value;
+    });
+
+
+
+    $('.Five').show();
+    }
+      
+    else {
+    
+    guest_one_checkin_room_five.value = null;
+
+    $("[name='first_name_of_guest_NO_1_R5']").attr("required", false);
+    $("[name='last_name_of_guest_NO_1_R5']").attr("required", false);
+    $("[name='guest_NO_1_check_in_R5']").attr("required", false);
+    $("[name='guest_NO_1_check_out_R5']").attr("required", false);
+    $('.Five').hide();
+    
+    
+    };
+    
+    
+    // 666666666666666666666666
+    
+    
+    
+    if ($('#Monty').val() >= 6) {
+
+    guest_one_checkin_room_one.addEventListener("blur", (e) =>{
+    let value = e.target.value;
+    console.log(value);    
+
+        
+    
+    $("[name='first_name_of_guest_NO_1_R6]").attr("required", true);
+    $("[name='last_name_of_guest_NO_1_R6']").attr("required", true);
+    $("[name='guest_NO_1_check_in_R6']").attr("required", true);
+    $("[name='guest_NO_1_check_out_R6']").attr("required", true);
+    guest_one_checkin_room_six.value = value;
+    });
+
+
+    $('.Six').show();
+    }
+      
+    else {
+    
+    guest_one_checkin_room_six.value = null; 
+    $("[name='first_name_of_guest_NO_1_R6']").attr("required", false);
+    $("[name='last_name_of_guest_NO_1_R6']").attr("required", false);
+    $("[name='guest_NO_1_check_in_R6']").attr("required", false);
+    $("[name='guest_NO_1_check_out_R6']").attr("required", false);
+    $('.Six').hide();
+    
+    
+    };
+    
+    
+    
+    
+    // 77777777777777777777777777
+    
+    if ($('#Monty').val() >= 7) {
+    
+   
+        
+    guest_one_checkin_room_one.addEventListener("blur", (e) =>{
+    let value = e.target.value;
+    console.log(value);    
+
+
+    $("[name='first_name_of_guest_NO_1_R7]").attr("required", true);
+    $("[name='last_name_of_guest_NO_1_R7']").attr("required", true);
+    $("[name='guest_NO_1_check_in_R7']").attr("required", true);
+    $("[name='guest_NO_1_check_out_R7']").attr("required", true);
+
+    guest_one_checkin_room_seven.value = value;
+    });
+    $('.Seven').show();
+    }
+      
+    else {
+    
+    guest_one_checkin_room_seven.value = null;
+    $("[name='first_name_of_guest_NO_1_R7']").attr("required", false);
+    $("[name='last_name_of_guest_NO_1_R7']").attr("required", false);
+    $("[name='guest_NO_1_check_in_R7']").attr("required", false);
+    $("[name='guest_NO_1_check_out_R7']").attr("required", false);
+    $('.Seven').hide();
+    
+    
+    };
+    
+    
+    
+    
+    
+    //888888888888888888888888
+    
+    
+    
+    
+    
+    
+    
+    if ($('#Monty').val() >= 8) {
+
+
+    guest_one_checkin_room_one.addEventListener("blur", (e) =>{
+    let value = e.target.value;
+    console.log(value);    
+    
+    $("[name='first_name_of_guest_NO_1_R8]").attr("required", true);
+    $("[name='last_name_of_guest_NO_1_R8']").attr("required", true);
+    $("[name='guest_NO_1_check_in_R8']").attr("required", true);
+    $("[name='guest_NO_1_check_out_R8']").attr("required", true);
+
+
+    guest_one_checkin_room_eight.value = value;
+    });
+
+
+    $('.Eight').show();
+    }
+      
+    else {
+    
+    guest_one_checkin_room_eight.value = null;
+    $("[name='first_name_of_guest_NO_1_R8']").attr("required", false);
+    $("[name='last_name_of_guest_NO_1_R8']").attr("required", false);
+    $("[name='guest_NO_1_check_in_R8']").attr("required", false);
+    $("[name='guest_NO_1_check_out_R8']").attr("required", false);
+    $('.Eight').hide();
+    
+    
+    };
+    
+    
+    
+    
+    
+    
+    //9999999999999999999999999999
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    if ($('#Monty').val() >= 9) {
+
+
+    guest_one_checkin_room_one.addEventListener("blur", (e) =>{
+    let value = e.target.value;
+    console.log(value);       
+    
+
+    $("[name='first_name_of_guest_NO_1_R9]").attr("required", true);
+    $("[name='last_name_of_guest_NO_1_R9']").attr("required", true);
+    $("[name='guest_NO_1_check_in_R9']").attr("required", true);
+    $("[name='guest_NO_1_check_out_R9']").attr("required", true);
+
+
+    guest_one_checkin_room_nine.value = value;
+    });
+
+    $('.Nine').show();
+    }
+      
+    else {
+    
+    guest_one_checkin_room_nine.value = null;
+    $("[name='first_name_of_guest_NO_1_R9']").attr("required", false);
+    $("[name='last_name_of_guest_NO_1_R9']").attr("required", false);
+    $("[name='guest_NO_1_check_in_R9']").attr("required", false);
+    $("[name='guest_NO_1_check_out_R9']").attr("required", false);
+    $('.Nine').hide();
+    
+    
+    };
+    
+    
+    
+    
+    
+    
+    ///10000000000000000000000
+    
+    
+    
+    
+    if ($('#Monty').val() >= 10) {
+    
+    guest_one_checkin_room_one.addEventListener("blur", (e) =>{
+    let value = e.target.value;
+    console.log(value);       
+    
+
+    $("[name='first_name_of_guest_NO_1_R10]").attr("required", true);
+    $("[name='last_name_of_guest_NO_1_R10']").attr("required", true);
+    $("[name='guest_NO_1_check_in_R10']").attr("required", true);
+    $("[name='guest_NO_1_check_out_R10']").attr("required", true);
+
+    guest_one_checkin_room_ten.value = value;
+    });
+    
+    $('.Ten').show();
+    }
+      
+
+    else {
+    
+    guest_one_checkin_room_ten.value = null;
+    $("[name='first_name_of_guest_NO_1_R10']").attr("required", false);
+    $("[name='last_name_of_guest_NO_1_R10']").attr("required", false);
+    $("[name='guest_NO_1_check_in_R10']").attr("required", false);
+    $("[name='guest_NO_1_check_out_R10']").attr("required", false);
+    $('.Ten').hide();
+    
+    
+    };
+    
+    
+    ///111111111111111111111
+    
+    
+    if ($('#Monty').val() >= 11) {
+    
+    guest_one_checkin_room_one.addEventListener("blur", (e) =>{
+    let value = e.target.value;
+    console.log(value);     
+    
+    
+
+    $("[name='first_name_of_guest_NO_1_R11]").attr("required", true);
+    $("[name='last_name_of_guest_NO_1_R11']").attr("required", true);
+    $("[name='guest_NO_1_check_in_R11']").attr("required", true);
+    $("[name='guest_NO_1_check_out_R11']").attr("required", true);
+
+
+    guest_one_checkin_room_eleven.value = value;
+    });
+    
+    
+    $('.Eleven').show();
+    }
+      
+    else {
+    
+    guest_one_checkin_room_eleven.value = null;
+
+
+    $("[name='first_name_of_guest_NO_1_R11']").attr("required", false);
+    $("[name='last_name_of_guest_NO_1_R11']").attr("required", false);
+    $("[name='guest_NO_1_check_in_R11']").attr("required", false);
+    $("[name='guest_NO_1_check_out_R11']").attr("required", false);
+    $('.Eleven').hide();
+    
+    
+    };
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //12121212121212121212112
+    
+    
+    
+    
+    if ($('#Monty').val() >= 12) {
+
+
+    guest_one_checkin_room_one.addEventListener("blur", (e) =>{
+    let value = e.target.value;
+    console.log(value);     
+      
+    
+    $("[name='first_name_of_guest_NO_1_R12]").attr("required", true);
+    $("[name='last_name_of_guest_NO_1_R12']").attr("required", true);
+    $("[name='guest_NO_1_check_in_R12']").attr("required", true);
+    $("[name='guest_NO_1_check_out_R12']").attr("required", true);
+    guest_one_checkin_room_twelve.value = value;
+    });
+
+
+    $('.Twelve').show();
+    }
+      
+    else {
+    
+    guest_one_checkin_room_twelve.value = null;    
+
+    $("[name='first_name_of_guest_NO_1_R12']").attr("required", false);
+    $("[name='last_name_of_guest_NO_1_R12']").attr("required", false);
+    $("[name='guest_NO_1_check_in_R12']").attr("required", false);
+    $("[name='guest_NO_1_check_out_R12']").attr("required", false);
+    $('.Twelve').hide();
+    
+    
+    };
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //13131313313311313
+    
+    
+    if ($('#Monty').val() >= 13) {
+   
+    guest_one_checkin_room_one.addEventListener("blur", (e) =>{
+    let value = e.target.value;
+    console.log(value);     
+              
+
+    
+    $("[name='first_name_of_guest_NO_1_R13]").attr("required", true);
+    $("[name='last_name_of_guest_NO_1_R13']").attr("required", true);
+    $("[name='guest_NO_1_check_in_R13']").attr("required", true);
+    $("[name='guest_NO_1_check_out_R13']").attr("required", true);
+
+    guest_one_checkin_room_thirteen.value = value;
+    });
+
+
+    $('.Thirteen').show();
+    }
+      
+    else {
+    
+    guest_one_checkin_room_thirteen.value = null;
+
+
+    $("[name='first_name_of_guest_NO_1_R13']").attr("required", false);
+    $("[name='last_name_of_guest_NO_1_R13']").attr("required", false);
+    $("[name='guest_NO_1_check_in_R13']").attr("required", false);
+    $("[name='guest_NO_1_check_out_R13']").attr("required", false);
+    $('.Thirteen').hide();
+    
+    
+    };
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //1414141414114141414
+    
+    
+    
+    
+    
+    
+    if ($('#Monty').val() >= 14) {
+    
+
+    guest_one_checkin_room_one.addEventListener("blur", (e) =>{
+    let value = e.target.value;
+    console.log(value);     
+              
+
+        
+
+    $("[name='first_name_of_guest_NO_1_R14]").attr("required", true);
+    $("[name='last_name_of_guest_NO_1_R14']").attr("required", true);
+    $("[name='guest_NO_1_check_in_R14']").attr("required", true);
+    $("[name='guest_NO_1_check_out_R14']").attr("required", true);
+
+    guest_one_checkin_room_fourteen.value = value;
+    });
+
+
+    $('.Fourteen').show();
+    }
+      
+    else {
+    
+    guest_one_checkin_room_fourteen.value = null;   
+    $("[name='first_name_of_guest_NO_1_R14']").attr("required", false);
+    $("[name='last_name_of_guest_NO_1_R14']").attr("required", false);
+    $("[name='guest_NO_1_check_in_R14']").attr("required", false);
+    $("[name='guest_NO_1_check_out_R14']").attr("required", false);
+    $('.Fourteen').hide();
+    
+    
+    };
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //151515515115551551515155
+    
+    
+    
+    
+    
+    
+    
+    
+    if ($('#Monty').val() >= 15) {
+
+
+    guest_one_checkin_room_one.addEventListener("blur", (e) =>{
+    let value = e.target.value;
+    console.log(value);     
+                  
+    
+    $("[name='first_name_of_guest_NO_1_R15]").attr("required", true);
+    $("[name='last_name_of_guest_NO_1_R15']").attr("required", true);
+    $("[name='guest_NO_1_check_in_R15']").attr("required", true);
+    $("[name='guest_NO_1_check_out_R15']").attr("required", true);
+
+    guest_one_checkin_room_fifteen.value = value;
+    });
+
+
+    $('.Fifteen').show();
+    }
+      
+    else {
+    
+    
+    guest_one_checkin_room_fifteen.value = null;
+
+
+    $("[name='first_name_of_guest_NO_1_R15']").attr("required", false);
+    $("[name='last_name_of_guest_NO_1_R15']").attr("required", false);
+    $("[name='guest_NO_1_check_in_R15']").attr("required", false);
+    $("[name='guest_NO_1_check_out_R15']").attr("required", false);
+    $('.Fifteen').hide();
+    
+    
+    
+    };
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //1616166161666161661616166
+    
+    
+    
+    
+    
+    if ($('#Monty').val() >= 16) {
+
+    guest_one_checkin_room_one.addEventListener("blur", (e) =>{
+    let value = e.target.value;
+    console.log(value);       
+    
+    $("[name='first_name_of_guest_NO_1_R16]").attr("required", true);
+    $("[name='last_name_of_guest_NO_1_R16']").attr("required", true);
+    $("[name='guest_NO_1_check_in_R16']").attr("required", true);
+    $("[name='guest_NO_1_check_out_R16']").attr("required", true);
+
+    guest_one_checkin_room_sixteen.value = value;
+    });
+
+    $('.Sixteen').show();
+    }
+      
+    else {
+    
+    guest_one_checkin_room_sixteen.value = null;
+    $("[name='first_name_of_guest_NO_1_R16']").attr("required", false);
+    $("[name='last_name_of_guest_NO_1_R16']").attr("required", false);
+    $("[name='guest_NO_1_check_in_R16']").attr("required", false);
+    $("[name='guest_NO_1_check_out_R16']").attr("required", false);
+    $('.Sixteen').hide();
+    
+    
+    };
+    
+    
+    
+    
+    
+    //171717171717177177177
+    
+    
+    
+    
+    
+    
+    if ($('#Monty').val() >= 17) {
+    
+    guest_one_checkin_room_one.addEventListener("blur", (e) =>{
+    let value = e.target.value;
+    console.log(value);       
+    
+    
+    $("[name='first_name_of_guest_NO_1_R17]").attr("required", true);
+    $("[name='last_name_of_guest_NO_1_R17']").attr("required", true);
+    $("[name='guest_NO_1_check_in_R17']").attr("required", true);
+    $("[name='guest_NO_1_check_out_R17']").attr("required", true);
+    guest_one_checkin_room_seventeen.value = value;
+    });
+    
+    $('.Seventeen').show();
+    }
+      
+    else {
+    
+    guest_one_checkin_room_seventeen.value = null;
+    $("[name='first_name_of_guest_NO_1_R17']").attr("required", false);
+    $("[name='last_name_of_guest_NO_1_R17']").attr("required", false);
+    $("[name='guest_NO_1_check_in_R17']").attr("required", false);
+    $("[name='guest_NO_1_check_out_R17']").attr("required", false);
+    $('.Seventeen').hide();
+    
+    
+    };
+    
+    
+    
+    
+    
+    //1881818181818188181818
+    
+    
+    
+    
+    
+    
+    
+    if ($('#Monty').val() >= 18) {
+
+
+    guest_one_checkin_room_one.addEventListener("blur", (e) =>{
+    let value = e.target.value;
+    console.log(value);       
+        
+    
+    $("[name='first_name_of_guest_NO_1_R18']").attr("required", true);
+    $("[name='last_name_of_guest_NO_1_R18']").attr("required", true);
+    $("[name='guest_NO_1_check_in_R18']").attr("required", true);
+    $("[name='guest_NO_1_check_out_R18']").attr("required", true);
+
+    guest_one_checkin_room_eighteen.value = value;
+    });
+
+
+    $('.Eightteen').show();
+    }
+      
+    else {
+    
+    guest_one_checkin_room_eighteen.value = null;
+
+    $("[name='first_name_of_guest_NO_1_R18']").attr("required", false);
+    $("[name='last_name_of_guest_NO_1_R18']").attr("required", false);
+    $("[name='guest_NO_1_check_in_R18']").attr("required", false);
+    $("[name='guest_NO_1_check_out_R18']").attr("required", false);
+    $('.Eightteen').hide();
+    
+    };
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //1911919199191919199
+    
+    
+    
+    
+    
+    if ($('#Monty').val() >= 19) {
+    
+
+
+    guest_one_checkin_room_one.addEventListener("blur", (e) =>{
+    let value = e.target.value;
+    console.log(value);             
+
+
+    $("[name='first_name_of_guest_NO_1_R19']").attr("required", true);
+    $("[name='last_name_of_guest_NO_1_R19']").attr("required", true);
+    $("[name='guest_NO_1_check_in_R19']").attr("required", true);
+    $("[name='guest_NO_1_check_out_R19']").attr("required", true);
+
+    guest_one_checkin_room_nineteen.value = value;
+    });
+
+
+    $('.Nineteen').show();
+    }
+      
+    else {
+    
+    guest_one_checkin_room_nineteen.value = null;
+
+
+    $("[name='first_name_of_guest_NO_1_R19']").attr("required", false);
+    $("[name='last_name_of_guest_NO_1_R19']").attr("required", false);
+    $("[name='guest_NO_1_check_in_R19']").attr("required", false);
+    $("[name='guest_NO_1_check_out_R19']").attr("required", false);
+    $('.Nineteen').hide();
+    
+    };
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //2050202020202202
+    
+    
+    
+    
+    
+    
+    
+    
+    if ($('#Monty').val() == 20) {
+
+
+    guest_one_checkin_room_one.addEventListener("blur", (e) =>{
+    let value = e.target.value;
+    console.log(value);     
+    
+    
+    $("[name='first_name_of_guest_NO_1_R20']").attr("required", true);
+    $("[name='last_name_of_guest_NO_1_R20']").attr("required", true);
+    $("[name='guest_NO_1_check_in_R20']").attr("required", true);
+    $("[name='guest_NO_1_check_out_R20']").attr("required", true);
+    
+    guest_one_checkin_room_twenty.value = value;
+    });  
+    
+    $('.Twenty').show();
+    
+    }
+      
+    else {
+
+
+
+    guest_one_checkin_room_twenty.value = null;
+    $("[name='first_name_of_guest_NO_1_R20']").attr("required", false);
+    $("[name='last_name_of_guest_NO_1_R20']").attr("required", false);
+    $("[name='guest_NO_1_check_in_R20']").attr("required", false);
+    $("[name='guest_NO_1_check_out_R20']").attr("required", false);
+    $('.Twenty').hide();
+    
+    
+    };
+    
+    
+    
+    });
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+    
+    
+
+    
+
+
+    
+    
+    <script>
+    
+    
+    
+    
+    
+        $('#div_id_Number_OF_Guests').change(function(){
+        
+        // 222222222222222222222222222222222222222222222222222
+        
+    
+        let all_datepickers = document.getElementsByClassName('form-control datepickerinput form-control');
+            console.log(all_datepickers);
+            
+            // check-ins and check-outs room number one
+            let guest_one_checkin_room_one = (all_datepickers[0]);
+            let guest_one_checkout_room_one = (all_datepickers[1]);
+            let guest_two_checkin_room_one = (all_datepickers[2]);
+            let guest_two_checkout_room_one = (all_datepickers[3]);
+            
+            // check-ins and check-outs room number two
+            let guest_one_checkin_room_two = (all_datepickers[4]);
+            let guest_one_checkout_room_two = (all_datepickers[5]);
+            let guest_two_checkin_room_two = (all_datepickers[6]);
+            let guest_two_checkout_room_two = (all_datepickers[7]);
+            
+            
+            // check-ins and check-outs room number three
+            let guest_one_checkin_room_three = (all_datepickers[8]);
+            let guest_one_checkout_room_three = (all_datepickers[9]);
+            let guest_two_checkin_room_three = (all_datepickers[10]);
+            let guest_two_checkout_room_three = (all_datepickers[11]);
+            
+            
+            // check-ins and check-outs room number four
+            let guest_one_checkin_room_four = (all_datepickers[12]);
+            let guest_one_checkout_room_four = (all_datepickers[13]);
+            let guest_two_checkin_room_four = (all_datepickers[14]);
+            let guest_two_checkout_room_four = (all_datepickers[15]);
+            
+            
+            // check-ins and check-outs room number five
+            let guest_one_checkin_room_five = (all_datepickers[16]);
+            let guest_one_checkout_room_five = (all_datepickers[17]);
+            let guest_two_checkin_room_five = (all_datepickers[18]);
+            let guest_two_checkout_room_five = (all_datepickers[19]);
+            
+            
+            // check-ins and check-outs room number six
+            let guest_one_checkin_room_six = (all_datepickers[20]);
+            let guest_one_checkout_room_six = (all_datepickers[21]);
+            let guest_two_checkin_room_six = (all_datepickers[22]);
+            let guest_two_checkout_room_six = (all_datepickers[23]);
+            
+            
+            // check-ins and check-outs room number seven
+            let guest_one_checkin_room_seven = (all_datepickers[24]);
+            let guest_one_checkout_room_seven = (all_datepickers[25]);
+            let guest_two_checkin_room_seven = (all_datepickers[26]);
+            let guest_two_checkout_room_seven = (all_datepickers[27]);
+            
+            
+            // check-ins and check-outs room number eight
+            let guest_one_checkin_room_eight = (all_datepickers[28]);
+            let guest_one_checkout_room_eight = (all_datepickers[29]);
+            let guest_two_checkin_room_eight = (all_datepickers[30]);
+            let guest_two_checkout_room_eight = (all_datepickers[31]);
+            
+            // check-ins and check-outs room number nine
+            let guest_one_checkin_room_nine = (all_datepickers[32]);
+            let guest_one_checkout_room_nine = (all_datepickers[33]);
+            let guest_two_checkin_room_nine = (all_datepickers[34]);
+            let guest_two_checkout_room_nine = (all_datepickers[35]);
+            
+            // check-ins and check-outs room number ten
+            let guest_one_checkin_room_ten = (all_datepickers[36]);
+            let guest_one_checkout_room_ten = (all_datepickers[37]);
+            let guest_two_checkin_room_ten = (all_datepickers[38]);
+            let guest_two_checkout_room_ten = (all_datepickers[39]);
+            
+            
+            // check-ins and check-outs room number eleven
+            let guest_one_checkin_room_eleven = (all_datepickers[40]);
+            let guest_one_checkout_room_eleven = (all_datepickers[41]);
+            let guest_two_checkin_room_eleven = (all_datepickers[42]);
+            let guest_two_checkout_room_eleven = (all_datepickers[43]);
+            
+            
+            // check-ins and check-outs room number twelve
+            let guest_one_checkin_room_twelve = (all_datepickers[44]);
+            let guest_one_checkout_room_twelve = (all_datepickers[45]);
+            let guest_two_checkin_room_twelve = (all_datepickers[46]);
+            let guest_two_checkout_room_twelve = (all_datepickers[47]);
+            
+            
+            // check-ins and check-outs room number thirteen
+            let guest_one_checkin_room_thirteen = (all_datepickers[48]);
+            let guest_one_checkout_room_thirteen = (all_datepickers[49]);
+            let guest_two_checkin_room_thirteen = (all_datepickers[50]);
+            let guest_two_checkout_room_thirteen = (all_datepickers[51]);
+            
+            
+            
+            // check-ins and check-outs room number fourteen
+            let guest_one_checkin_room_fourteen = (all_datepickers[52]);
+            let guest_one_checkout_room_fourteen = (all_datepickers[53]);
+            let guest_two_checkin_room_fourteen = (all_datepickers[54]);
+            let guest_two_checkout_room_fourteen = (all_datepickers[55]);
+            
+            
+            
+            // check-ins and check-outs room number fifteen
+            let guest_one_checkin_room_fifteen = (all_datepickers[56]);
+            let guest_one_checkout_room_fifteen = (all_datepickers[57]);
+            let guest_two_checkin_room_fifteen = (all_datepickers[58]);
+            let guest_two_checkout_room_fifteen = (all_datepickers[59]);
+            
+            // check-ins and check-outs room number sixteen
+            let guest_one_checkin_room_sixteen = (all_datepickers[60]);
+            let guest_one_checkout_room_sixteen = (all_datepickers[61]);
+            let guest_two_checkin_room_sixteen = (all_datepickers[62]);
+            let guest_two_checkout_room_sixteen = (all_datepickers[63]);
+            
+            
+            // check-ins and check-outs room number seventeen
+            let guest_one_checkin_room_seventeen = (all_datepickers[64]);
+            let guest_one_checkout_room_seventeen = (all_datepickers[65]);
+            let guest_two_checkin_room_seventeen = (all_datepickers[66]);
+            let guest_two_checkout_room_seventeen = (all_datepickers[67]);
+            
+            
+            // check-ins and check-outs room number eighteen
+            let guest_one_checkin_room_eighteen = (all_datepickers[68]);
+            let guest_one_checkout_room_eighteen = (all_datepickers[69]);
+            let guest_two_checkin_room_eighteen = (all_datepickers[70]);
+            let guest_two_checkout_room_eighteen = (all_datepickers[71]);
+            
+            
+            
+            // check-ins and check-outs room number nineteen
+            let guest_one_checkin_room_nineteen = (all_datepickers[72]);
+            let guest_one_checkout_room_nineteen = (all_datepickers[73]);
+            let guest_two_checkin_room_nineteen = (all_datepickers[74]);
+            let guest_two_checkout_room_nineteen = (all_datepickers[75]);
+            
+            
+            // check-ins and check-outs room number twenty
+            let guest_one_checkin_room_twenty = (all_datepickers[76]);
+            let guest_one_checkout_room_twenty = (all_datepickers[77]);
+            let guest_two_checkin_room_twenty = (all_datepickers[78]);
+            let guest_two_checkout_room_twenty = (all_datepickers[79]);
+            
+            
+            
+    
+               
+            if ($('#Monty').val() >= 2) {
+       
+       
+       
+       guest_one_checkout_room_one.addEventListener("blur", (e) =>{
+       let value = e.target.value;
+       console.log(value);    
+    
+       $("[name='first_name_of_guest_NO_1_R2']").attr("required", true);
+       $("[name='last_name_of_guest_NO_1_R2']").attr("required", true);
+       $("[name='guest_NO_1_check_in_R2']").attr("required", true);
+       $("[name='guest_NO_1_check_out_R2']").attr("required", true);
+    
+    
+    
+    
+       guest_one_checkout_room_two.value = value;
+       });
+      
+      
+      
+       $('.Two').show();
+       }
+         
+       else {
+    
+    
+       guest_one_checkout_room_two.value = null;
+    
+    
+       $("[name='first_name_of_guest_NO_1_R2']").attr("required", false);
+       $("[name='last_name_of_guest_NO_1_R2']").attr("required", false);
+       $("[name='first_name_of_guest_NO_2_R2']").attr("required", false);
+       $("[name='last_name_of_guest_NO_2_R2']").attr("required", false);
+
+       
+
+       $("[name='guest_NO_1_check_in_R2']").attr("required", false);
+       $("[name='guest_NO_1_check_out_R2']").attr("required", false);
+      
+       $('.Two').hide();
+        };
+       
+       
+       
+       // 333333333333333333333333333333333333
+       
+       if ($('#Monty').val() >= 3) {
+    
+    
+       guest_one_checkout_room_one.addEventListener("blur", (e) =>{
+       let value = e.target.value;
+       console.log(value);    
+       
+    
+       $("[name='first_name_of_guest_NO_1_R3']").attr("required", true);
+       $("[name='last_name_of_guest_NO_1_R3']").attr("required", true);
+       $("[name='guest_NO_1_check_in_R3']").attr("required", true);
+       $("[name='guest_NO_1_check_out_R3']").attr("required", true);
+       
+       
+       guest_one_checkout_room_three.value = value;
+       });
+    
+    
+       $('.Three').show();
+       }
+         
+       else {
+       
+       guest_one_checkout_room_three.value = null;
+    
+       $("[name='first_name_of_guest_NO_1_R3']").attr("required", false);
+       $("[name='last_name_of_guest_NO_1_R3']").attr("required", false);
+
+    
+       $("[name='first_name_of_guest_NO_2_R3']").attr("required", false);
+       $("[name='last_name_of_guest_NO_2_R3']").attr("required", false);
+
+              
+       $("[name='guest_NO_1_check_in_R3']").attr("required", false);
+       $("[name='guest_NO_1_check_out_R3']").attr("required", false);
+       $('.Three').hide();
+       
+       
+       };
+       
+       
+       
+       // 444444444444444444444444444444444444444
+       
+       
+       if ($('#Monty').val() >= 4) {
+       
+       guest_one_checkout_room_one.addEventListener("blur", (e) =>{
+       let value = e.target.value;
+       console.log(value);    
+    
+    
+    
+       $("[name='first_name_of_guest_NO_1_R4]").attr("required", true);
+       $("[name='last_name_of_guest_NO_1_R4']").attr("required", true);
+       $("[name='guest_NO_1_check_in_R4']").attr("required", true);
+       $("[name='guest_NO_1_check_out_R4']").attr("required", true);
+       
+    
+    
+       guest_one_checkout_room_four.value = value;
+       });
+    
+    
+       $('.Four').show();
+       }
+         
+       else {
+       
+       guest_one_checkout_room_four.value = null;
+    
+    
+       $("[name='first_name_of_guest_NO_1_R4']").attr("required", false);
+       $("[name='last_name_of_guest_NO_1_R4']").attr("required", false);
+
+       
+       $("[name='first_name_of_guest_NO_2_R4']").attr("required", false);
+       $("[name='last_name_of_guest_NO_2_R4']").attr("required", false);
+       
+       $("[name='guest_NO_1_check_in_R4']").attr("required", false);
+       $("[name='guest_NO_1_check_out_R4']").attr("required", false);
+       $('.Four').hide();
+       
+       
+       };
+       
+       
+       
+       
+       
+       
+       //5555555555555555555555555555555555555555
+       
+       
+       
+       
+       if ($('#Monty').val() >= 5) {
+    
+       guest_one_checkout_room_one.addEventListener("blur", (e) =>{
+       let value = e.target.value;
+       console.log(value);    
+    
+       
+       
+       $("[name='first_name_of_guest_NO_1_R5]").attr("required", true);
+       $("[name='last_name_of_guest_NO_1_R5']").attr("required", true);
+       $("[name='guest_NO_1_check_in_R5']").attr("required", true);
+       $("[name='guest_NO_1_check_out_R5']").attr("required", true);
+    
+    
+       guest_one_checkout_room_five.value = value;
+       });
+    
+    
+    
+       $('.Five').show();
+       }
+         
+       else {
+       
+       guest_one_checkout_room_five.value = null;
+    
+       $("[name='first_name_of_guest_NO_1_R5']").attr("required", false);
+       $("[name='last_name_of_guest_NO_1_R5']").attr("required", false);
+
+       $("[name='first_name_of_guest_NO_2_R5']").attr("required", false);
+       $("[name='last_name_of_guest_NO_2_R5']").attr("required", false);
+
+         
+       $("[name='guest_NO_1_check_in_R5']").attr("required", false);
+       $("[name='guest_NO_1_check_out_R5']").attr("required", false);
+       $('.Five').hide();
+       
+       
+       };
+       
+       
+       // 666666666666666666666666
+       
+       
+       
+       if ($('#Monty').val() >= 6) {
+    
+       guest_one_checkout_room_one.addEventListener("blur", (e) =>{
+       let value = e.target.value;
+       console.log(value);    
+    
+           
+       
+       $("[name='first_name_of_guest_NO_1_R6]").attr("required", true);
+       $("[name='last_name_of_guest_NO_1_R6']").attr("required", true);
+       $("[name='guest_NO_1_check_in_R6']").attr("required", true);
+       $("[name='guest_NO_1_check_out_R6']").attr("required", true);
+       guest_one_checkout_room_six.value = value;
+       });
+    
+    
+       $('.Six').show();
+       }
+         
+       else {
+       
+       guest_one_checkout_room_six.value = null; 
+       $("[name='first_name_of_guest_NO_1_R6']").attr("required", false);
+       $("[name='last_name_of_guest_NO_1_R6']").attr("required", false);
+
+
+       $("[name='first_name_of_guest_NO_2_R6']").attr("required", false);
+       $("[name='last_name_of_guest_NO_2_R6']").attr("required", false);
+
+
+       $("[name='guest_NO_1_check_in_R6']").attr("required", false);
+       $("[name='guest_NO_1_check_out_R6']").attr("required", false);
+       $('.Six').hide();
+       
+       
+       };
+       
+       
+       
+       
+       // 77777777777777777777777777
+       
+       if ($('#Monty').val() >= 7) {
+       
+      
+           
+       guest_one_checkout_room_one.addEventListener("blur", (e) =>{
+       let value = e.target.value;
+       console.log(value);    
+    
+    
+       $("[name='first_name_of_guest_NO_1_R7]").attr("required", true);
+       $("[name='last_name_of_guest_NO_1_R7']").attr("required", true);
+       $("[name='guest_NO_1_check_in_R7']").attr("required", true);
+       $("[name='guest_NO_1_check_out_R7']").attr("required", true);
+    
+       guest_one_checkout_room_seven.value = value;
+       });
+       $('.Seven').show();
+       }
+         
+       else {
+       
+       guest_one_checkout_room_seven.value = null;
+       $("[name='first_name_of_guest_NO_1_R7']").attr("required", false);
+       $("[name='last_name_of_guest_NO_1_R7']").attr("required", false);
+       $("[name='first_name_of_guest_NO_2_R7']").attr("required", false);
+       $("[name='last_name_of_guest_NO_2_R7']").attr("required", false);
+
+
+       $("[name='guest_NO_1_check_in_R7']").attr("required", false);
+       $("[name='guest_NO_1_check_out_R7']").attr("required", false);
+       $('.Seven').hide();
+       
+       
+       };
+       
+       
+       
+       
+       
+       //888888888888888888888888
+       
+       
+       
+       
+       
+       
+       
+       if ($('#Monty').val() >= 8) {
+    
+    
+       guest_one_checkout_room_one.addEventListener("blur", (e) =>{
+       let value = e.target.value;
+       console.log(value);    
+       
+       $("[name='first_name_of_guest_NO_1_R8]").attr("required", true);
+       $("[name='last_name_of_guest_NO_1_R8']").attr("required", true);
+       $("[name='guest_NO_1_check_in_R8']").attr("required", true);
+       $("[name='guest_NO_1_check_out_R8']").attr("required", true);
+    
+    
+       guest_one_checkout_room_eight.value = value;
+       });
+    
+    
+       $('.Eight').show();
+       }
+         
+       else {
+       
+       guest_one_checkout_room_eight.value = null;
+       $("[name='first_name_of_guest_NO_1_R8']").attr("required", false);
+       $("[name='last_name_of_guest_NO_1_R8']").attr("required", false);
+       $("[name='first_name_of_guest_NO_2_R8']").attr("required", false);
+       $("[name='last_name_of_guest_NO_2_R8']").attr("required", false);
+
+
+       $("[name='guest_NO_1_check_in_R8']").attr("required", false);
+       $("[name='guest_NO_1_check_out_R8']").attr("required", false);
+       $('.Eight').hide();
+       
+       
+       };
+       
+       
+       
+       
+       
+       
+       //9999999999999999999999999999
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       if ($('#Monty').val() >= 9) {
+    
+    
+       guest_one_checkout_room_one.addEventListener("blur", (e) =>{
+       let value = e.target.value;
+       console.log(value);       
+       
+    
+       $("[name='first_name_of_guest_NO_1_R9]").attr("required", true);
+       $("[name='last_name_of_guest_NO_1_R9']").attr("required", true);
+       $("[name='guest_NO_1_check_in_R9']").attr("required", true);
+       $("[name='guest_NO_1_check_out_R9']").attr("required", true);
+    
+    
+       guest_one_checkout_room_nine.value = value;
+       });
+    
+       $('.Nine').show();
+       }
+         
+       else {
+       
+       guest_one_checkout_room_nine.value = null;
+       $("[name='first_name_of_guest_NO_1_R9']").attr("required", false);
+       $("[name='last_name_of_guest_NO_1_R9']").attr("required", false);
+       $("[name='first_name_of_guest_NO_2_R9']").attr("required", false);
+       $("[name='last_name_of_guest_NO_2_R9']").attr("required", false);
+
+
+       $("[name='guest_NO_1_check_in_R9']").attr("required", false);
+       $("[name='guest_NO_1_check_out_R9']").attr("required", false);
+       $('.Nine').hide();
+       
+       
+       };
+       
+       
+       
+       
+       
+       
+       ///10000000000000000000000
+       
+       
+       
+       
+       if ($('#Monty').val() >= 10) {
+       
+       guest_one_checkout_room_one.addEventListener("blur", (e) =>{
+       let value = e.target.value;
+       console.log(value);       
+       
+    
+       $("[name='first_name_of_guest_NO_1_R10]").attr("required", true);
+       $("[name='last_name_of_guest_NO_1_R10']").attr("required", true);
+       $("[name='guest_NO_1_check_in_R10']").attr("required", true);
+       $("[name='guest_NO_1_check_out_R10']").attr("required", true);
+    
+       guest_one_checkout_room_ten.value = value;
+       });
+       
+       $('.Ten').show();
+       }
+         
+    
+       else {
+       
+       guest_one_checkout_room_ten.value = null;
+       $("[name='first_name_of_guest_NO_1_R10']").attr("required", false);
+       $("[name='last_name_of_guest_NO_1_R10']").attr("required", false);
+
+       $("[name='first_name_of_guest_NO_2_R10']").attr("required", false);
+       $("[name='last_name_of_guest_NO_2_R10']").attr("required", false);
+
+
+       $("[name='guest_NO_1_check_in_R10']").attr("required", false);
+       $("[name='guest_NO_1_check_out_R10']").attr("required", false);
+       $('.Ten').hide();
+       
+       
+       };
+       
+       
+       ///111111111111111111111
+       
+       
+       if ($('#Monty').val() >= 11) {
+       
+       guest_one_checkout_room_one.addEventListener("blur", (e) =>{
+       let value = e.target.value;
+       console.log(value);     
+       
+       
+    
+       $("[name='first_name_of_guest_NO_1_R11]").attr("required", true);
+       $("[name='last_name_of_guest_NO_1_R11']").attr("required", true);
+       $("[name='guest_NO_1_check_in_R11']").attr("required", true);
+       $("[name='guest_NO_1_check_out_R11']").attr("required", true);
+    
+    
+       guest_one_checkout_room_eleven.value = value;
+       });
+       
+       
+       $('.Eleven').show();
+       }
+         
+       else {
+       
+       guest_one_checkout_room_eleven.value = null;
+    
+    
+       $("[name='first_name_of_guest_NO_1_R11']").attr("required", false);
+       $("[name='last_name_of_guest_NO_1_R11']").attr("required", false);
+
+
+    
+       $("[name='first_name_of_guest_NO_2_R11']").attr("required", false);
+       $("[name='last_name_of_guest_NO_2_R11']").attr("required", false);
+
+       $("[name='guest_NO_1_check_in_R11']").attr("required", false);
+       $("[name='guest_NO_1_check_out_R11']").attr("required", false);
+       $('.Eleven').hide();
+       
+       
+       };
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       //12121212121212121212112
+       
+       
+       
+       
+       if ($('#Monty').val() >= 12) {
+    
+    
+       guest_one_checkout_room_one.addEventListener("blur", (e) =>{
+       let value = e.target.value;
+       console.log(value);     
+         
+       
+       $("[name='first_name_of_guest_NO_1_R12]").attr("required", true);
+       $("[name='last_name_of_guest_NO_1_R12']").attr("required", true);
+       $("[name='guest_NO_1_check_in_R12']").attr("required", true);
+       $("[name='guest_NO_1_check_out_R12']").attr("required", true);
+       guest_one_checkout_room_twelve.value = value;
+       });
+    
+    
+       $('.Twelve').show();
+       }
+         
+       else {
+       
+       guest_one_checkout_room_twelve.value = null;    
+    
+       $("[name='first_name_of_guest_NO_1_R12']").attr("required", false);
+       $("[name='last_name_of_guest_NO_1_R12']").attr("required", false);
+
+       $("[name='first_name_of_guest_NO_2_R12']").attr("required", false);
+       $("[name='last_name_of_guest_NO_2_R12']").attr("required", false);
+  
+       $("[name='guest_NO_1_check_in_R12']").attr("required", false);
+       $("[name='guest_NO_1_check_out_R12']").attr("required", false);
+       $('.Twelve').hide();
+       
+       
+       };
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       //13131313313311313
+       
+       
+       if ($('#Monty').val() >= 13) {
+      
+       guest_one_checkout_room_one.addEventListener("blur", (e) =>{
+       let value = e.target.value;
+       console.log(value);     
+                 
+    
+       
+       $("[name='first_name_of_guest_NO_1_R13]").attr("required", true);
+       $("[name='last_name_of_guest_NO_1_R13']").attr("required", true);
+       $("[name='guest_NO_1_check_in_R13']").attr("required", true);
+       $("[name='guest_NO_1_check_out_R13']").attr("required", true);
+    
+       guest_one_checkout_room_thirteen.value = value;
+       });
+    
+    
+       $('.Thirteen').show();
+       }
+         
+       else {
+       
+       guest_one_checkout_room_thirteen.value = null;
+    
+    
+       $("[name='first_name_of_guest_NO_1_R13']").attr("required", false);
+       $("[name='last_name_of_guest_NO_1_R13']").attr("required", false);
+
+
+       $("[name='first_name_of_guest_NO_2_R13']").attr("required", false);
+       $("[name='last_name_of_guest_NO_2_R13']").attr("required", false);
+       $("[name='guest_NO_1_check_in_R13']").attr("required", false);
+       $("[name='guest_NO_1_check_out_R13']").attr("required", false);
+
+
+
+       $('.Thirteen').hide();
+       
+       
+       };
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       //1414141414114141414
+       
+       
+       
+       
+       
+       
+       if ($('#Monty').val() >= 14) {
+       
+    
+       guest_one_checkout_room_one.addEventListener("blur", (e) =>{
+       let value = e.target.value;
+       console.log(value);     
+                 
+    
+           
+    
+       $("[name='first_name_of_guest_NO_1_R14]").attr("required", true);
+       $("[name='last_name_of_guest_NO_1_R14']").attr("required", true);
+       $("[name='guest_NO_1_check_in_R14']").attr("required", true);
+       $("[name='guest_NO_1_check_out_R14']").attr("required", true);
+    
+       guest_one_checkout_room_fourteen.value = value;
+       });
+    
+    
+       $('.Fourteen').show();
+       }
+         
+       else {
+       
+       guest_one_checkout_room_fourteen.value = null;   
+       $("[name='first_name_of_guest_NO_1_R14']").attr("required", false);
+       $("[name='last_name_of_guest_NO_1_R14']").attr("required", false);
+
+       $("[name='first_name_of_guest_NO_2_R14']").attr("required", false);
+       $("[name='last_name_of_guest_NO_2_R14']").attr("required", false);
+
+       $("[name='guest_NO_1_check_in_R14']").attr("required", false);
+       $("[name='guest_NO_1_check_out_R14']").attr("required", false);
+       $('.Fourteen').hide();
+       
+       
+       };
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       //151515515115551551515155
+       
+       
+       
+       
+       
+       
+       
+       
+       if ($('#Monty').val() >= 15) {
+    
+    
+       guest_one_checkout_room_one.addEventListener("blur", (e) =>{
+       let value = e.target.value;
+       console.log(value);     
+                     
+       
+       $("[name='first_name_of_guest_NO_1_R15]").attr("required", true);
+       $("[name='last_name_of_guest_NO_1_R15']").attr("required", true);
+       $("[name='guest_NO_1_check_in_R15']").attr("required", true);
+       $("[name='guest_NO_1_check_out_R15']").attr("required", true);
+    
+       guest_one_checkout_room_fifteen.value = value;
+       });
+    
+    
+       $('.Fifteen').show();
+       }
+         
+       else {
+       
+       
+       guest_one_checkout_room_fifteen.value = null;
+    
+    
+       $("[name='first_name_of_guest_NO_1_R15']").attr("required", false);
+       $("[name='last_name_of_guest_NO_1_R15']").attr("required", false);
+
+       $("[name='first_name_of_guest_NO_2_R15']").attr("required", false);
+       $("[name='last_name_of_guest_NO_2_R15']").attr("required", false);
+
+
+       $("[name='guest_NO_1_check_in_R15']").attr("required", false);
+       $("[name='guest_NO_1_check_out_R15']").attr("required", false);
+       $('.Fifteen').hide();
+       
+       
+       
+       };
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       //1616166161666161661616166
+       
+       
+       
+       
+       
+       if ($('#Monty').val() >= 16) {
+    
+       guest_one_checkout_room_one.addEventListener("blur", (e) =>{
+       let value = e.target.value;
+       console.log(value);       
+       
+       $("[name='first_name_of_guest_NO_1_R16]").attr("required", true);
+       $("[name='last_name_of_guest_NO_1_R16']").attr("required", true);
+       $("[name='guest_NO_1_check_in_R16']").attr("required", true);
+       $("[name='guest_NO_1_check_out_R16']").attr("required", true);
+    
+       guest_one_checkout_room_sixteen.value = value;
+       });
+    
+       $('.Sixteen').show();
+       }
+         
+       else {
+       
+       guest_one_checkout_room_sixteen.value = null;
+       $("[name='first_name_of_guest_NO_1_R16']").attr("required", false);
+       $("[name='last_name_of_guest_NO_1_R16']").attr("required", false);
+
+       $("[name='first_name_of_guest_NO_2_R16']").attr("required", false);
+       $("[name='last_name_of_guest_NO_2_R16']").attr("required", false);
+   
+       $("[name='guest_NO_1_check_in_R16']").attr("required", false);
+       $("[name='guest_NO_1_check_out_R16']").attr("required", false);
+       $('.Sixteen').hide();
+       
+       
+       };
+       
+       
+       
+       
+       
+       //171717171717177177177
+       
+       
+       
+       
+       
+       
+       if ($('#Monty').val() >= 17) {
+       
+       guest_one_checkout_room_one.addEventListener("blur", (e) =>{
+       let value = e.target.value;
+       console.log(value);       
+       
+       
+       $("[name='first_name_of_guest_NO_1_R17]").attr("required", true);
+       $("[name='last_name_of_guest_NO_1_R17']").attr("required", true);
+       $("[name='guest_NO_1_check_in_R17']").attr("required", true);
+       $("[name='guest_NO_1_check_out_R17']").attr("required", true);
+       guest_one_checkout_room_seventeen.value = value;
+       });
+       
+       $('.Seventeen').show();
+       }
+         
+       else {
+       
+       guest_one_checkout_room_seventeen.value = null;
+       $("[name='first_name_of_guest_NO_1_R17']").attr("required", false);
+       $("[name='last_name_of_guest_NO_1_R17']").attr("required", false);
+
+       $("[name='first_name_of_guest_NO_2_R17']").attr("required", false);
+       $("[name='last_name_of_guest_NO_2_R17']").attr("required", false);
+
+
+
+       $("[name='guest_NO_1_check_in_R17']").attr("required", false);
+       $("[name='guest_NO_1_check_out_R17']").attr("required", false);
+       $('.Seventeen').hide();
+       
+       
+       };
+       
+       
+       
+       
+       
+       //1881818181818188181818
+       
+       
+       
+       
+       
+       
+       
+       if ($('#Monty').val() >= 18) {
+    
+    
+       guest_one_checkout_room_one.addEventListener("blur", (e) =>{
+       let value = e.target.value;
+       console.log(value);       
+           
+       
+       $("[name='first_name_of_guest_NO_1_R18']").attr("required", true);
+       $("[name='last_name_of_guest_NO_1_R18']").attr("required", true);
+       $("[name='guest_NO_1_check_in_R18']").attr("required", true);
+       $("[name='guest_NO_1_check_out_R18']").attr("required", true);
+    
+       guest_one_checkout_room_eighteen.value = value;
+       });
+    
+    
+       $('.Eightteen').show();
+       }
+         
+       else {
+       
+       guest_one_checkout_room_eighteen.value = null;
+    
+       $("[name='first_name_of_guest_NO_1_R18']").attr("required", false);
+       $("[name='last_name_of_guest_NO_1_R18']").attr("required", false);
+
+
+       $("[name='first_name_of_guest_NO_2_R18']").attr("required", false);
+       $("[name='last_name_of_guest_NO_2_R18']").attr("required", false);
+
+
+       $("[name='guest_NO_1_check_in_R18']").attr("required", false);
+       $("[name='guest_NO_1_check_out_R18']").attr("required", false);
+       $('.Eightteen').hide();
+       
+       };
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       //1911919199191919199
+       
+       
+       
+       
+       
+       if ($('#Monty').val() >= 19) {
+       
+    
+    
+       guest_one_checkout_room_one.addEventListener("blur", (e) =>{
+       let value = e.target.value;
+       console.log(value);             
+    
+    
+       $("[name='first_name_of_guest_NO_1_R19']").attr("required", true);
+       $("[name='last_name_of_guest_NO_1_R19']").attr("required", true);
+       $("[name='guest_NO_1_check_in_R19']").attr("required", true);
+       $("[name='guest_NO_1_check_out_R19']").attr("required", true);
+    
+       guest_one_checkout_room_nineteen.value = value;
+       });
+    
+    
+       $('.Nineteen').show();
+       }
+         
+       else {
+       
+       guest_one_checkout_room_nineteen.value = null;
+    
+    
+       $("[name='first_name_of_guest_NO_1_R19']").attr("required", false);
+       $("[name='last_name_of_guest_NO_1_R19']").attr("required", false);
+
+           
+       $("[name='first_name_of_guest_NO_2_R19']").attr("required", false);
+       $("[name='last_name_of_guest_NO_2_R19']").attr("required", false);
+
+       $("[name='guest_NO_1_check_in_R19']").attr("required", false);
+       $("[name='guest_NO_1_check_out_R19']").attr("required", false);
+       $('.Nineteen').hide();
+       
+       };
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       //2050202020202202
+       
+       
+       
+       
+       
+       
+       
+       
+       if ($('#Monty').val() == 20) {
+    
+    
+       guest_one_checkout_room_one.addEventListener("blur", (e) =>{
+       let value = e.target.value;
+       console.log(value);     
+       
+       
+       $("[name='first_name_of_guest_NO_1_R20']").attr("required", true);
+       $("[name='last_name_of_guest_NO_1_R20']").attr("required", true);
+       $("[name='guest_NO_1_check_in_R20']").attr("required", true);
+       $("[name='guest_NO_1_check_out_R20']").attr("required", true);
+       
+       guest_one_checkout_room_twenty.value = value;
+       });  
+       
+       $('.Twenty').show();
+       
+       }
+         
+       else {
+    
+    
+    
+       guest_one_checkout_room_twenty.value = null;
+       $("[name='first_name_of_guest_NO_1_R20']").attr("required", false);
+       $("[name='last_name_of_guest_NO_1_R20']").attr("required", false);
+        $("[name='first_name_of_guest_NO_2_R20']").attr("required", false);
+        $("[name='last_name_of_guest_NO_2_R20']").attr("required", false);
+       $("[name='guest_NO_1_check_in_R20']").attr("required", false);
+       $("[name='guest_NO_1_check_out_R20']").attr("required", false);
+       $('.Twenty').hide();
+       
+       
+       };
+       
+       
+       
+       });
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </script>
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    <script>
+    
+
+$(document).ready(function () {
+
+    
+
+
+//111111111
+    $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_1']:checked").val();
+            if (selectedValue == 'D') {
+            
+
+            $("[name='first_name_of_guest_NO_2_R1']").attr("required", true);
+            $("[name='last_name_of_guest_NO_2_R1']").attr("required", true);
+            $("[name='guest_NO_2_check_in_R1']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R1']").attr("required", false);
+            $('.Room_1_Guest_2').show();
+            
+            
+            }
+        else{
+            $("[name='first_name_of_guest_NO_2_R1']").attr("required", false);
+            $("[name='last_name_of_guest_NO_2_R1']").attr("required", false);
+            $("[name='guest_NO_2_check_in_R1']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R1']").attr("required", false);
+            $('.Room_1_Guest_2').hide();
+                
+            }
+            
+        });
+
+
+//222222
+// hero
+    $('#div_id_Number_OF_Guests').change(function(){
+
+        if ($('#Monty').val() == 2) {
+
+
+           
+    $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_2']:checked").val();
+            if (selectedValue == 'D') {
+            
+
+            $("[name='first_name_of_guest_NO_2_R2']").attr("required", true);
+            $("[name='last_name_of_guest_NO_2_R2']").attr("required", true);
+            $("[name='guest_NO_2_check_in_R2']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R2']").attr("required", false);
+            $('.Room_2_Guest_2').show();
+            
+            
+            }
+        else{
+            $("[name='first_name_of_guest_NO_2_R2']").attr("required", false);
+            $("[name='last_name_of_guest_NO_2_R2']").attr("required", false);
+            $("[name='guest_NO_2_check_in_R2']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R2']").attr("required", false);
+            $('.Room_2_Guest_2').hide();
+                
+            }
+            
+        });
+
+
+
+        }  
+        else {
+
+            $("[name='first_name_of_guest_NO_2_R2']").attr("required", false);
+            $("[name='last_name_of_guest_NO_2_R2']").attr("required", false);
+            $("[name='guest_NO_2_check_in_R2']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R2']").attr("required", false);
+        }
+        
+
+    })
+
+
+
+
+
+
+//3333333333
+
+
+        $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_3']:checked").val();
+            if (selectedValue == 'D') {
+            
+
+            $("[name='first_name_of_guest_NO_2_R3']").attr("required", true);
+            $("[name='last_name_of_guest_NO_2_R3']").attr("required", true);
+            $("[name='guest_NO_2_check_in_R3']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R3']").attr("required", false);
+            $('.Room_3_Guest_2').show();
+            
+            
+            }
+        else{
+            $("[name='first_name_of_guest_NO_2_R3']").attr("required", false);
+            $("[name='last_name_of_guest_NO_2_R3']").attr("required", false);
+            $("[name='guest_NO_2_check_in_R3']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R3']").attr("required", false);
+            $('.Room_3_Guest_2').hide();
+                
+            }
+            
+        });
+
+
+
+
+//4444444444444444
+
+
+
+
+        $("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_4']:checked").val();
+            if (selectedValue == 'D') {
+            
+
+            $("[name='first_name_of_guest_NO_2_R4']").attr("required", true);
+            $("[name='last_name_of_guest_NO_2_R4']").attr("required", true);
+            $("[name='guest_NO_2_check_in_R4']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R4']").attr("required", false);
+            $('.Room_4_Guest_2').show();
+            
+            
+            }
+        else{
+            $("[name='first_name_of_guest_NO_2_R4']").attr("required", false);
+            $("[name='last_name_of_guest_NO_2_R4']").attr("required", false);
+            $("[name='guest_NO_2_check_in_R4']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R4']").attr("required", false);
+            $('.Room_4_Guest_2').hide();
+                
+            }
+            
+        });
+
+
+
+
+
+
+//5555555555555555
+
+
+
+$("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_5']:checked").val();
+            if (selectedValue == 'D') {
+            
+
+            $("[name='first_name_of_guest_NO_2_R5']").attr("required", true);
+            $("[name='last_name_of_guest_NO_2_R5']").attr("required", true);
+            $("[name='guest_NO_2_check_in_R5']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R5']").attr("required", false);
+            $('.Room_5_Guest_2').show();
+            
+            
+            }
+        else{
+            $("[name='first_name_of_guest_NO_2_R5']").attr("required", false);
+            $("[name='last_name_of_guest_NO_2_R5']").attr("required", false);
+            $("[name='guest_NO_2_check_in_R5']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R5']").attr("required", false);
+            $('.Room_5_Guest_2').hide();
+                
+            }
+            
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+//66666666666666
+
+
+
+
+$("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_6']:checked").val();
+            if (selectedValue == 'D') {
+            
+
+            $("[name='first_name_of_guest_NO_2_R6']").attr("required", true);
+            $("[name='last_name_of_guest_NO_2_R6']").attr("required", true);
+            $("[name='guest_NO_2_check_in_R6']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R6']").attr("required", false);
+            $('.Room_6_Guest_2').show();
+            
+            
+            }
+        else{
+            $("[name='first_name_of_guest_NO_2_R6']").attr("required", false);
+            $("[name='last_name_of_guest_NO_2_R6']").attr("required", false);
+            $("[name='guest_NO_2_check_in_R6']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R6']").attr("required", false);
+            $('.Room_6_Guest_2').hide();
+                
+            }
+            
+        });
+
+
+
+
+
+
+
+//777777777777777777777777777
+
+
+
+
+
+$("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_7']:checked").val();
+            if (selectedValue == 'D') {
+            
+
+            $("[name='first_name_of_guest_NO_2_R7']").attr("required", true);
+            $("[name='last_name_of_guest_NO_2_R7']").attr("required", true);
+            $("[name='guest_NO_2_check_in_R7']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R7']").attr("required", false);
+            $('.Room_7_Guest_2').show();
+            
+            
+            }
+        else{
+            $("[name='first_name_of_guest_NO_2_R7']").attr("required", false);
+            $("[name='last_name_of_guest_NO_2_R7']").attr("required", false);
+            $("[name='guest_NO_2_check_in_R7']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R7']").attr("required", false);
+            $('.Room_7_Guest_2').hide();
+                
+            }
+            
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//8888888888888888
+
+
+
+
+$("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_8']:checked").val();
+            if (selectedValue == 'D') {
+            
+
+            $("[name='first_name_of_guest_NO_2_R8']").attr("required", true);
+            $("[name='last_name_of_guest_NO_2_R8']").attr("required", true);
+            $("[name='guest_NO_2_check_in_R8']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R8']").attr("required", false);
+            $('.Room_8_Guest_2').show();
+            
+            
+            }
+        else{
+            $("[name='first_name_of_guest_NO_2_R8']").attr("required", false);
+            $("[name='last_name_of_guest_NO_2_R8']").attr("required", false);
+            $("[name='guest_NO_2_check_in_R8']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R8']").attr("required", false);
+            $('.Room_8_Guest_2').hide();
+                
+            }
+            
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//9999999999999999999999
+
+
+$("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_9']:checked").val();
+            if (selectedValue == 'D') {
+            
+
+            $("[name='first_name_of_guest_NO_2_R9']").attr("required", true);
+            $("[name='last_name_of_guest_NO_2_R9']").attr("required", true);
+            $("[name='guest_NO_2_check_in_R9']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R9']").attr("required", false);
+            $('.Room_9_Guest_2').show();
+            
+            
+            }
+        else{
+            $("[name='first_name_of_guest_NO_2_R9']").attr("required", false);
+            $("[name='last_name_of_guest_NO_2_R9']").attr("required", false);
+            $("[name='guest_NO_2_check_in_R9']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R9']").attr("required", false);
+            $('.Room_9_Guest_2').hide();
+                
+            }
+            
+        });
+
+
+
+
+
+
+
+
+
+
+
+//101010101010101010
+
+
+
+
+
+
+$("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_10']:checked").val();
+            if (selectedValue == 'D') {
+            
+
+            $("[name='first_name_of_guest_NO_2_R10']").attr("required", true);
+            $("[name='last_name_of_guest_NO_2_R10']").attr("required", true);
+            $("[name='guest_NO_2_check_in_R10']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R10']").attr("required", false);
+            $('.Room_10_Guest_2').show();
+            
+            
+            
+            }
+        else{
+            $("[name='first_name_of_guest_NO_2_R10']").attr("required", false);
+            $("[name='last_name_of_guest_NO_2_R10']").attr("required", false);
+            $("[name='guest_NO_2_check_in_R10']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R10']").attr("required", false);
+            $('.Room_10_Guest_2').hide();
+                
+            }
+            
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//11111111111111/111111111
+
+
+
+
+$("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_11']:checked").val();
+            if (selectedValue == 'D') {
+            
+
+            $("[name='first_name_of_guest_NO_2_R11']").attr("required", true);
+            $("[name='last_name_of_guest_NO_2_R11']").attr("required", true);
+            $("[name='guest_NO_2_check_in_R11']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R11']").attr("required", false);
+            $('.Room_11_Guest_2').show();
+            
+            
+            
+            }
+        else{
+            $("[name='first_name_of_guest_NO_2_R11']").attr("required", false);
+            $("[name='last_name_of_guest_NO_2_R11']").attr("required", false);
+            $("[name='guest_NO_2_check_in_R11']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R11']").attr("required", false);
+            $('.Room_11_Guest_2').hide();
+                
+            }
+            
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///121212121212121122121
+
+
+
+
+
+
+$("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_12']:checked").val();
+            if (selectedValue == 'D') {
+            
+
+            $("[name='first_name_of_guest_NO_2_R12']").attr("required", true);
+            $("[name='last_name_of_guest_NO_2_R12']").attr("required", true);
+            $("[name='guest_NO_2_check_in_R12']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R12']").attr("required", false);
+            $('.Room_12_Guest_2').show();
+            
+            
+            
+            }
+        else{
+            $("[name='first_name_of_guest_NO_2_R12']").attr("required", false);
+            $("[name='last_name_of_guest_NO_2_R12']").attr("required", false);
+            $("[name='guest_NO_2_check_in_R12']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R12']").attr("required", false);
+            $('.Room_12_Guest_2').hide();
+                
+            }
+            
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//131313133113113311313
+
+
+
+
+
+
+
+$("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_13']:checked").val();
+            if (selectedValue == 'D') {
+            
+
+            $("[name='first_name_of_guest_NO_2_R13']").attr("required", true);
+            $("[name='last_name_of_guest_NO_2_R13']").attr("required", true);
+            $("[name='guest_NO_2_check_in_R13']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R13']").attr("required", false);
+            $('.Room_13_Guest_2').show();
+            
+            
+            
+            }
+        else{
+            $("[name='first_name_of_guest_NO_2_R13']").attr("required", false);
+            $("[name='last_name_of_guest_NO_2_R13']").attr("required", false);
+            $("[name='guest_NO_2_check_in_R13']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R13']").attr("required", false);
+            $('.Room_13_Guest_2').hide();
+                
+            }
+            
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+//14141414141414141
+
+
+
+
+
+
+
+$("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_14']:checked").val();
+            if (selectedValue == 'D') {
+            
+
+            $("[name='first_name_of_guest_NO_2_R14']").attr("required", true);
+            $("[name='last_name_of_guest_NO_2_R14']").attr("required", true);
+            $("[name='guest_NO_2_check_in_R14']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R14']").attr("required", false);
+            $('.Room_14_Guest_2').show();
+            
+            
+            
+            }
+        else{
+            $("[name='first_name_of_guest_NO_2_R14']").attr("required", false);
+            $("[name='last_name_of_guest_NO_2_R14']").attr("required", false);
+            $("[name='guest_NO_2_check_in_R14']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R14']").attr("required", false);
+            $('.Room_14_Guest_2').hide();
+                
+            }
+            
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//151515151551515151511
+
+
+
+
+
+
+
+$("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_15']:checked").val();
+            if (selectedValue == 'D') {
+            
+
+            $("[name='first_name_of_guest_NO_2_R15']").attr("required", true);
+            $("[name='last_name_of_guest_NO_2_R15']").attr("required", true);
+            $("[name='guest_NO_2_check_in_R15']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R15']").attr("required", false);
+            $('.Room_15_Guest_2').show();
+            
+            
+            
+            }
+        else{
+            $("[name='first_name_of_guest_NO_2_R15']").attr("required", false);
+            $("[name='last_name_of_guest_NO_2_R15']").attr("required", false);
+            $("[name='guest_NO_2_check_in_R15']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R15']").attr("required", false);
+            $('.Room_15_Guest_2').hide();
+                
+            }
+            
+        });
+
+
+
+
+
+
+
+
+//161616161616161616616
+
+
+
+$("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_16']:checked").val();
+            if (selectedValue == 'D') {
+            
+
+            $("[name='first_name_of_guest_NO_2_R16']").attr("required", true);
+            $("[name='last_name_of_guest_NO_2_R16']").attr("required", true);
+            $("[name='guest_NO_2_check_in_R16']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R16']").attr("required", false);
+            $('.Room_16_Guest_2').show();
+            
+            
+            
+            }
+        else{
+            $("[name='first_name_of_guest_NO_2_R16']").attr("required", false);
+            $("[name='last_name_of_guest_NO_2_R16']").attr("required", false);
+            $("[name='guest_NO_2_check_in_R16']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R16']").attr("required", false);
+            $('.Room_16_Guest_2').hide();
+                
+            }
+            
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//1717171717171717
+
+
+
+
+
+$("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_17']:checked").val();
+            if (selectedValue == 'D') {
+            
+
+            $("[name='first_name_of_guest_NO_2_R17']").attr("required", true);
+            $("[name='last_name_of_guest_NO_2_R17']").attr("required", true);
+            $("[name='guest_NO_2_check_in_R17']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R17']").attr("required", false);
+            $('.Room_17_Guest_2').show();
+            
+            
+            
+            }
+        else{
+            $("[name='first_name_of_guest_NO_2_R17']").attr("required", false);
+            $("[name='last_name_of_guest_NO_2_R17']").attr("required", false);
+            $("[name='guest_NO_2_check_in_R17']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R17']").attr("required", false);
+            $('.Room_17_Guest_2').hide();
+                
+            }
+            
+        });
+
+
+
+
+
+
+
+
+//1818181818818181
+
+
+
+
+
+
+
+
+
+$("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_18']:checked").val();
+            if (selectedValue == 'D') {
+            
+
+            $("[name='first_name_of_guest_NO_2_R18']").attr("required", true);
+            $("[name='last_name_of_guest_NO_2_R18']").attr("required", true);
+            $("[name='guest_NO_2_check_in_R18']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R18']").attr("required", false);
+            $('.Room_18_Guest_2').show();
+            
+            
+            
+            }
+        else{
+            $("[name='first_name_of_guest_NO_2_R18']").attr("required", false);
+            $("[name='last_name_of_guest_NO_2_R18']").attr("required", false);
+            $("[name='guest_NO_2_check_in_R18']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R18']").attr("required", false);
+            $('.Room_18_Guest_2').hide();
+                
+            }
+            
+        });
+
+
+
+
+
+
+
+//1919919919919
+
+
+
+
+
+
+
+$("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_19']:checked").val();
+            if (selectedValue == 'D') {
+            
+
+            $("[name='first_name_of_guest_NO_2_R19']").attr("required", true);
+            $("[name='last_name_of_guest_NO_2_R19']").attr("required", true);
+            $("[name='guest_NO_2_check_in_R19']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R19']").attr("required", false);
+            $('.Room_19_Guest_2').show();
+            
+            
+            
+            }
+        else{
+            $("[name='first_name_of_guest_NO_2_R19']").attr("required", false);
+            $("[name='last_name_of_guest_NO_2_R19']").attr("required", false);
+            $("[name='guest_NO_2_check_in_R19']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R19']").attr("required", false);
+            $('.Room_19_Guest_2').hide();
+                
+            }
+            
+        });
+
+
+
+
+
+
+
+
+
+//20202020202022020202
+
+
+
+
+$("input[type='radio']").on('change', function () {
+            var selectedValue = $("input[name='Room_20']:checked").val();
+            if (selectedValue == 'D') {
+            
+
+            $("[name='first_name_of_guest_NO_2_R20']").attr("required", true);
+            $("[name='last_name_of_guest_NO_2_R20']").attr("required", true);
+            $("[name='guest_NO_2_check_in_R20']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R20']").attr("required", false);
+            $('.Room_20_Guest_2').show();
+            
+            
+            
+            }
+        else{
+            $("[name='first_name_of_guest_NO_2_R20']").attr("required", false);
+            $("[name='last_name_of_guest_NO_2_R20']").attr("required", false);
+            $("[name='guest_NO_2_check_in_R20']").attr("required", false);
+            $("[name='guest_NO_2_check_out_R20']").attr("required", false);
+            $('.Room_20_Guest_2').hide();
+                
+            }
+            
+        });
+    
+
+/// the last }); is below 
+    
+
+
+});
+    
+
+    </script>
+    
+    
+
+
+
+<script>
+
+document.getElementById("#rm4").required = true;
+</script>
+
+
+
+
+
+
+
+
+
+{% endif %}   
+
+
+</body>
+</html>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,889 @@
+
+
+{% extends 'Main/Base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% if user.is_superuser %}
+<title>Travencia | Book </title>
+</head>
+<body>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<style>
+  ::placeholder{
+    color: black;
+  }
+
+
+ 
+</style>
+<br>
+<br>
+<br>
+<div class="container" style="width: auto;"> 
+<form  class="form-inline md-form mr-auto mb-4" method="GET" > 
+<div style class="md-form my-0" > 
+<input   name="q" class="form-control mr-sm-2" type="text" style="color: black !important;" placeholder="Search Hotel" aria-label="Search" value="{{request.GET.q}}">
+<button style="background-color:rgb(0, 131, 144) !important; color:white !important;" id="thebtn" class="btn btn-indigo btn-rounded btn-md my-0 waves-effect waves-light" type="submit">Search</button>
+</div>
+</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--MailChimp Snippet starts below
+
+
+
+MailChimp Snippet starts below
+
+
+MailChimp Snippet starts below -->
+
+      {% if request.GET.q  %}
+
+      
+<div  style="padding-bottom: 0px !important; margin-bottom: 0px !important; margin-left: 5%; margin-right:5%;">
+
+    <img src="{{request.scheme}}://{{request.META.HTTP_HOST}}{{ object_list.0.convention_image.url }}" alt="" style=" text-align: center !important; width:100% !important; max-height:350px !important;">
+
+    
+  
+  <h1 style="padding-bottom: 1px !important; margin-bottom: 1px !important; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;" >Promotion Code: {{object_list.0.promo_code}}</h1>
+
+
+  
+  <p style="padding-bottom: 1px !important; margin-bottom: 1px !important; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 550;"> Book Your Perfect Stay</p>
+
+  <h3 style="padding-bottom: 1px !important; margin-bottom: 1px !important; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 550;">{{object_list.0.convention}}</h3>
+
+  <p style="padding-bottom: 1px !important; margin-bottom: 1px !important; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 550;">{{object_list.0.convention_address}} </p>
+  
+  <p style="padding-bottom: 1px !important; margin-bottom: 1px !important; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 550;">{{object_list.0.start_date}} - {{object_list.0.end_date}}</p>
+  <p style="padding-bottom: 1px !important; margin-bottom: 1px !important; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 550;">   This offer is available exclusively to exhibitors and the attendees.Take <br> advantage of this limited time offer. Book your room and save. </p>
+  <p style="padding-bottom: 1px !important; margin-bottom: 1px !important; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 550;">offer is subject to availability.</p>
+  <p style="padding-bottom: 1px !important; margin-bottom: 1px !important; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 550;" ><img style=" padding:0% !important; margin: 0% !important;" src="{{request.scheme}}://{{request.META.HTTP_HOST}}{% static 'Main/img/tel.jpg'%}" alt="">  (800) 462-0650</p>
+  <p style="padding-bottom: 1px !important; margin-bottom: 1px !important; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 550;"> <img style="transform: rotate(-5deg); padding:0% !important; margin: 0% !important;" src="{{request.scheme}}://{{request.META.HTTP_HOST}}{% static 'Main/img/check.jpg'%}" alt=""> All Reservations Are Flexible.</p>
+  <p style="padding-bottom: 1px !important; margin-bottom: 1px !important; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 550;"> <img style="transform: rotate(-5deg); padding:0% !important; margin: 0% !important;" src="{{request.scheme}}://{{request.META.HTTP_HOST}}{% static 'Main/img/check.jpg'%}" alt=""> Name Change allowed.</p>
+  <p style="padding-bottom: 1px !important; margin-bottom: 1px !important; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 550;"> <img style="transform: rotate(-5deg); padding:0% !important; margin: 0% !important;" src="{{request.scheme}}://{{request.META.HTTP_HOST}}{% static 'Main/img/check.jpg'%}" alt="">  Free Modifications.</p>
+  <p style="padding-bottom: 1px !important; margin-bottom: 1px !important; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 550;"> <img style="transform: rotate(-5deg); padding:0% !important; margin: 0% !important;" src="{{request.scheme}}://{{request.META.HTTP_HOST}}{% static 'Main/img/check.jpg'%}" alt="">  Secure Booking.</p>
+
+</div>
+
+    <br>
+
+
+{% endif %}
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<div class="mate" style="margin-left: 3%; margin-right: 3%; margin-top: 50px !important;">
+
+<div style="display: grid;  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+padding-right: 15px;padding-left: 15px; grid-gap: 2rem; 
+ ">    
+
+{% for item in object_list %}
+
+<div style="text-align: center !important; width:100%;     word-wrap: break-word; background-clip: border-box; border: 2px solid rgba(0,0,0,.125);
+border-radius: 10px 10px 10px 10px;  !important; height: 450px;      box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%); ">
+
+<img style="height:200px;width:100% !important; text-align: center !important; padding: 0% !important; border-radius: 10px 10px 10px 10px;    margin-bottom:18px  !important;  " src="{{request.scheme}}://{{request.META.HTTP_HOST}}{{ item.image.url }}" >
+<a href="{{ item.get_absolute_url }}">
+
+</a>
+
+
+
+<a href="{{ item.get_absolute_url }}"  style="color: #333 !important; font-weight: 700 !important;   padding-top: 15px !important; margin: 10px !important; line-height: 1.5;  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;text-transform: capitalize !important; font-size:1rem !important; text-align: center !important;   ">{{ item.title }}</a>
+
+<p style=" color: #9e9e9e!important; font-weight: bold !important;  padding-bottom: 5px !important; padding-top:10px !important; margin: 0px !important;    font-weight: 300; font-size: 10px;
+line-height: 1.2; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;text-transform: capitalize !important; padding-left:5px; padding-right: 5px;  "> 
+ {{ item.address}}  </p>
+
+
+{% if item.discount_price %}
+{{ item.discount_price }}0
+{% else %}
+<p style="    color: #2196f3!important; font-weight: bold !important;  margin: 0px !important;    font-weight: 300; font-size: 10px;
+line-height: 1.2;  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;     text-transform: capitalize !important;font-size: 1.55rem;  ">${{ item.price }}0</p>
+
+{% endif %}
+            
+<a href="{{ item.get_absolute_url }}">      
+<button id="btn_two" style="background-color:rgb(0, 131, 144) !important;  margin: .375rem;color: white !important; font-weight: 600 !important;  text-transform: uppercase; word-wrap: break-word; white-space: normal; cursor: pointer; border: 0;
+border-radius: .125rem;box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%); transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;padding: .84rem 2.14rem; font-size:16px; width: 85%; border-radius: 5px !important; max-height: 50px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; padding-top: 5px !important; padding-bottom: 7px !important; margin-top:30px ;" > Book Now</button></a>
+
+
+
+</div>
+
+
+
+
+        {% endfor %}
+      </div>
+    </div>
+    
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+<div class="container" style="display:none !important;">
+  <div class="row">
+    <div class="col-md-12" style="margin-bottom: 0px !important; padding-bottom:0px !important ;">
+      <p style="font-weight:400 !important; font-size: 12px !important; font-family: 'Roboto', sans-serif;text-align: center !important; color:#333 !important;margin-bottom: 0px !important; padding-bottom:0px !important ; padding-left:12px ;">Copyright © 2021 Travencia, All Right Reserved </p>
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-md-12">
+      <p  style="font-weight:400 !important; font-size: 12px !important; font-family: 'Roboto', sans-serif;padding:12px !important;text-align: center !important; color:#333 !important; ">
+     
+        <span style="font-size: 12px; color: black !important; font-weight: bold; font-family: 'Roboto', sans-serif;">Our Mailing Address is:</span>
+        <br>
+        1065 SW 8th St #1189 Miami FL 33130 
+        <hr style="background-color: #666; width: 200px !important;">
+      </p>
+    </div>
+
+   
+
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-12" style="text-align: center !important;">
+      <p style="  font-size:13px;font-weight: 700;font-family: 'Poppins', sans-serif; margin-bottom: 0px !important; padding-bottom: 5px !important;
+     ">connect with us</p>
+      <a href="https://www.facebook.com/Travencia-107191497471416" target="_blank"><i style="background-color: #3B5998 ;border-radius: 50%; color:blanchedalmond; padding:10px;" class="fab fa-facebook-f "></i></a>
+      <a href="https://www.instagram.com/travencia/" target="_blank"><i  style="background-color:#8a3ab9	; border-radius: 50%; color:blanchedalmond; padding:10px;" class="fab fa-instagram "></i></a>
+    </div>
+  </div>
+</div>
+
+
+      <!--Pagination-->
+
+      {% if is_paginated %}
+      <nav class="d-flex justify-content-center wow fadeIn">
+        <ul class="pagination pg-blue">
+
+          {% if page_obj.has_previous %}
+          <li class="page-item">
+            <a  class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          {% endif %}
+
+          <li class="page-item active">
+            <a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+
+          {% if page_obj.has_next %}
+          <li class="page-item" >
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+      {% endif %}
+
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <br>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  
+<script>
+
+/*
+jQuery(function($){
+
+// Replace 'hiddy' with your html tag
+$("#hiddy").html(function() { 
+
+// Replace 'Host' with string you want to change, you can delete 'Host' and replace it with empty string
+      return $(this).html().replace("Host", "");  
+
+});
+});*/
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+{% else %}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travencia | Book </title>
+<body style="  background-color: rgb(22, 22, 22);">
+  
+
+
+
+<div class="container" style="margin-top: 70px;">
+
+
+
+<br>
+<h1 style="text-align: center !important;     font-family: 'Archivo Black', arial, sans-serif;font-weight: 400; font-size: 32px;color: rgb(0, 131, 144);">RECOMMENDED HOTELS</h1>
+
+
+
+<br>
+
+
+<style>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  *{
+      box-sizing:border-box;
+  }
+  .Abdelzaher-slider{
+      width: 100% !important;
+      height:85vh !important;
+      position: relative;
+      
+      overflow:hidden;
+      
+  }
+  .Abdelzaher-slider .item{
+      width: 100% !important;
+      height: 100% !important;
+    
+      display: flex;
+      position: absolute;
+      z-index: -1;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center !important;
+      object-fit: contain !important;
+  }
+  .Abdelzaher-slider .item .example
+  {
+      color:white;
+      position: absolute;
+      top:93%;
+      
+      width:100%;
+      height:100%;
+      display: flex;
+      font-weight: 450 !important;
+      justify-content: left !important;
+      align-items: left !important;
+      font-size:18px !important;
+      font-family: 'Roboto', sans-serif !important;
+      text-transform: capitalize;
+      background-color: rgba(0,0,0,.4);
+      padding-top: 8px;
+      padding-left: 10px;
+      
+  }
+  
+  
+  
+  
+
+  
+  
+  
+  
+  .Abdelzaher-slider .item::before{
+      content: "";
+      position: absolute;
+      top:0px;
+      left:0px;
+      width:100%;
+      height:100%;
+      background-color: rgba(0,0,0,.1);
+      object-fit: contain !important;
+      
+  }
+  .Abdelzaher-slider .item:nth-child(1){
+   
+      background-image: url("{% static 'Main/img/book1.jpeg'%}");
+  }
+  .Abdelzaher-slider .item:nth-child(2){
+    background-image: url("{% static 'Main/img/book2.jpeg'%}");
+  }
+  
+  .Abdelzaher-slider .item:nth-child(3){
+    background-image: url("{% static 'Main/img/book3.jpeg'%}");
+  }
+  .Abdelzaher-slider .item:nth-child(4){
+    background-image: url("{% static 'Main/img/book4.jpeg'%}");
+   
+  }
+  
+  .Abdelzaher-slider .item:nth-child(5){
+    background-image: url("{% static 'Main/img/book5.jpeg'%}");
+    }
+  
+  
+  .Abdelzaher-slider .item:nth-child(6){
+    background-image: url("{% static 'Main/img/book6.jpeg'%}");
+  }
+  .Abdelzaher-slider .item:nth-child(7){
+    background-image: url("{% static 'Main/img/book7.jpeg'%}");
+  }
+  .Abdelzaher-slider .item:nth-child(8){
+    background-image: url("{% static 'Main/img/book8.jpeg'%}");
+  }
+  
+
+  
+  
+  
+  .Abdelzaher-slider .item.top{
+      transition: .5s ease transform;
+      z-index:3
+  }
+  .Abdelzaher-slider .left{
+      transform: translateX(-100%);
+  }
+  .Abdelzaher-slider .right{
+      transform: translateX(100%);
+  }
+  .Abdelzaher-slider .item.active{
+      transform: translateX(0%);
+  }
+  .Abdelzaher-slider .controls{
+      position: absolute;
+      bottom: 20px;
+      display:none !important;
+      justify-content: center;
+      width:100%
+      
+  }
+  .Abdelzaher-slider .controls span{
+      width:10px;
+      height:10px;
+      border-radius:10px;
+      background-color:#bbb;
+      margin: 0px 7px;
+      cursor: pointer;
+      transition: width .5s ease;
+  }
+  .Abdelzaher-slider .controls span.active{
+      width:30px;
+      background-color:#fff;
+      border-radius: 5px;
+  }
+  .controlsButtons{
+      position: absolute;
+      width:100%;
+      height:100%;
+      top:0px;
+      left:0px;
+  
+  }
+  .controlsButtons button{
+      position: absolute;
+      top:50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      width:40px;
+      height:40px;
+      /*border-radius:80px;*/
+      border:none;
+      outline:none;
+      font-size:25pt;
+      font-weight:bold;
+      color:#bbb;
+      background-color:transparent;
+      text-align:center;
+      cursor:pointer;
+  }
+  .controlsButtons button:hover{
+      outline: none;
+      color: #fff;
+      background-color: rgba(0,0,0,.2);
+      border: solid white 0.05px;
+  }
+  .controlsButtons .next{
+      right:0px
+  }
+  .controlsButtons .next i {
+      position: relative;
+      left:2px
+  }
+  .controlsButtons .prev{
+      left:0px
+  }
+  .controlsButtons .prev i {
+      position: relative;
+      left:-4px
+  }
+  .sound{
+      position: absolute;
+      display:none
+  }
+  
+  
+  </style>
+  
+  
+  
+  
+  
+  <!--
+      This page made by : Youssef Abdelzaher Front-end developer 
+   -->
+  
+  <!-- You must write number in data-change to start the change or "none" to stop the change -->
+  <div class="Abdelzaher-slider" data-change="5000"> <!-- write number in data-change to start the change or "none" to stop the change -->
+    <div class="item active">
+      <h1 class="example"> {% trans "Aria Las Vegas" %} </h1> <!-- This an example  you can remove it in any time -->
+    </div>
+    <div class="item">
+      <h1 class="example" >{% trans "Venetian Las Vegas" %}</h1> <!-- This an example  you can remove it in any time -->
+    </div>
+    <div class="item">
+      <h1 class="example">{% trans "Hyatt Regency Long Beach" %}</h1> <!-- This an example  you can remove it in any time -->
+    </div>
+    <div class="item">
+      <h1 class="example">{% trans "Golden Nugget Atlantic City" %}</h1> <!-- This an example  you can remove it in any time -->
+    </div>
+    <div class="item">
+      <h1 class="example">{% trans "Hard Rock San Diego" %}</h1> <!-- This an example  you can remove it in any time -->
+    </div>
+     <div class="item">
+      <h1 class="example">{% trans "Omni hotel Dallas" %}</h1> <!-- This an example  you can remove it in any time -->
+    </div>
+    <div class="item">
+      <h1 class="example">{% trans "Hyatt Regency O'hare" %}</h1> <!-- This an example  you can remove it in any time -->
+    </div>
+    <div class="item">
+      <h1 class="example">{% trans "Hyatt Regency Orlando" %}</h1> <!-- This an example  you can remove it in any time -->
+    </div>
+
+    ..
+    <div class="controls"></div>
+    <div class="controlsButtons">
+      <button class="prev"><i class="fa fa-chevron-left"></i></button>
+      <button class="next"><i class="fa fa-chevron-right"></i></button>
+    </div>
+  
+    <audio src="music/song.mp3" class="sound"></audio>
+  
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <script>
+    /* 
+      This page made by : Youssef Abdelzaher Front-end developer 
+  */
+  
+  /* Start Get Elements  */
+  let AbdelzaherSlider = document.querySelector(".Abdelzaher-slider");
+  let items = Array.from(document.querySelectorAll(".Abdelzaher-slider .item"));
+  let controls = document.querySelector(".Abdelzaher-slider .controls");
+  // Creat controls spans by items number 
+  for (let i = 0; i < items.length; i++) {
+      let controlsSpan = document.createElement("span");
+      controlsSpan.dataset.index = i;
+      controls.appendChild(controlsSpan);  
+  }
+  let controlsSpans = Array.from(document.querySelectorAll(".Abdelzaher-slider .controls span"));
+  let controlsButtons = Array.from(document.querySelectorAll(".Abdelzaher-slider .controlsButtons button"));
+  let audioEffect  = document.querySelector(".sound");
+  /* End Get Elements  */
+  
+  /* Start Controls span Function  */
+  controlsSpans.forEach((span,index) => {
+      // Add z-index for spans 
+      span.style.zIndex = items.length + 2;
+  
+      span.onclick = function(){
+          let activeItem = document.querySelector(".Abdelzaher-slider .item.active");
+          let activeIndex = items.indexOf(activeItem);
+          if (index > activeIndex) {
+              startAudio();
+              // Cleear Interval function for this Function work without problems
+              clearInterval(autoInterval);
+              setTimeout(autoTranstion(),5000);
+              // Remove and Add class "active" for items to make transform
+              activeItem.style.transform = 'translate(-100%)';
+              activeItem.classList.remove('active');
+              items[index].style.transform = 'translate(0)';
+              items[index].classList.add('active');
+              // Add this function for transform work good without any problems in the end of transform
+              getPosition();
+              
+          }else if(index < activeIndex) {
+              startAudio();
+              // Cleear Interval function for this Function work without problems
+              clearInterval(autoInterval);
+              setTimeout(autoTranstion(),5000);
+              // Remove and Add class "active" for items to make transform
+              activeItem.style.transform = 'translate(100%)';
+              activeItem.classList.remove('active');
+              items[index].style.transform = 'translate(0)';
+              items[index].classList.add('active');
+              // Add this function for transform work good without any problems in the end of transform
+              getPosition();
+          }
+  
+      };
+  });
+  /* End Controls span Function  */
+  
+  /* Start prev and next rules Function */
+  function getPrevAndNext() {
+      let activeItem = document.querySelector(".Abdelzaher-slider .item.active");
+      let activeIndex = items.indexOf(activeItem);
+      let prevSlide,nextSlide;
+      if (activeIndex === items.length - 1) {
+          nextSlide = items[0];
+      } else {
+          nextSlide = items[activeIndex + 1];
+      }
+      if (activeIndex === 0) {
+          prevSlide = items[items.length - 1]
+      } else {
+          prevSlide = items[activeIndex - 1];
+      }
+      return[prevSlide,nextSlide];
+  }
+  getPrevAndNext();
+  /* End prev and next rules Function */
+  
+  /* Start Position function */
+  function getPosition() {
+      let activeItem = document.querySelector(".Abdelzaher-slider .item.active");
+      let activeIndex = items.indexOf(activeItem);
+      const [prevSlide,nextSlide] = getPrevAndNext();
+      items.forEach((item,index)=>{
+          if (index === activeIndex) {
+              item.style.transform = "translateX(0%)";
+          }else if (item === prevSlide) {
+              item.style.transform = "translateX(-100%)";
+          }else if (item === nextSlide) {
+              item.style.transform = "translateX(100%)";
+          }else{
+              item.style.transform = "translateX(100%)";
+          }
+          item.addEventListener("transitionend",()=>{
+              item.classList.remove("top");
+          });
+          // Add and remove "active" class for controls spans
+          controlsSpans.forEach(span => {
+              span.classList.remove("active")
+          });
+          controlsSpans[activeIndex].classList.add("active");
+      });
+  };
+  getPosition();
+  /* End Position function */
+  
+  // Add events for controls buttons
+  controlsButtons.forEach(button =>{
+      // Add z-index for buttons 
+      button.style.zIndex = items.length + 2;
+      button.addEventListener("click",()=>{
+          if (button.classList.contains("next")) {
+              startAudio();
+              // Cleear Interval function for this Function work without problems
+              clearInterval(autoInterval);
+              setTimeout(autoTranstion(),intervalTimeNume);
+              getNextSlide();
+          }else if (button.classList.contains("prev")) {
+              startAudio();
+              clearInterval(autoInterval);
+              setTimeout(autoTranstion(),intervalTimeNume);
+              getPrevSlide();
+          }
+      });
+  });
+  
+  /* Start nextSlide function */
+  function getNextSlide() {
+  
+      let activeItem = document.querySelector(".Abdelzaher-slider .item.active");
+      const [prevSlide,nextSlide] = getPrevAndNext();
+      if (activeItem.classList.contains("top")) {
+          return;
+      }
+      // Add class "top" to active item to show his transform
+      activeItem.classList.add("top");
+      nextSlide.classList.add("top");
+      // Remove and Add class "active" for items to make transform
+      activeItem.classList.remove('active');
+      activeItem.style.transform = 'translate(-100%)';
+      nextSlide.classList.add('active');
+      nextSlide.style.transform = 'translateX(0)';
+      // Add this function for transform work good without any problems in the end of transform
+      getPosition();
+  }
+  /* End nextSlide function */
+  
+  /* Start prevSlide function */
+  function getPrevSlide() {
+  
+      let activeItem = document.querySelector(".Abdelzaher-slider .item.active");
+      const [prevSlide,nextSlide] = getPrevAndNext();
+      if (activeItem.classList.contains("top")) {
+          return;
+      }
+      // Add class "top" to active item to show his transform
+      activeItem.classList.add("top");
+      prevSlide.classList.add("top");
+      // Remove and Add class "active" for items to make transform
+      activeItem.classList.remove('active');
+      activeItem.style.transform = 'translate(100%)';
+      prevSlide.classList.add('active');
+      prevSlide.style.transform = 'translateX(0)';
+      // Add this function for transform work good without any problems in the end of transform
+      getPosition();
+  }
+  /* Start prevSlide function */
+  
+  /* Start autoInterval function for change item every 5 secound */
+  let intervalTimeNume = parseInt(AbdelzaherSlider.dataset.change);
+  let intervalTimeString = AbdelzaherSlider.dataset.change;
+  function autoTranstion() {
+      autoInterval = setInterval(()=>{
+          getNextSlide();
+      },intervalTimeNume);
+  }
+  autoTranstion();
+  
+  // Remove autoInterval function 
+  if (intervalTimeNume === 0 || intervalTimeString === "none") {
+      
+      clearInterval(autoInterval);
+  
+  }
+  /* End autoInterval function for change item every 5 secound */
+  
+  
+  /* Start sctiveControl function for add and remove "active" class for controls spans */
+  function activeControl() {
+      let activeItem = document.querySelector(".Abdelzaher-slider .item.active");
+      let activeIndex = items.indexOf(activeItem);
+      controlsSpans.forEach(span => {
+          span.classList.remove("active")
+      });
+      controlsSpans[activeIndex].classList.add("active");
+  }
+  activeControl();
+  /* End sctiveControl function for add and remove "active" class for controls spans */
+  
+  function startAudio() {
+      audioEffect.play();
+  }
+  </script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+
+{% comment "" %}{% include 'Main/footer2.html'%}{% endcomment %}
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endif %}
+
+</body>
+</html>
+
+
+
+
+{% endblock  %}
+
+
+

@@ -1,0 +1,134 @@
+{% load static %}
+{% load cart_template_tags %}
+
+{% load activeurl %}
+
+<style>
+  .Moha{
+    border-bottom:rgb(0, 131, 144) solid 1px !important;
+ 
+  }
+
+
+  .Moha a{
+    color:rgb(0, 131, 144)  !important;
+ 
+  }
+  #nava{
+    padding-bottom: 6px;
+    padding-top: 6px;
+    padding-right: 6px;
+    margin-bottom: -6px;
+    margin-top: -6px;
+    margin-right: -6px;
+    margin-left: -6px;
+    text-transform: uppercase;
+    letter-spacing: normal;
+    font-family: Montserrat, arial, sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 300;
+
+}
+  
+  
+#BookFA:hover{
+ color:green !important;
+}
+
+#monty ul{
+
+ margin:2px 2px 2px 2px !important;
+
+}
+#ITN ul{
+ margin:2px 2px 2px 2px !important;
+}
+
+
+
+
+</style>
+
+<link rel="icon" href="{% static 'Main/img/icon.jpg' %}" type="image/x-icon"/>  
+
+{% activeurl %}
+
+  <nav id="nava" class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar" style="background-color: black !important; min-height:150px ">
+
+      <!-- Brand -->
+      <a class="navbar-brand waves-effect" href="/"  id="ITN2" style="color:white; font-size:16px" >
+        <strong id="koni" style="color: black !important;" class="blue-text"></strong>
+        <img style="height: 60px; max-width:100px; margin-top: 0px !important; margin-bottom: 0px; " src="{% static 'Main/img/TravenciaNewLogo.jpg'%}" alt="">
+        
+      </a>
+
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+        <!-- Left -->
+        <ul class="navbar-nav ml-auto">
+          <li id="ITN" class="nav-item  waves-effect">
+           
+            <a   style="color: white !important;  " class="nav-link waves-effect " href="/" >Home
+           </a>
+          </li>
+          <li id="ITN"  style="color: white !important;" class="nav-item">
+           
+            <a class="nav-link waves-effect" href="/about/"   style="color: white !important;  margin-left:25px !important;" >About Us </a>
+          </li>
+          <li id="ITN" class="nav-item">
+            <a class="nav-link waves-effect " href="/BookList/"  style="color: white !important; margin-right:10pxpx !important;  margin-left:10pxpx !important;">Book</a>
+          </li>
+              <li id="ITN" class="nav-item">
+            <a class="nav-link waves-effect " href="/Contact/"   style="color: white !important; margin-right:10pxpx !important;  margin-left:10pxpx !important;">Contact Us</a>
+          </li>
+        
+      
+           <li id="ITN" class="nav-item">
+            <a class="nav-link waves-effect " href="/Terms&Conditions/"  style="color: white !important; margin-right:10pxpx !important;  margin-left:10pxpx !important;" > Terms and Conditons </a>
+          </li>
+        </ul-->
+        
+
+    
+
+
+        <ul class="navbar-nav nav-flex-icons" style="margin-top: 7px !important; padding-left:200px; ">
+   
+                
+        <li class="nav-item">
+          <a href="">
+          <i  style="color:white; font-size: 20px;" class="fab fa-facebook-square"></i>
+        </a>
+        </li>
+        
+        <li class="nav-item">
+          <a href="">
+            <i style="color:white !important;font-size: 20px; padding-left:10px;" class="fab fa-twitter-square"></i>
+   
+        </a>
+        </li>
+        
+
+ <li class="nav-item">
+   <a href="">
+    <i style="color:white !important;font-size: 20px; padding-left:10px;"    class="fab fa-instagram"></i>
+   </a>
+ </li>
+         
+        </ul>
+     
+      </div>
+
+    </div>
+  </nav>
+
+
+  {% endactiveurl %}

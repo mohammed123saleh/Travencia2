@@ -1,0 +1,25 @@
+{% extends 'Main/Base.html' %}
+{% load static %}
+{% block content %}
+
+<body style="background-color: #333; color: white; min-height: 1000px;">
+    
+
+<div class="container">
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br> 
+{% for i in Hotels %}
+{{i.Hotels_series}}
+{{i.Convention_name}}
+{{i.series_summary}}
+
+
+{%endfor%}
+</div>
+</body>
+{% endblock %}
